@@ -1,0 +1,263 @@
+{
+  "name": "APITwilio_greeting",
+  "nodes": [
+    {
+      "parameters": {
+        "from": "+13613664267",
+        "to": "+573226159348",
+        "message": "=Bienvenido Jose!",
+        "options": {}
+      },
+      "id": "8de20710-be42-4b68-bfbe-19d5e6869a75",
+      "name": "Twilio",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        60
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC590b7c7d02de0fd66c0ce86def776346/Messages.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Basic QUM1OTBiN2M3ZDAyZGUwZmQ2NmMwY2U4NmRlZjc3NjM0NjozM2Q4ZGNkZTdiODFlYzcyMGZhMDQxMDY5NTEzM2RkMw=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "From",
+              "value": "+13613664267"
+            },
+            {
+              "name": "Body",
+              "value": "={{ $json[\"greeting\"] }}"
+            },
+            {
+              "name": "To",
+              "value": "+573116722581"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {
+              "followRedirects": true
+            }
+          }
+        }
+      },
+      "id": "ac327613-bf3d-40d9-a606-c78e462b998c",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1100,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n  \"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "ecf39849-a39d-4adf-a98c-8acb404fb026",
+      "name": "MongoDB",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        900,
+        260
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10,
+        "unit": "seconds"
+      },
+      "id": "4714a75e-9ae3-4f99-89c3-4d4db6817a33",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        260
+      ],
+      "webhookId": "fa118797-81e3-4cf2-9b59-99eefcdfa81e"
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n  \"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "aefe0bef-1f78-4f0f-9168-3ea713a7a4fe",
+      "name": "MongoDB1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        260
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC590b7c7d02de0fd66c0ce86def776346/Messages.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Basic QUM1OTBiN2M3ZDAyZGUwZmQ2NmMwY2U4NmRlZjc3NjM0NjozM2Q4ZGNkZTdiODFlYzcyMGZhMDQxMDY5NTEzM2RkMw=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "From",
+              "value": "+13613664267"
+            },
+            {
+              "name": "Body",
+              "value": "={{ $json[\"menu\"] }}"
+            },
+            {
+              "name": "To",
+              "value": "+573116722581"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {
+              "followRedirects": true
+            }
+          }
+        }
+      },
+      "id": "65c0305c-1496-4c42-821e-f9a1cb1288ca",
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1700,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "id": "7674f559-ba59-4587-ace9-9c71584de439",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        720,
+        260
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "MongoDB": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MongoDB1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "MongoDB",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "MongoDB1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "hash": "dbb4951942e9c1dc1286056c78ac58b8",
+  "id": 6,
+  "meta": {
+    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
+  },
+  "tags": []
+}

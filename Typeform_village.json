@@ -1,0 +1,313 @@
+{
+  "name": "Typeform_village",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "insert",
+        "collection": "Mavi",
+        "fields": "name, email, phone, location",
+        "options": {}
+      },
+      "id": "8a37b20c-4c3d-4ae1-879a-923c01cf1db1",
+      "name": "MongoDB",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        900
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 6
+            }
+          ]
+        }
+      },
+      "id": "90b533f2-6d6c-46f5-8452-ee77526e05bf",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "items",
+        "options": {}
+      },
+      "id": "79031d65-7b59-42c8-838e-1e275feb037e",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        180,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "6f468203-da96-4fc1-9f1d-373c01fdaa1d",
+      "name": "SplitInBatches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [
+        380,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.typeform.com/forms/WP4sjM5m/responses?page_size=2",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer tfp_Dc5Ep3D2CrfMoEWVqaSBq8SyiHK3PX8vz81RzJmqAmYg_e42dppYtm2iS"
+            },
+            {
+              "name": "cookie",
+              "value": "AWSALBTG=zttAr2mXAeknTkRRx4One4bsybL29QuygLz7lUPSgQc0rBu1v3VT4Jup/98tP75B/XS9ZJmj9jH7lBSnFpsCFAFHggO28C1tPWwbh3B8vb4qwFboW6TIHniU/2gTvPBT9mvCTZEpyKk4jh5yNTgFLyCal5aCBAxFBCAm3vKTp+tR;AWSALBTGCORS=zttAr2mXAeknTkRRx4One4bsybL29QuygLz7lUPSgQc0rBu1v3VT4Jup/98tP75B/XS9ZJmj9jH7lBSnFpsCFAFHggO28C1tPWwbh3B8vb4qwFboW6TIHniU/2gTvPBT9mvCTZEpyKk4jh5yNTgFLyCal5aCBAxFBCAm3vKTp+tR;device_view=full;"
+            }
+          ]
+        },
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 0,
+              "batchInterval": 0
+            }
+          }
+        }
+      },
+      "id": "4df74667-7ab5-4ce5-9627-cc1fb544a04b",
+      "name": "Get form answers",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        20,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "name",
+              "value": "={{ $json[\"answers\"][\"0\"][\"text\"] }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $json[\"answers\"][\"1\"][\"text\"] }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $json[\"answers\"][\"2\"][\"text\"] }}"
+            },
+            {
+              "name": "location",
+              "value": "={{ $json[\"answers\"][\"3\"][\"text\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "26a3e1dd-4158-4a24-a1b0-a3af058acd75",
+      "name": "Set variables",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        540,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "collection": "Mavi",
+        "options": {},
+        "query": "={\"phone\":  \"{{ $json[\"answers\"][\"2\"][\"text\"] }}\"}"
+      },
+      "id": "276e19e5-1d8d-4b82-a192-0e769eff10a1",
+      "name": "MongoDB1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        740,
+        880
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$node[\"Set variables\"].json[\"phone\"]}}",
+              "value2": "={{$node[\"MongoDB1\"].json[\"phone\"]}}"
+            }
+          ]
+        }
+      },
+      "id": "cd780d92-1b1b-4e94-99d2-e025a6b9c5b6",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        920,
+        880
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e448b4f4-2724-44de-b4e8-b0cc0fede7a3",
+      "name": "NoOp",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "3fed8c18-d73a-49f6-8146-2af6124e97c1",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        1000
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get form answers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "SplitInBatches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SplitInBatches": {
+      "main": [
+        [
+          {
+            "node": "Set variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get form answers": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set variables": {
+      "main": [
+        [
+          {
+            "node": "MongoDB1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SplitInBatches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MongoDB1": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "NoOp",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "timezone": "Europe/Madrid",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "any",
+    "executionTimeout": 60
+  },
+  "hash": "472ad9a817f26fcc39030945acfd91da",
+  "id": 5,
+  "meta": {
+    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
+  },
+  "tags": []
+}

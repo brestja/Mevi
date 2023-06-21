@@ -1,0 +1,1196 @@
+{
+  "name": "Slack flow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "956e41f4-a666-43da-8825-464e4a1d0188",
+        "options": {
+          "noResponseBody": true
+        }
+      },
+      "id": "83c4b0c7-f155-4af6-8c86-f602d19cb22c",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        440,
+        500
+      ],
+      "webhookId": "956e41f4-a666-43da-8825-464e4a1d0188"
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
+        "text": "Feeding can be tough and if you're struggling in any way that's completely normal and okay. How are you doing today? Reply with the number corresponding to where you're at:  \n/1- I think my baby is having trouble latching  \n/2- I don't know if my baby is getting enough \n/3- I'm in a lot of pain \n/4- Other  \n/5- I've got this!\t\t\t\t\t\t\t",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "a971d401-0790-4504-979d-ebad7fb8cab5",
+      "name": "Slack1",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        -140
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "7f8e434f-069d-441a-bcee-01305a67a2de",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        -140
+      ],
+      "webhookId": "cd600a52-87d9-4265-a2aa-526dbc2ebd17"
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Hey mama, hope the first few days at home with baby are blissfull. We know things are probably starting to pile up, so we're ready to activate your village in whatever ways you need. Today we'll make sure you have what you need to keep baby fed because a fed baby is a happy baby. \t\t\t\t\t\t\t",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "abd48d2a-9466-4717-b8e3-e9f23e49ce4a",
+      "name": "Greetings",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        880,
+        -140
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "1- I think my baby is having trouble latching: \nBelow is a great evidence based resource to help you figure out if baby is latching correctly.  Link: https://www.healthlinkbc.ca/pregnancy-parenting/parenting-babies-0-12-months/breastfeeding/learning-latch.  \n\nIf you need more help on this, write /more. ",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "77630375-92cc-46a1-acc3-6081c00ccc46",
+      "name": "Latching",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        880,
+        40
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "2- I don't know if my baby is getting enough milk:\nThis is a valid concern. When breastfeeding you can't tell how much your baby is getting so often when babies clusterfeed or are hungry often, mom does feel concerned they're not getting enough.   However, in most cases if your baby is healthy they are getting what they need. This resource from HealthLink BC explains how your baby's feeding patterns should change over the first ten days.    https://www.healthlinkbc.ca/pregnancy-parenting/parenting-babies-0-12-months/feeding-your-baby/how-often-and-how-long-feed\t.\n\nDo you still need support? Write /yes.\t\t\t",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "e499158f-cd40-47e7-adf8-2fff064bb4b7",
+      "name": "Getting enough milk",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        880,
+        220
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "3- I'm in pain: \nYou'll be okay soon. If the pain is severe and remains after baby has finished feeding, you may have mastitis. Don't worry, your baby is not in danger.   This resource from HealthLink BC explains how to manage mastitis. But, you should call 811 for immediate support so you can figure out what specific care you may need.   Good luck, mama! ",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "aa438c86-5547-4a74-9011-dce8069e842c",
+      "name": "I'm in pain",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        880,
+        400
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "4- Other:\nThe challenges of feeding often are not discussed openly. You're not the only one struggling, we promise.   Because we're in prototype, we don't have the ability to have a dialogue to help you in real time. However, we can still help! Please check out the resources below that may cover your current concerns.   Breastfeeding: https://www.healthlinkbc.ca/pregnancy-parenting/parenting-babies-0-12-months/breastfeeding  Combo feeding (breastmilk + formula): https://www.healthlinkbc.ca/pregnancy-parenting/parenting-babies-0-12-months/feeding-your-baby/alternative-feeding-methods  Exclusively formula feeding: https://www.healthlinkbc.ca/health-topics/bottle-feeding  Breastfeeding and lactation consultation services: http://www.bcwomens.ca/our-services/labour-birth-post-birth-care/breastfeeding-clinic\t",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "639ade51-cfb7-4b11-9d12-6c7c2bf06c83",
+      "name": "Other",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        880,
+        600
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "5- I'm good:\nThat's amazing to hear! We'll reach out soon to see how we can help in other ways.\n\nWrite /members to begin the  village members messages.",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "916c2d04-3dd8-4dc2-841e-e44fedd2960b",
+      "name": "I'm good",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        880,
+        760
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "No sweat. You have options! \n\nYou may contact BC Women's to speak to a lactation consultant. \n\nIf you need help immediately, call 811 to talk to the Public Health Nurse for immediate support.  ",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "5737f445-7d49-4139-aa48-ff9b3a31f054",
+      "name": "Latching help",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        880,
+        940
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Hey Village member! [PN] just got home from the hospital and needs some help with food. We're activating a meal train on their behalf. Would you look to participate? Reply /participate.\t\t\t\t\t",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "8b20eb0d-4da7-4b82-81a3-3735ae44a35e",
+      "name": "Village members greeting",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        880,
+        1120
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Are you able to provide a meal, order an Uber eats gift card or some groceries through Instacart? Reply: \n/meal \n/uber \n/instacart.\t\t\t",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "71e4f50c-f1a1-47cd-b76b-9e2455decc2d",
+      "name": "Participate on a meal train",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        -140
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Sounds great! We've let [PM] know and you can reach out to them to coordinate delivery.\t\t\t",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "15be5c7c-8015-4122-b9cd-5de6abb2b268",
+      "name": "Meal",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        40
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "f5927ead-fb1f-404e-b34f-eb1087bf58fe",
+      "name": "Wait1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        40
+      ],
+      "webhookId": "7051f175-e1b9-4aa8-abf3-ec6ae4fa20fa"
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "=varios",
+        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}{{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Hey mama, your family will be dropping lunch and dinner off for the day. They'll be reaching out to coordinate delivery shortly. \n\nStay well 🧡",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "94d49cd8-6c36-44ca-ac78-facfcb06f8a1",
+      "name": "PN Notification",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        40
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Great! Here's a link to purchase a gift card.",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "72723ea5-e05d-4e06-b662-d158e584014f",
+      "name": "Uber",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        220
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "45475e48-4b2e-4d03-ac51-4ce52961be4a",
+      "name": "Wait2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        220
+      ],
+      "webhookId": "895eb38d-8c0b-4488-aa8c-9776d644eb9c"
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "=varios",
+        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}{{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Hey mama, your family has purchased an Uber gift card for the family. Hope it keeps you fed today.\n\nStay well 🧡",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "4dde51f4-bbc7-46a8-9fe3-c88083447804",
+      "name": "PN Notification1",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        220
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Great! Here's a link to purchase an Instacart gift card.",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "1d6b528f-3b5c-4374-864c-c1919d484671",
+      "name": "Instacart",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        400
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "49721f03-24ae-4f20-9dd4-ff839855fa95",
+      "name": "Wait3",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        400
+      ],
+      "webhookId": "ac871b63-d839-4e80-a6c3-ce5f38e2eba4"
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "=varios",
+        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}{{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Hey mama, your family has purchased an Instacart gift card for the family. Hope it helps with groceries this week. \n\nStay well 🧡\n\n(Write /series2 to receive Day 7 messages.)",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "ba004144-bace-46aa-b4b3-20cd3cda76bd",
+      "name": "PN Notification2",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        400
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json[\"body\"][\"command\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "/start"
+            },
+            {
+              "value2": "/1",
+              "output": 1
+            },
+            {
+              "value2": "/2",
+              "output": 2
+            },
+            {
+              "value2": "/3",
+              "output": 3
+            }
+          ]
+        }
+      },
+      "id": "37a48283-3b52-4151-bc9c-35f7a6e9dd17",
+      "name": "Series 1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        660,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json[\"body\"][\"command\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "/4"
+            },
+            {
+              "value2": "/5",
+              "output": 1
+            },
+            {
+              "value2": "/more",
+              "output": 2
+            },
+            {
+              "value2": "/yes",
+              "output": 2
+            },
+            {
+              "value2": "/members",
+              "output": 3
+            }
+          ]
+        }
+      },
+      "id": "6e47562c-e585-4cd9-b50f-7a36cdcc975f",
+      "name": "Series1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        660,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json[\"body\"][\"command\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "/participate"
+            },
+            {
+              "value2": "/meal",
+              "output": 1
+            },
+            {
+              "value2": "/uber",
+              "output": 2
+            },
+            {
+              "value2": "/instacart",
+              "output": 3
+            }
+          ]
+        }
+      },
+      "id": "46eb3d95-f84e-4606-ba31-9519d64e342a",
+      "name": "Series  1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json[\"body\"][\"command\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "/series2"
+            },
+            {
+              "value2": "/support",
+              "output": 1
+            },
+            {
+              "value2": "/help",
+              "output": 2
+            },
+            {
+              "value2": "/11am",
+              "output": 3
+            }
+          ]
+        }
+      },
+      "id": "9802c1ab-50a7-4408-b6bd-8eaa68acfbed",
+      "name": "Series2",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Hey mama, we know that household things can start to pile up around this time. \n\nIt's really important that you are able to spend intimate time with your little one of that's what calls to you. Your village can lend a hand with stuff around the house so you can focus on baby. \nCan we help you tap into their support? Reply /support.\t\t",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "080ba135-5897-4845-a3aa-1c1f84b03b17",
+      "name": "Gretings Series 2",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        600
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "cdf17522-7481-4861-aaf0-cd979fd71108",
+      "name": "Wait4",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        760
+      ],
+      "webhookId": "6bcd384f-6ccb-4cea-b9a2-8b094ba3e0d9"
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "=varios",
+        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}{{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Hey family! [PN] is in need of some household support while she cares for her baby. \n\nStudies show that intimate skin to skin time is critical during this time, so we like to ask if you can support the new family with household tasks like dishes, laundry. and light cleaning while the new parents connect with their newborn. However, new mothers typically find it difficult to ask for this help themselves. That's why we're here to take on these requests for [PN] so that she can focus on what's going on at home. \n\n\nAre you to help household tasks today? Reply /help",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "2c0ad8fc-5bc1-4a4c-b398-066855752adb",
+      "name": "Village Notification",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        760
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Great! It's [x:xx am] PST right now. Let us know if you're available at:\n\n1. 11am - 1pm\n2. 1pm - 4pm \n3. 4pm to 7pm\n\nSelect /11am, /1pm, or /4pm for the time block you are available.",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "aea6133c-4b68-45bc-9147-c84fa82ec4bb",
+      "name": "Village member accepted to help",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        940
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Sounds great. We'll send a message to [PM] to confirm. ",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "d97cd68e-d3f7-4404-a416-69ff2acb8470",
+      "name": "Village member shedule a block time",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        1140
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "41a674e1-a3b6-41ea-9d09-61162ad646c1",
+      "name": "Wait5",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        1140
+      ],
+      "webhookId": "87ebb1ce-0630-47ab-8ec2-8af1d62ed0a5"
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "=varios",
+        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}{{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Hey mama, your family is coming by at 11am to take care of the laundry and other housekeeping tasks. You won't need to lift a finger.\n\nLet us know if you need anything else today 💛.\n\n(Write /series4 to receive Day 11 messages)",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "64ef2cf0-840a-472f-b40b-aaffb9abe945",
+      "name": "PN Notification3",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        1140
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "We are on it!",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "fbabecf5-bf26-473b-86bc-d4aaefbe4eea",
+      "name": "Mama Support acepted",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        760
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json[\"body\"][\"command\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "/series4"
+            }
+          ]
+        }
+      },
+      "id": "18bf3fa7-30df-4775-b7e0-dc955a7cd156",
+      "name": "Series",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{ $json[\"body\"][\"user_id\"] }}",
+        "text": "Morning mama! Hope you got some sleep last night, but if you didn't, that's totally normal at this stage. For the firsr 6 weeks of life, your newborn is going to take 4-8 naps per day. Your baby can't handle more than 45-60 minutes of awake time throughout the day, which includes feedings. That doesn't leave a lot of time to get things done with them, but that's okay. Moving slowly, taking things easy, and being kind to yourself is most important right now. If you're in a two parent household, there are some tested approaches that can help you get as much rest as possible. Test them out and see if they work for your family. ",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "be4ed8c0-8670-42ac-ad6c-43de1527da92",
+      "name": "Series 4 Greetings",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        2300,
+        260
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "a9a47e72-447b-451a-a28e-fbf41c9c89da",
+      "name": "Wait6",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        2500,
+        260
+      ],
+      "webhookId": "06670397-bc87-4bae-a627-3a6ae3ad3292"
+    },
+    {
+      "parameters": {
+        "operation": "postEphemeral",
+        "channel": "varios",
+        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
+        "text": "1) Keep your own sleeping space dark, cool, and ready to welcome you. Adjust it to your ideal sleeping conditions. As soon as your baby takes their nap, leap into bed and do your best to catch some shut eye. \n\n2) When you're ready to rest do your best to keep your phone in a separate room. If you must have it with you, turn the brightness down and don't look at it before your nap.\n\n3) After night feedings, hand your baby off to your partner so they can handle diaper changes and getting them down for a nap. This helps you catch an extra 10-20 minutes of rest each time which is critical for you right now. \n\n4) Keep snacks around so that you can feed yourself while baby is feeding. Feeding you both at the same time means that as soon as baby doesn't need to be with you for feeding, you can take a little break for yourself as well.",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "56b644a1-f6fa-44a7-8250-18f30b868308",
+      "name": "Aproaches",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        2720,
+        260
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "1",
+          "name": "Slack account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Series 1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Series1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Series  1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Series2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Series",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Slack1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Greetings": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Meal": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "PN Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Uber": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "PN Notification1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instacart": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "PN Notification2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Series 1": {
+      "main": [
+        [
+          {
+            "node": "Greetings",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Latching",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Getting enough milk",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "I'm in pain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Series1": {
+      "main": [
+        [
+          {
+            "node": "Other",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "I'm good",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Latching help",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Village members greeting",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Series  1": {
+      "main": [
+        [
+          {
+            "node": "Participate on a meal train",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Meal",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Uber",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Instacart",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Series2": {
+      "main": [
+        [
+          {
+            "node": "Gretings Series 2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mama Support acepted",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Village member accepted to help",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Village member shedule a block time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait4": {
+      "main": [
+        [
+          {
+            "node": "Village Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Village member shedule a block time": {
+      "main": [
+        [
+          {
+            "node": "Wait5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait5": {
+      "main": [
+        [
+          {
+            "node": "PN Notification3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mama Support acepted": {
+      "main": [
+        [
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Series": {
+      "main": [
+        [
+          {
+            "node": "Series 4 Greetings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Series 4 Greetings": {
+      "main": [
+        [
+          {
+            "node": "Wait6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait6": {
+      "main": [
+        [
+          {
+            "node": "Aproaches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "hash": "e8bc191e3ef4f5e128fa2f86352d1482",
+  "id": 7,
+  "meta": {
+    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
+  },
+  "tags": []
+}

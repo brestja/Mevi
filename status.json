@@ -1,0 +1,690 @@
+{
+    "payload": {
+        "ordersStatus": [
+            {
+                "purchaseOrderNumber": "5N7FN65V",
+                "purchaseOrderStatus": "OPEN",
+                "purchaseOrderDate": "2022-10-17T01:26:52Z",
+                "lastUpdatedDate": "2022-10-17T01:26:56Z",
+                "sellingParty": {
+                    "partyId": "ECUW8"
+                },
+                "shipToParty": {
+                    "partyId": "MAD6"
+                },
+                "itemStatus": [
+                    {
+                        "itemSequenceNumber": "1",
+                        "buyerProductIdentifier": "B01MCTH5MY",
+                        "vendorProductIdentifier": "8433905222680",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "21"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "28.93"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 12,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-17T01:26:56Z",
+                                    "orderedQuantity": {
+                                        "amount": 12,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "UNCONFIRMED"
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    },
+                    {
+                        "itemSequenceNumber": "2",
+                        "buyerProductIdentifier": "B09JGHTHGD",
+                        "vendorProductIdentifier": "8433905600150",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "164.45"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "247.11"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-17T01:26:56Z",
+                                    "orderedQuantity": {
+                                        "amount": 1,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "UNCONFIRMED"
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    },
+                    {
+                        "itemSequenceNumber": "3",
+                        "buyerProductIdentifier": "B08BJLT381",
+                        "vendorProductIdentifier": "8433905524371",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "65"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "119"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 4,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-17T01:26:56Z",
+                                    "orderedQuantity": {
+                                        "amount": 4,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "UNCONFIRMED"
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    },
+                    {
+                        "itemSequenceNumber": "4",
+                        "buyerProductIdentifier": "B09JGJP921",
+                        "vendorProductIdentifier": "8433905600167",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "202.95"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "304.96"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-17T01:26:56Z",
+                                    "orderedQuantity": {
+                                        "amount": 1,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "UNCONFIRMED"
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    }
+                ]
+            },
+            {
+                "purchaseOrderNumber": "5NYFDTCB",
+                "purchaseOrderStatus": "OPEN",
+                "purchaseOrderDate": "2022-10-17T01:26:51Z",
+                "lastUpdatedDate": "2022-10-17T01:26:56Z",
+                "sellingParty": {
+                    "partyId": "ECUW8"
+                },
+                "shipToParty": {
+                    "partyId": "VLC1"
+                },
+                "itemStatus": [
+                    {
+                        "itemSequenceNumber": "1",
+                        "buyerProductIdentifier": "B07ZRQZYTM",
+                        "vendorProductIdentifier": "8433905501273",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "49"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "73.55"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 18,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-17T01:26:56Z",
+                                    "orderedQuantity": {
+                                        "amount": 18,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "UNCONFIRMED"
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    }
+                ]
+            },
+            {
+                "purchaseOrderNumber": "1C32M78S",
+                "purchaseOrderStatus": "OPEN",
+                "purchaseOrderDate": "2022-10-12T01:08:44Z",
+                "lastUpdatedDate": "2022-10-16T17:31:16Z",
+                "sellingParty": {
+                    "partyId": "ECUW8"
+                },
+                "shipToParty": {
+                    "partyId": "VLC1"
+                },
+                "itemStatus": [
+                    {
+                        "itemSequenceNumber": "1",
+                        "buyerProductIdentifier": "B08BJNWFVT",
+                        "vendorProductIdentifier": "8433905526931",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "32"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "59"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 17,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-12T01:08:47Z",
+                                    "orderedQuantity": {
+                                        "amount": 17,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "ACCEPTED",
+                            "acceptedQuantity": {
+                                "amount": 17,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "acknowledgementStatusDetails": [
+                                {
+                                    "acknowledgementDate": "2022-10-13T08:13:40Z",
+                                    "acceptedQuantity": {
+                                        "amount": 17,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    },
+                                    "rejectedQuantity": {
+                                        "amount": 0,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    },
+                    {
+                        "itemSequenceNumber": "2",
+                        "buyerProductIdentifier": "B07ZRQZYTM",
+                        "vendorProductIdentifier": "8433905501273",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "49"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "73.55"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-12T01:08:47Z",
+                                    "orderedQuantity": {
+                                        "amount": 6,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "ACCEPTED",
+                            "acceptedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "acknowledgementStatusDetails": [
+                                {
+                                    "acknowledgementDate": "2022-10-13T08:13:40Z",
+                                    "acceptedQuantity": {
+                                        "amount": 6,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    },
+                                    "rejectedQuantity": {
+                                        "amount": 0,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    }
+                ]
+            },
+            {
+                "purchaseOrderNumber": "7T5FYIZH",
+                "purchaseOrderStatus": "OPEN",
+                "purchaseOrderDate": "2022-10-12T01:08:44Z",
+                "lastUpdatedDate": "2022-10-16T15:17:36Z",
+                "sellingParty": {
+                    "partyId": "ECUW8"
+                },
+                "shipToParty": {
+                    "partyId": "MAD6"
+                },
+                "itemStatus": [
+                    {
+                        "itemSequenceNumber": "1",
+                        "buyerProductIdentifier": "B00VUUE9H4",
+                        "vendorProductIdentifier": "8433905242909",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "36"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "48.76"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-12T01:08:49Z",
+                                    "orderedQuantity": {
+                                        "amount": 6,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "ACCEPTED",
+                            "acceptedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "acknowledgementStatusDetails": [
+                                {
+                                    "acknowledgementDate": "2022-10-13T08:13:40Z",
+                                    "acceptedQuantity": {
+                                        "amount": 6,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    },
+                                    "rejectedQuantity": {
+                                        "amount": 0,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    },
+                    {
+                        "itemSequenceNumber": "2",
+                        "buyerProductIdentifier": "B07ZRSFSYV",
+                        "vendorProductIdentifier": "8433905501327",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "49"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "73.55"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 12,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-12T01:08:49Z",
+                                    "orderedQuantity": {
+                                        "amount": 12,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "ACCEPTED",
+                            "acceptedQuantity": {
+                                "amount": 12,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "acknowledgementStatusDetails": [
+                                {
+                                    "acknowledgementDate": "2022-10-13T08:13:40Z",
+                                    "acceptedQuantity": {
+                                        "amount": 12,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    },
+                                    "rejectedQuantity": {
+                                        "amount": 0,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    },
+                    {
+                        "itemSequenceNumber": "3",
+                        "buyerProductIdentifier": "B09JGHTHGD",
+                        "vendorProductIdentifier": "8433905600150",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "164.45"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "247.11"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-12T01:08:49Z",
+                                    "orderedQuantity": {
+                                        "amount": 1,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "ACCEPTED",
+                            "acceptedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "acknowledgementStatusDetails": [
+                                {
+                                    "acknowledgementDate": "2022-10-13T08:13:40Z",
+                                    "acceptedQuantity": {
+                                        "amount": 1,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    },
+                                    "rejectedQuantity": {
+                                        "amount": 0,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    },
+                    {
+                        "itemSequenceNumber": "4",
+                        "buyerProductIdentifier": "B08BJN3FPT",
+                        "vendorProductIdentifier": "8433905524319",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "65"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "119"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-12T01:08:49Z",
+                                    "orderedQuantity": {
+                                        "amount": 1,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "ACCEPTED",
+                            "acceptedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "acknowledgementStatusDetails": [
+                                {
+                                    "acknowledgementDate": "2022-10-13T08:13:40Z",
+                                    "acceptedQuantity": {
+                                        "amount": 1,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    },
+                                    "rejectedQuantity": {
+                                        "amount": 0,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    },
+                    {
+                        "itemSequenceNumber": "5",
+                        "buyerProductIdentifier": "B08BJLT381",
+                        "vendorProductIdentifier": "8433905524371",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "65"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "119"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 26,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-12T01:08:49Z",
+                                    "orderedQuantity": {
+                                        "amount": 26,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "ACCEPTED",
+                            "acceptedQuantity": {
+                                "amount": 26,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "acknowledgementStatusDetails": [
+                                {
+                                    "acknowledgementDate": "2022-10-13T08:13:40Z",
+                                    "acceptedQuantity": {
+                                        "amount": 26,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    },
+                                    "rejectedQuantity": {
+                                        "amount": 0,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    },
+                    {
+                        "itemSequenceNumber": "6",
+                        "buyerProductIdentifier": "B08BJNWFVT",
+                        "vendorProductIdentifier": "8433905526931",
+                        "netCost": {
+                            "currencyCode": "EUR",
+                            "amount": "32"
+                        },
+                        "listPrice": {
+                            "currencyCode": "EUR",
+                            "amount": "59"
+                        },
+                        "orderedQuantity": {
+                            "orderedQuantity": {
+                                "amount": 14,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "orderedQuantityDetails": [
+                                {
+                                    "updatedDate": "2022-10-12T01:08:49Z",
+                                    "orderedQuantity": {
+                                        "amount": 14,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "acknowledgementStatus": {
+                            "confirmationStatus": "ACCEPTED",
+                            "acceptedQuantity": {
+                                "amount": 14,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "acknowledgementStatusDetails": [
+                                {
+                                    "acknowledgementDate": "2022-10-13T08:13:40Z",
+                                    "acceptedQuantity": {
+                                        "amount": 14,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    },
+                                    "rejectedQuantity": {
+                                        "amount": 0,
+                                        "unitOfMeasure": "Eaches",
+                                        "unitSize": 1
+                                    }
+                                }
+                            ]
+                        },
+                        "receivingStatus": {
+                            "receiveStatus": "NOT_RECEIVED"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

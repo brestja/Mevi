@@ -1,0 +1,2931 @@
+{
+    "payload": {
+        "pagination": {
+            "nextToken": "WzE2NjExNjM5NDEwMDAsIjJaU0UxSjJEIl0"
+        },
+        "orders": [
+            {
+                "purchaseOrderNumber": "5N7FN65V",
+                "purchaseOrderState": "New",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-10-17T01:26:52Z",
+                    "purchaseOrderStateChangedDate": "2022-10-17T01:26:56Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-10-16T22:00:00Z--2022-10-20T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01MCTH5MY",
+                            "vendorProductIdentifier": "8433905222680",
+                            "orderedQuantity": {
+                                "amount": 12,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "21"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "28.93"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B09JGHTHGD",
+                            "vendorProductIdentifier": "8433905600150",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "164.45"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "247.11"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B08BJLT381",
+                            "vendorProductIdentifier": "8433905524371",
+                            "orderedQuantity": {
+                                "amount": 4,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "4",
+                            "amazonProductIdentifier": "B09JGJP921",
+                            "vendorProductIdentifier": "8433905600167",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "202.95"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "304.96"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "5NYFDTCB",
+                "purchaseOrderState": "New",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-10-17T01:26:51Z",
+                    "purchaseOrderStateChangedDate": "2022-10-17T01:26:56Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "VLC1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "billToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "deliveryWindow": "2022-10-16T22:00:00Z--2022-10-23T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B07ZRQZYTM",
+                            "vendorProductIdentifier": "8433905501273",
+                            "orderedQuantity": {
+                                "amount": 18,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "49"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "73.55"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "1C32M78S",
+                "purchaseOrderState": "Acknowledged",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-10-12T01:08:44Z",
+                    "purchaseOrderChangedDate": "2022-10-16T17:31:16Z",
+                    "purchaseOrderStateChangedDate": "2022-10-13T08:13:44Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "VLC1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "billToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "deliveryWindow": "2022-10-12T22:00:00Z--2022-10-19T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B08BJNWFVT",
+                            "vendorProductIdentifier": "8433905526931",
+                            "orderedQuantity": {
+                                "amount": 17,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "59"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B07ZRQZYTM",
+                            "vendorProductIdentifier": "8433905501273",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "49"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "73.55"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "7T5FYIZH",
+                "purchaseOrderState": "Acknowledged",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-10-12T01:08:44Z",
+                    "purchaseOrderChangedDate": "2022-10-16T15:17:36Z",
+                    "purchaseOrderStateChangedDate": "2022-10-13T08:13:48Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-10-12T22:00:00Z--2022-10-18T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B00VUUE9H4",
+                            "vendorProductIdentifier": "8433905242909",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "36"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "48.76"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B07ZRSFSYV",
+                            "vendorProductIdentifier": "8433905501327",
+                            "orderedQuantity": {
+                                "amount": 12,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "49"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "73.55"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B09JGHTHGD",
+                            "vendorProductIdentifier": "8433905600150",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "164.45"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "247.11"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "4",
+                            "amazonProductIdentifier": "B08BJN3FPT",
+                            "vendorProductIdentifier": "8433905524319",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "5",
+                            "amazonProductIdentifier": "B08BJLT381",
+                            "vendorProductIdentifier": "8433905524371",
+                            "orderedQuantity": {
+                                "amount": 26,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "6",
+                            "amazonProductIdentifier": "B08BJNWFVT",
+                            "vendorProductIdentifier": "8433905526931",
+                            "orderedQuantity": {
+                                "amount": 14,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "59"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "2CETCLAL",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-10-10T01:28:44Z",
+                    "purchaseOrderStateChangedDate": "2022-10-16T18:26:21Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-10-09T22:00:00Z--2022-10-16T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B08BJLT381",
+                            "vendorProductIdentifier": "8433905524371",
+                            "orderedQuantity": {
+                                "amount": 3,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B08BJN3FPT",
+                            "vendorProductIdentifier": "8433905524319",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "4",
+                            "amazonProductIdentifier": "B08BJNWFVT",
+                            "vendorProductIdentifier": "8433905526931",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "59"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B07PXRWZJT",
+                            "vendorProductIdentifier": "8433905292843",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "216"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "216"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "8R49EJ1M",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-10-10T01:28:44Z",
+                    "purchaseOrderStateChangedDate": "2022-10-14T12:53:16Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "XIBA"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "XIBA"
+                    },
+                    "billToParty": {
+                        "partyId": "XIBA"
+                    },
+                    "deliveryWindow": "2022-10-09T22:00:00Z--2022-10-16T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B07PWLJN9D",
+                            "vendorProductIdentifier": "8433905294137",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "358.6"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "358.6"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "8NTQ9F7E",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-10-05T01:15:38Z",
+                    "purchaseOrderStateChangedDate": "2022-10-13T18:46:25Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "VLC1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "billToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "deliveryWindow": "2022-10-04T22:00:00Z--2022-10-10T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B07PYSWD7S",
+                            "vendorProductIdentifier": "8433905294076",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "4",
+                            "amazonProductIdentifier": "B08BJNWFVT",
+                            "vendorProductIdentifier": "8433905526931",
+                            "orderedQuantity": {
+                                "amount": 7,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "59"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01I1WC7RM",
+                            "vendorProductIdentifier": "8433905222642",
+                            "orderedQuantity": {
+                                "amount": 30,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "120"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "180.99"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B08BJN3FPT",
+                            "vendorProductIdentifier": "8433905524319",
+                            "orderedQuantity": {
+                                "amount": 3,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "475VX1ON",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-10-05T01:15:37Z",
+                    "purchaseOrderStateChangedDate": "2022-10-10T12:44:30Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-10-04T22:00:00Z--2022-10-09T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B09JGHTHGD",
+                            "vendorProductIdentifier": "8433905600150",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "164.45"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "247.11"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B07CNV6TZJ",
+                            "vendorProductIdentifier": "8433905389765",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "60"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "90.08"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B08BJLT381",
+                            "vendorProductIdentifier": "8433905524371",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "3ZS3CO4E",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-10-03T01:48:56Z",
+                    "purchaseOrderStateChangedDate": "2022-10-12T18:30:39Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "VLC1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "billToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "deliveryWindow": "2022-10-02T22:00:00Z--2022-10-09T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B07ZRQZYTM",
+                            "vendorProductIdentifier": "8433905501273",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "49"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "73.55"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B08BJNWFVT",
+                            "vendorProductIdentifier": "8433905526931",
+                            "orderedQuantity": {
+                                "amount": 18,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "59"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "4FIDA8SC",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-10-03T01:48:53Z",
+                    "purchaseOrderStateChangedDate": "2022-10-05T18:36:56Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-10-02T22:00:00Z--2022-10-06T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B08BJLT381",
+                            "vendorProductIdentifier": "8433905524371",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "3M3DEDZO",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-26T02:55:50Z",
+                    "purchaseOrderStateChangedDate": "2022-10-05T18:34:03Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "VLC1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "billToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "deliveryWindow": "2022-09-25T22:00:00Z--2022-10-02T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B00VUUWW00",
+                            "vendorProductIdentifier": "8433905242459",
+                            "orderedQuantity": {
+                                "amount": 12,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "36"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "36"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "3VXPOI7R",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-26T02:55:50Z",
+                    "purchaseOrderStateChangedDate": "2022-10-02T18:26:55Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-09-25T22:00:00Z--2022-09-29T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01MA4QNWH",
+                            "vendorProductIdentifier": "8433905222697",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "24"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "32.23"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B07PYSWD7S",
+                            "vendorProductIdentifier": "8433905294076",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B01MPYZ9SW",
+                            "vendorProductIdentifier": "8433905178383",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "43.45"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "43.45"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "33NCRM5D",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-19T02:44:41Z",
+                    "purchaseOrderStateChangedDate": "2022-09-23T12:31:35Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD9"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "deliveryWindow": "2022-09-18T22:00:00Z--2022-09-22T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B07PYSWD7S",
+                            "vendorProductIdentifier": "8433905294076",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "39IEPQ6Z",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-19T02:44:41Z",
+                    "purchaseOrderStateChangedDate": "2022-09-28T00:28:31Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-09-18T22:00:00Z--2022-09-22T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B08BJLT381",
+                            "vendorProductIdentifier": "8433905524371",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01N0UP9FC",
+                            "vendorProductIdentifier": "8433905265168",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B07CL5F877",
+                            "vendorProductIdentifier": "8433905398644",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "313"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "470.25"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "8ZPS5INV",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-19T02:44:41Z",
+                    "purchaseOrderChangedDate": "2022-10-12T07:18:21Z",
+                    "purchaseOrderStateChangedDate": "2022-10-12T07:18:21Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "VLC1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "billToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "deliveryWindow": "2022-09-18T22:00:00Z--2022-09-25T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01M33ULBQ",
+                            "vendorProductIdentifier": "8433905139483",
+                            "orderedQuantity": {
+                                "amount": 0,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "38"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "38"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "85SUCYHM",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-19T02:44:40Z",
+                    "purchaseOrderStateChangedDate": "2022-09-26T06:40:50Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "XIBA"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "XIBA"
+                    },
+                    "billToParty": {
+                        "partyId": "XIBA"
+                    },
+                    "deliveryWindow": "2022-09-18T22:00:00Z--2022-09-25T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01N0UP9NK",
+                            "vendorProductIdentifier": "8433905265144",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "246"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "246"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "5A9H4AVG",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-14T03:12:53Z",
+                    "purchaseOrderStateChangedDate": "2022-09-14T18:39:19Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-09-13T22:00:00Z--2022-09-18T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B01MPYZ9SW",
+                            "vendorProductIdentifier": "8433905178383",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "43.45"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "43.45"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01M5HYEYF",
+                            "vendorProductIdentifier": "8433905322618",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "30"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "40.5"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "1YNFS52I",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-13T21:50:09Z",
+                    "purchaseOrderStateChangedDate": "2022-09-18T00:25:23Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD9"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "deliveryWindow": "2022-09-13T22:00:00Z--2022-09-18T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B09JGHTHGD",
+                            "vendorProductIdentifier": "8433905600150",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "164.45"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "247.11"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "2G38CSCQ",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-12T02:43:32Z",
+                    "purchaseOrderStateChangedDate": "2022-09-22T06:27:43Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD9"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "deliveryWindow": "2022-09-11T22:00:00Z--2022-09-15T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "5",
+                            "amazonProductIdentifier": "B07NNCTQ3H",
+                            "vendorProductIdentifier": "8433905294120",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "313"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "313"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "4",
+                            "amazonProductIdentifier": "B078MDRQLY",
+                            "vendorProductIdentifier": "8433905398576",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "53.72"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "6",
+                            "amazonProductIdentifier": "B08BJN3FPT",
+                            "vendorProductIdentifier": "8433905524319",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B00VUUE9H4",
+                            "vendorProductIdentifier": "8433905242909",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "36"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "48.76"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B01N0UP9FC",
+                            "vendorProductIdentifier": "8433905265168",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B00VUV35L4",
+                            "vendorProductIdentifier": "8433905242466",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "36"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "48.76"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "2RHK48XF",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-12T02:43:32Z",
+                    "purchaseOrderStateChangedDate": "2022-09-22T00:28:42Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "VLC1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "billToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "deliveryWindow": "2022-09-11T22:00:00Z--2022-09-18T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B07ZRQZYTM",
+                            "vendorProductIdentifier": "8433905501273",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "49"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "73.55"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B08BJN3FPT",
+                            "vendorProductIdentifier": "8433905524319",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B00VUUWW00",
+                            "vendorProductIdentifier": "8433905242459",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "36"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "36"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "7ZJ9JUYM",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-06T22:13:33Z",
+                    "purchaseOrderStateChangedDate": "2022-09-08T12:49:41Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-09-06T22:00:00Z--2022-09-11T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B09JGHTHGD",
+                            "vendorProductIdentifier": "8433905600150",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "164.45"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "247.11"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "12O1SXHA",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-05T03:28:31Z",
+                    "purchaseOrderStateChangedDate": "2022-09-13T12:25:12Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "VLC1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "billToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "deliveryWindow": "2022-09-04T22:00:00Z--2022-09-11T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B07RHZG7N8",
+                            "vendorProductIdentifier": "8433905468460",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "327.44"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "470.25"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "1JBV8X7F",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-05T03:28:30Z",
+                    "purchaseOrderStateChangedDate": "2022-09-15T00:25:56Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD9"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "deliveryWindow": "2022-09-04T22:00:00Z--2022-09-08T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01M8OYK7D",
+                            "vendorProductIdentifier": "8433905173241",
+                            "orderedQuantity": {
+                                "amount": 36,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "37.32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "37.32"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B07CL38LZZ",
+                            "vendorProductIdentifier": "8433905398620",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "391.74"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "4DWAEV4H",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-05T03:28:30Z",
+                    "purchaseOrderStateChangedDate": "2022-09-14T18:36:25Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "VLC1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "billToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "deliveryWindow": "2022-09-04T22:00:00Z--2022-09-11T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "4",
+                            "amazonProductIdentifier": "B08BJN3FPT",
+                            "vendorProductIdentifier": "8433905524319",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B078MDRQLY",
+                            "vendorProductIdentifier": "8433905398576",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "53.72"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B01N0UP9FC",
+                            "vendorProductIdentifier": "8433905265168",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B00VUUE9H4",
+                            "vendorProductIdentifier": "8433905242909",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "36"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "48.76"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "1PXWWPFH",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-05T03:28:29Z",
+                    "purchaseOrderStateChangedDate": "2022-09-16T18:26:49Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-09-04T22:00:00Z--2022-09-08T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B07CL38LZZ",
+                            "vendorProductIdentifier": "8433905398620",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "391.74"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B07CL5F877",
+                            "vendorProductIdentifier": "8433905398644",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "313"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "470.25"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01M8OYK7D",
+                            "vendorProductIdentifier": "8433905173241",
+                            "orderedQuantity": {
+                                "amount": 36,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "37.32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "37.32"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "4",
+                            "amazonProductIdentifier": "B07NNCTQ3H",
+                            "vendorProductIdentifier": "8433905294120",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "313"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "313"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "3IZAU8KW",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-09-05T01:07:15Z",
+                    "purchaseOrderStateChangedDate": "2022-09-05T18:33:17Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "BCN3"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "BCN3"
+                    },
+                    "billToParty": {
+                        "partyId": "BCN3"
+                    },
+                    "deliveryWindow": "2022-09-04T22:00:00Z--2022-09-08T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B07PVNJT1Z",
+                            "vendorProductIdentifier": "8433905294069",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "1H7HKL5A",
+                "purchaseOrderState": "Acknowledged",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T23:22:33Z",
+                    "purchaseOrderStateChangedDate": "2022-08-30T10:52:35Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD9"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "deliveryWindow": "2022-11-23T23:00:00Z--2022-11-29T23:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B078MB9SCV",
+                            "vendorProductIdentifier": "8433905398552",
+                            "orderedQuantity": {
+                                "amount": 126,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "20"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "37.19"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B08BJS5LP5",
+                            "vendorProductIdentifier": "8433905524609",
+                            "orderedQuantity": {
+                                "amount": 30,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "24"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "55"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "32ZAUOPB",
+                "purchaseOrderState": "Acknowledged",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T23:22:33Z",
+                    "purchaseOrderStateChangedDate": "2022-08-30T10:56:56Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "RMU1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "RMU1"
+                    },
+                    "billToParty": {
+                        "partyId": "RMU1"
+                    },
+                    "deliveryWindow": "2022-11-23T23:00:00Z--2022-11-29T23:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B015945WX6",
+                            "vendorProductIdentifier": "8433905095017",
+                            "orderedQuantity": {
+                                "amount": 36,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "10.4"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "18.18"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "3A3K5COG",
+                "purchaseOrderState": "Acknowledged",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T23:22:33Z",
+                    "purchaseOrderStateChangedDate": "2022-08-30T10:55:21Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "BCN2"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "BCN2"
+                    },
+                    "billToParty": {
+                        "partyId": "BCN2"
+                    },
+                    "deliveryWindow": "2022-11-23T23:00:00Z--2022-11-29T23:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B015903IMC",
+                            "vendorProductIdentifier": "8433905094973",
+                            "orderedQuantity": {
+                                "amount": 72,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "6.4"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "9.09"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B015945WX6",
+                            "vendorProductIdentifier": "8433905095017",
+                            "orderedQuantity": {
+                                "amount": 84,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "10.4"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "18.18"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "3D13LW7E",
+                "purchaseOrderState": "Acknowledged",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T23:22:33Z",
+                    "purchaseOrderStateChangedDate": "2022-08-30T10:53:53Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "SVQ1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "SVQ1"
+                    },
+                    "billToParty": {
+                        "partyId": "SVQ1"
+                    },
+                    "deliveryWindow": "2022-11-23T23:00:00Z--2022-11-29T23:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B015945WX6",
+                            "vendorProductIdentifier": "8433905095017",
+                            "orderedQuantity": {
+                                "amount": 36,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "10.4"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "18.18"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "3XO8DW3Q",
+                "purchaseOrderState": "Acknowledged",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T23:22:33Z",
+                    "purchaseOrderStateChangedDate": "2022-08-30T10:49:39Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-11-23T23:00:00Z--2022-11-29T23:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B078MB9SCV",
+                            "vendorProductIdentifier": "8433905398552",
+                            "orderedQuantity": {
+                                "amount": 48,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "20"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "37.19"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B08BJS5LP5",
+                            "vendorProductIdentifier": "8433905524609",
+                            "orderedQuantity": {
+                                "amount": 15,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "24"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "55"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "6VOOBVTF",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T23:04:54Z",
+                    "purchaseOrderStateChangedDate": "2022-09-29T00:35:08Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-09-26T22:00:00Z--2022-09-30T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B08BJS5LP5",
+                            "vendorProductIdentifier": "8433905524609",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "24"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "55"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "711LLQKL",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T23:04:54Z",
+                    "purchaseOrderChangedDate": "2022-10-16T21:28:40Z",
+                    "purchaseOrderStateChangedDate": "2022-10-16T21:28:40Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD9"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "deliveryWindow": "2022-09-26T22:00:00Z--2022-09-30T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01MCTH5MY",
+                            "vendorProductIdentifier": "8433905222680",
+                            "orderedQuantity": {
+                                "amount": 21,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "17.85"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "28.93"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B08BJS5LP5",
+                            "vendorProductIdentifier": "8433905524609",
+                            "orderedQuantity": {
+                                "amount": 23,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "24"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "55"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "73SZYF5A",
+                "purchaseOrderState": "Acknowledged",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T22:58:56Z",
+                    "purchaseOrderStateChangedDate": "2022-08-30T10:35:52Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-10-24T21:00:00Z--2022-10-30T23:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B08BJS5LP5",
+                            "vendorProductIdentifier": "8433905524609",
+                            "orderedQuantity": {
+                                "amount": 7,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "24"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "55"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "8VJWKDLL",
+                "purchaseOrderState": "Acknowledged",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T22:58:56Z",
+                    "purchaseOrderStateChangedDate": "2022-08-30T10:37:56Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD9"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "deliveryWindow": "2022-10-24T21:00:00Z--2022-10-30T23:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01MCTH5MY",
+                            "vendorProductIdentifier": "8433905222680",
+                            "orderedQuantity": {
+                                "amount": 42,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "17.85"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "28.93"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B08BJS5LP5",
+                            "vendorProductIdentifier": "8433905524609",
+                            "orderedQuantity": {
+                                "amount": 17,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "24"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "55"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "48RL31JN",
+                "purchaseOrderState": "Acknowledged",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T21:01:32Z",
+                    "purchaseOrderStateChangedDate": "2022-08-30T06:50:24Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "VLC1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "billToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "deliveryWindow": "2022-11-23T23:00:00Z--2022-11-29T23:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01MG73PF1",
+                            "vendorProductIdentifier": "8433905139506",
+                            "orderedQuantity": {
+                                "amount": 30,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "39.2"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "39.2"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "4GHEM9FY",
+                "purchaseOrderState": "Acknowledged",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T21:01:32Z",
+                    "purchaseOrderStateChangedDate": "2022-08-30T10:31:49Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD9"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "deliveryWindow": "2022-11-23T23:00:00Z--2022-11-29T23:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01MG73PF1",
+                            "vendorProductIdentifier": "8433905139506",
+                            "orderedQuantity": {
+                                "amount": 102,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "39.2"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "39.2"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "15X85X4T",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T03:41:51Z",
+                    "purchaseOrderStateChangedDate": "2022-09-05T12:25:53Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD9"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "deliveryWindow": "2022-08-28T22:00:00Z--2022-09-01T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B07CL38LZZ",
+                            "vendorProductIdentifier": "8433905398620",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "285"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "391.74"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "4",
+                            "amazonProductIdentifier": "B08BJNWFVT",
+                            "vendorProductIdentifier": "8433905526931",
+                            "orderedQuantity": {
+                                "amount": 7,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "59"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B08BJLT381",
+                            "vendorProductIdentifier": "8433905524371",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B01M8OYK7D",
+                            "vendorProductIdentifier": "8433905173241",
+                            "orderedQuantity": {
+                                "amount": 36,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "37.32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "37.32"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "5",
+                            "amazonProductIdentifier": "B08BJS5LP5",
+                            "vendorProductIdentifier": "8433905524609",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "30"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "55"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "7G3O9UOZ",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T03:41:51Z",
+                    "purchaseOrderStateChangedDate": "2022-09-13T18:42:32Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-08-28T22:00:00Z--2022-09-01T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B078MB9SCV",
+                            "vendorProductIdentifier": "8433905398552",
+                            "orderedQuantity": {
+                                "amount": 18,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "25"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "37.19"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "4",
+                            "amazonProductIdentifier": "B08BJNWFVT",
+                            "vendorProductIdentifier": "8433905526931",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "32"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "59"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "5",
+                            "amazonProductIdentifier": "B08BJS5LP5",
+                            "vendorProductIdentifier": "8433905524609",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "30"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "55"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B08BJLT381",
+                            "vendorProductIdentifier": "8433905524371",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B07CL5F877",
+                            "vendorProductIdentifier": "8433905398644",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "313"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "470.25"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "7HXFUYJO",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-29T03:41:51Z",
+                    "purchaseOrderStateChangedDate": "2022-09-01T12:51:41Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "VLC1"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "billToParty": {
+                        "partyId": "VLC1"
+                    },
+                    "deliveryWindow": "2022-08-28T22:00:00Z--2022-09-04T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B00VUUWW00",
+                            "vendorProductIdentifier": "8433905242459",
+                            "orderedQuantity": {
+                                "amount": 6,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "36"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "36"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B08BJN3FPT",
+                            "vendorProductIdentifier": "8433905524319",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "3",
+                            "amazonProductIdentifier": "B08BJQHK1F",
+                            "vendorProductIdentifier": "8433905524678",
+                            "orderedQuantity": {
+                                "amount": 3,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "30"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "55"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "14WOF1AF",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-28T22:28:38Z",
+                    "purchaseOrderStateChangedDate": "2022-09-07T12:25:37Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD9"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD9"
+                    },
+                    "deliveryWindow": "2022-08-28T22:00:00Z--2022-09-01T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B09JGJP921",
+                            "vendorProductIdentifier": "8433905600167",
+                            "orderedQuantity": {
+                                "amount": 2,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "202.95"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "304.96"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "1C83G4KE",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-22T10:25:41Z",
+                    "purchaseOrderStateChangedDate": "2022-08-26T00:25:15Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD7"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD7"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD7"
+                    },
+                    "deliveryWindow": "2022-08-21T22:00:00Z--2022-08-28T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B015945WX6",
+                            "vendorProductIdentifier": "8433905095017",
+                            "orderedQuantity": {
+                                "amount": 12,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "13"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "18.18"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B015928SWU",
+                            "vendorProductIdentifier": "8433905095031",
+                            "orderedQuantity": {
+                                "amount": 12,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "16"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "23.97"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "purchaseOrderNumber": "2ZSE1J2D",
+                "purchaseOrderState": "Closed",
+                "orderDetails": {
+                    "purchaseOrderDate": "2022-08-22T10:25:41Z",
+                    "purchaseOrderStateChangedDate": "2022-08-25T05:54:27Z",
+                    "purchaseOrderType": "RegularOrder",
+                    "paymentMethod": "Invoice",
+                    "buyingParty": {
+                        "partyId": "MAD6"
+                    },
+                    "sellingParty": {
+                        "partyId": "ECUW8"
+                    },
+                    "shipToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "billToParty": {
+                        "partyId": "MAD6"
+                    },
+                    "deliveryWindow": "2022-08-21T22:00:00Z--2022-08-28T22:00:00Z",
+                    "items": [
+                        {
+                            "itemSequenceNumber": "1",
+                            "amazonProductIdentifier": "B07CL5F877",
+                            "vendorProductIdentifier": "8433905398644",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "313"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "470.25"
+                            }
+                        },
+                        {
+                            "itemSequenceNumber": "2",
+                            "amazonProductIdentifier": "B08BJLT381",
+                            "vendorProductIdentifier": "8433905524371",
+                            "orderedQuantity": {
+                                "amount": 1,
+                                "unitOfMeasure": "Eaches",
+                                "unitSize": 1
+                            },
+                            "isBackOrderAllowed": false,
+                            "netCost": {
+                                "currencyCode": "EUR",
+                                "amount": "65"
+                            },
+                            "listPrice": {
+                                "currencyCode": "EUR",
+                                "amount": "119"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
