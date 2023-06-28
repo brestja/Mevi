@@ -5,25 +5,23 @@
   "nodes": [
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $node[\"/series5\"].json[\"Text 2\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/series5\"].json[\"Text 2\"] }}",
+        "options": {}
       },
-      "id": "56bf6da9-2fc8-4914-968e-e3b42ec04aa3",
-      "name": "Aproaches1",
-      "type": "n8n-nodes-base.slack",
+      "id": "e7fcfdd1-1abe-44d9-baf3-1f5cc948d7a5",
+      "name": "Aproaches",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         2600,
         920
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
@@ -44,49 +42,66 @@
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $json[\"Text 1\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Text 1\"] }}",
+        "options": {}
       },
-      "id": "6abac024-5e9f-4c34-82a7-ad9b4870bd98",
-      "name": "Series 5 Partner Greeting",
-      "type": "n8n-nodes-base.slack",
+      "id": "7547e337-4e9d-46b0-8c83-b4b7e8f5ff03",
+      "name": "Partner greeting1",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         2200,
         920
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $node[\"/series4\"].json[\"Text 2\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Series 5",
+        "options": {},
+        "query": "={\n\"Text 1\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
       },
-      "id": "e6b72802-4b5b-4490-8186-e17b906ba154",
-      "name": "Aproaches",
-      "type": "n8n-nodes-base.slack",
+      "id": "c0ab7946-2493-4d67-8567-b8c222c4cf75",
+      "name": "/series5",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        2000,
+        920
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/series4\"].json[\"Text 2\"] }}",
+        "options": {}
+      },
+      "id": "115066df-0790-473e-97eb-108994c93216",
+      "name": "Aproaches2",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         2600,
         720
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
@@ -107,32 +122,51 @@
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $json[\"Text 1\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Text 1\"] }}",
+        "options": {}
       },
-      "id": "127e35a8-8b2e-4cfc-99a0-a4fd9bd4ab35",
-      "name": "Series 4 Greetings",
-      "type": "n8n-nodes-base.slack",
+      "id": "7ae64ba5-b05b-468b-9e7e-b7f982601004",
+      "name": "Series 4 Greeting",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         2200,
         720
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 4",
+        "options": {},
+        "query": "={\n\"Text 1\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "fca5215c-d660-442e-9bdd-431a87e29d78",
+      "name": "/series4",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        2000,
+        720
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
         }
       }
     },
     {
       "parameters": {
         "dataType": "string",
-        "value1": "={{ $json[\"body\"][\"command\"] }}",
+        "value1": "={{ $json[\"body\"][\"Body\"] }}",
         "rules": {
           "rules": [
             {
@@ -156,31 +190,29 @@
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "=varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $node[\"/11am\"].json[\"PM receive confirmation\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/11am\"].json[\"PM receive confirmation\"] }}",
+        "options": {}
       },
-      "id": "600884c7-28e9-41a4-85ce-ba36267d13a8",
-      "name": "PN Notification3",
-      "type": "n8n-nodes-base.slack",
+      "id": "45e3ec2b-87ba-4405-970b-ed8fb96f980a",
+      "name": "PN Notification4",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         1360,
         1660
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "amount": 2,
+        "amount": 4,
         "unit": "seconds"
       },
       "id": "9e037e4f-fa73-4be7-8599-27c8f9543a3f",
@@ -195,79 +227,115 @@
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $json[\"Confirmation sent to PM\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Confirmation sent to PM\"] }}",
+        "options": {}
       },
-      "id": "74239ceb-3e0b-497a-bdef-cfe2eb42b91e",
-      "name": "Village member shedule a block time",
-      "type": "n8n-nodes-base.slack",
+      "id": "1759fbe3-738f-498d-88fd-eec90f9a6e1a",
+      "name": "Village member schedule block time",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         1000,
         1660
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{ $node[\"Webhook\"].json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $json[\"Village schedule\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Series 2",
+        "options": {},
+        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
       },
-      "id": "554ea819-07fd-4dd6-85f6-8c09e1267ab3",
-      "name": "Village member accepted to help",
-      "type": "n8n-nodes-base.slack",
+      "id": "d4a28694-e968-437b-9b56-b0d2323cf4a2",
+      "name": "/11am",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1660
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Village schedule\"] }}",
+        "options": {}
+      },
+      "id": "ad0e04b6-0751-4f10-b47a-9617cc4f2159",
+      "name": "Village member accepted to help1",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         1000,
         1460
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "=varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}{{ $json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $node[\"/support\"].json[\"Village Greeting\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Series 2",
+        "options": {},
+        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
       },
-      "id": "f5fcefea-07f2-4fd4-9aa8-296f5226593b",
-      "name": "Village Notification",
-      "type": "n8n-nodes-base.slack",
+      "id": "d3b74f3f-cea9-4891-bf9a-84f65f97b7b9",
+      "name": "/help",
+      "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1,
       "position": [
-        1340,
+        800,
+        1460
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/support\"].json[\"Village Greeting\"] }}",
+        "options": {}
+      },
+      "id": "f7018b95-b406-4578-8771-ad6f9686ecf2",
+      "name": "Village Notification1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1360,
         1280
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "amount": 2,
+        "amount": 4,
         "unit": "seconds"
       },
       "id": "582ebb39-f20b-46bc-b3d5-c4768ab9db7b",
@@ -275,63 +343,101 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1160,
+        1180,
         1280
       ],
       "webhookId": "6bcd384f-6ccb-4cea-b9a2-8b094ba3e0d9"
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{ $node[\"Webhook\"].json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $json[\"We're on it\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"We're on it\"] }}",
+        "options": {}
       },
-      "id": "332239b4-4439-4660-84de-13ec9846baa1",
-      "name": "Mama Support acepted",
-      "type": "n8n-nodes-base.slack",
+      "id": "b53f7287-eb45-4e91-a798-ec5edd9ea9d1",
+      "name": "Mama aceptede support",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         1000,
         1280
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{ $node[\"Webhook\"].json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $json[\"Greetings Day 7\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Series 2",
+        "options": {},
+        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
       },
-      "id": "601824db-3298-4a01-8a56-fdf7248dfbcd",
-      "name": "Gretings Series 2",
-      "type": "n8n-nodes-base.slack",
+      "id": "b761bf53-4ace-472d-8578-e7142823e8c6",
+      "name": "/support",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1280
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Greetings Day 7\"] }}",
+        "options": {}
+      },
+      "id": "fa0db9bf-a692-47d5-8dfb-3dc0ec038dae",
+      "name": "Greetings series 2",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         1000,
         1100
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 2",
+        "options": {},
+        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "3079fabd-cf71-44cc-8d39-a03ea072b595",
+      "name": "/series2",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1100
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
         }
       }
     },
     {
       "parameters": {
         "dataType": "string",
-        "value1": "={{ $json[\"body\"][\"command\"] }}",
+        "value1": "={{ $json[\"body\"][\"Body\"] }}",
         "rules": {
           "rules": [
             {
@@ -363,31 +469,29 @@
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "=varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}{{ $json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $node[\"/instacart\"].json[\"PM sms for instacart\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/instacart\"].json[\"PM sms for instacart\"] }}",
+        "options": {}
       },
-      "id": "acb56b46-e3f9-4362-ad22-2bd0203d39dd",
-      "name": "PN Notification2",
-      "type": "n8n-nodes-base.slack",
+      "id": "79ad1f24-d5ae-403c-b6a5-38c38b2994c4",
+      "name": "PN notifications2",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         1340,
-        880
+        820
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "amount": 2,
+        "amount": 4,
         "unit": "seconds"
       },
       "id": "0aa76a08-5d0a-474f-bd2c-ff1a4dd2452f",
@@ -396,61 +500,78 @@
       "typeVersion": 1,
       "position": [
         1160,
-        880
+        820
       ],
       "webhookId": "ac871b63-d839-4e80-a6c3-ce5f38e2eba4"
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{ $node[\"Webhook\"].json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $json[\"answer for instacart\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"answer for instacart\"] }}",
+        "options": {}
       },
-      "id": "7ef57a3b-cd1e-4d33-9867-1c655f043de2",
-      "name": "Instacart",
-      "type": "n8n-nodes-base.slack",
+      "id": "30f58ddb-2090-4a42-a1a6-3eb0c7fab08f",
+      "name": "instacart",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         980,
-        880
+        820
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "=varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $node[\"/uber\"].json[\"PM sms for uber\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Meal_train",
+        "options": {},
+        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
       },
-      "id": "ea9f772d-8ad0-456e-97cc-78b89a5df6cd",
-      "name": "PN Notification1",
-      "type": "n8n-nodes-base.slack",
+      "id": "e1b233b7-a175-49ae-83e4-9fd7b115122b",
+      "name": "/instacart",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        820
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/uber\"].json[\"PM sms for uber\"] }}",
+        "options": {}
+      },
+      "id": "eb5a7f14-63a6-41ca-84cf-a5e09d16f0e1",
+      "name": "PN notifications1",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         1340,
-        700
+        640
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "amount": 2,
+        "amount": 4,
         "unit": "seconds"
       },
       "id": "959c667a-f72f-433b-bf27-a14cb694573a",
@@ -459,55 +580,72 @@
       "typeVersion": 1,
       "position": [
         1160,
-        700
+        640
       ],
       "webhookId": "895eb38d-8c0b-4488-aa8c-9776d644eb9c"
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{ $node[\"Webhook\"].json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $json[\"answer for uber\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"answer for uber\"] }}",
+        "options": {}
       },
-      "id": "a7d66462-babe-496f-b35e-c349384ae65a",
-      "name": "Uber",
-      "type": "n8n-nodes-base.slack",
+      "id": "68bd3e6b-49dc-474f-b2f6-6094aee7d45d",
+      "name": "uber",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         980,
-        700
+        640
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "=varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}{{ $json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $node[\"/meal\"].json[\"PM sms for meal\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Meal_train",
+        "options": {},
+        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
       },
-      "id": "5c1c8d33-c386-419f-9219-f73aaa8702fd",
-      "name": "PN Notification",
-      "type": "n8n-nodes-base.slack",
+      "id": "19c01d61-5bee-400f-a64a-a1ead5864948",
+      "name": "/uber",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        640
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/meal\"].json[\"PM sms for meal\"] }}",
+        "options": {}
+      },
+      "id": "2136ca5c-a042-4598-9771-4b8c2b7daf1d",
+      "name": "PN notifications",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         1340,
-        540
+        480
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
@@ -522,62 +660,100 @@
       "typeVersion": 1,
       "position": [
         1160,
-        540
+        480
       ],
       "webhookId": "7051f175-e1b9-4aa8-abf3-ec6ae4fa20fa"
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{ $node[\"Webhook\"].json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $json[\"answer for meal\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"answer for meal\"] }}",
+        "options": {}
       },
-      "id": "c35cf4c7-c0c9-4e4c-bad7-648e6a08042f",
-      "name": "Meal",
-      "type": "n8n-nodes-base.slack",
+      "id": "daccabfe-23b7-4504-b460-ffdbb5330563",
+      "name": "Meal1",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         980,
-        540
+        480
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{ $node[\"Webhook\"].json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $json[\"options to send\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Meal_train",
+        "options": {},
+        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
       },
-      "id": "45a3f0e1-c6fc-4de4-8bf7-b754c49df6de",
-      "name": "Participate on a meal train",
-      "type": "n8n-nodes-base.slack",
+      "id": "4667814c-d608-41c3-8878-3fd109e1884c",
+      "name": "/meal",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        480
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"options to send\"] }}",
+        "options": {}
+      },
+      "id": "fa6c854f-0b88-4181-8330-42da7206fe1b",
+      "name": "Participate on a meal train1",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         980,
-        380
+        320
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Meal_train",
+        "options": {},
+        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
+      },
+      "id": "ee86f3a1-1de8-4b56-983b-f99167b4df5e",
+      "name": "/participate",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        320
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
         }
       }
     },
     {
       "parameters": {
         "dataType": "string",
-        "value1": "={{ $json[\"body\"][\"command\"] }}",
+        "value1": "={{ $json[\"body\"][\"Body\"] }}",
         "rules": {
           "rules": [
             {
@@ -604,109 +780,185 @@
       "typeVersion": 1,
       "position": [
         540,
-        600
+        540
       ]
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $json[\"village invitation\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"village invitation\"] }}",
+        "options": {}
       },
-      "id": "cdb9c218-f307-4e64-bea4-02ed4c57d418",
-      "name": "Village members greeting",
-      "type": "n8n-nodes-base.slack",
+      "id": "8fba4a2a-3c4a-4f01-aca4-a54d31e9519d",
+      "name": "Meal train invitation",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         -280,
         1660
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $json[\"more support\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Meal_train",
+        "options": {},
+        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
       },
-      "id": "dc43c8b0-ec75-4874-9b35-c40790217da4",
-      "name": "Latching help",
-      "type": "n8n-nodes-base.slack",
+      "id": "85364778-0d6b-453c-8062-4bdcd4f37ea4",
+      "name": "/members",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        1660
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"more support\"] }}",
+        "options": {}
+      },
+      "id": "20945e93-76fb-4900-9174-abc409b450d9",
+      "name": "Latching help1",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         -280,
         1460
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "5- I'm good:\nThat's amazing to hear! We'll reach out soon to see how we can help in other ways.\n\n(Write /members to begin the  village members messages.)",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
       },
-      "id": "ebc24afa-a061-4c46-b62b-083373a18f63",
-      "name": "I'm good",
-      "type": "n8n-nodes-base.slack",
+      "id": "82d05f03-8ffb-49be-9fca-258ae2379f78",
+      "name": "/more",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        1460
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"I'm good\"] }}",
+        "options": {}
+      },
+      "id": "86828c3e-8f46-4314-a8cc-a4a57f82a087",
+      "name": "I'm good1",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         -280,
         1280
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $json[\"Other\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
       },
-      "id": "4bebb8ba-9059-49f0-93e1-43a072268c68",
-      "name": "Other",
-      "type": "n8n-nodes-base.slack",
+      "id": "3dabe65c-e715-4680-a03f-5082909be97a",
+      "name": "/5",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        1280
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Other\"] }}",
+        "options": {}
+      },
+      "id": "2bd00ad7-c271-47ec-a6f1-7746d972e30e",
+      "name": "Other1",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         -280,
         1100
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "94f4bade-968f-4b51-a5f2-9602af6ec027",
+      "name": "/4",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        1100
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
         }
       }
     },
     {
       "parameters": {
         "dataType": "string",
-        "value1": "={{ $json[\"body\"][\"command\"] }}",
+        "value1": "={{ $json[\"body\"][\"Body\"] }}",
         "rules": {
           "rules": [
             {
@@ -742,73 +994,152 @@
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $json[\"I'm in pain\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"I'm in pain\"] }}",
+        "options": {}
       },
-      "id": "dff58053-209e-4fd3-aa35-c532416dac9c",
-      "name": "I'm in pain",
-      "type": "n8n-nodes-base.slack",
+      "id": "97873bdf-b533-4b19-b58f-a175551fb7f7",
+      "name": "I'm in pain1",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         -280,
         880
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{ $node[\"Webhook\"].json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $json[\"Getting enough milk\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
       },
-      "id": "74051404-947a-4740-9100-5716602649d3",
-      "name": "Getting enough milk",
-      "type": "n8n-nodes-base.slack",
+      "id": "41189396-072e-4765-b158-1cd37f823c76",
+      "name": "/3",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        880
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Getting enough milk\"] }}",
+        "options": {}
+      },
+      "id": "7f38cf05-5467-407f-9ebc-9fc7f4588bc6",
+      "name": "Getting enough milk1",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         -280,
         700
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
     {
       "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{ $node[\"Webhook\"].json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $json[\"latching\"] }}",
-        "otherOptions": {},
-        "attachments": []
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
       },
-      "id": "98f2a5c3-b46e-44c6-a77d-770bea770193",
-      "name": "Latching",
-      "type": "n8n-nodes-base.slack",
+      "id": "e4ea8d4a-f98b-4f5f-b1e6-a338a7d36f40",
+      "name": "/2",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        700
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"latching\"] }}",
+        "options": {}
+      },
+      "id": "4d5609fb-e5e6-4cab-8fe3-69881b51ba1a",
+      "name": "Latching2",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
         -280,
         540
       ],
       "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "5634d986-3be3-4b62-8def-35c1ee74dff3",
+      "name": "/1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        540
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/start\"].json[\"menu\"] }}",
+        "options": {}
+      },
+      "id": "e78375a4-2f40-47e0-95db-188f9ab5ec35",
+      "name": "Menu2",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        140,
+        380
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
         }
       }
     },
@@ -822,15 +1153,58 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        -60,
+        -40,
         380
       ],
       "webhookId": "cd600a52-87d9-4265-a2aa-526dbc2ebd17"
     },
     {
       "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"greeting\"] }}",
+        "options": {}
+      },
+      "id": "2437422f-c93b-4f17-bff8-6bf459ba8171",
+      "name": "Greeting1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        380
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "61eee3f7-f6b4-4c29-b207-c47e1b3ce793",
+      "name": "/start",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        380
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
         "dataType": "string",
-        "value1": "={{ $json[\"body\"][\"command\"] }}",
+        "value1": "={{ $json[\"body\"][\"Body\"] }}",
         "rules": {
           "rules": [
             {
@@ -877,458 +1251,10 @@
         960
       ],
       "webhookId": "956e41f4-a666-43da-8825-464e4a1d0188"
-    },
-    {
-      "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{ $node[\"Webhook\"].json[\"body\"][\"user_id\"] }}",
-        "text": "={{ $json[\"greeting\"] }}",
-        "otherOptions": {},
-        "attachments": []
-      },
-      "id": "5add6cc6-9c27-4c35-9998-d34b504a2a45",
-      "name": "Greeting",
-      "type": "n8n-nodes-base.slack",
-      "typeVersion": 1,
-      "position": [
-        -280,
-        380
-      ],
-      "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "61eee3f7-f6b4-4c29-b207-c47e1b3ce793",
-      "name": "/start",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        380
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "postEphemeral",
-        "channel": "varios",
-        "user": "={{$node[\"Webhook\"].json[\"body\"][\"user_id\"]}}",
-        "text": "={{ $node[\"/start\"].json[\"menu\"] }}",
-        "otherOptions": {},
-        "attachments": []
-      },
-      "id": "28838cd4-4fcb-46ff-888f-ef0c912fd5ac",
-      "name": "Menu",
-      "type": "n8n-nodes-base.slack",
-      "typeVersion": 1,
-      "position": [
-        140,
-        380
-      ],
-      "credentials": {
-        "slackApi": {
-          "id": "1",
-          "name": "Slack account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "5634d986-3be3-4b62-8def-35c1ee74dff3",
-      "name": "/1",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        540
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "e4ea8d4a-f98b-4f5f-b1e6-a338a7d36f40",
-      "name": "/2",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        700
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "41189396-072e-4765-b158-1cd37f823c76",
-      "name": "/3",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        880
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "94f4bade-968f-4b51-a5f2-9602af6ec027",
-      "name": "/4",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        1100
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "3dabe65c-e715-4680-a03f-5082909be97a",
-      "name": "/5",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        1280
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "82d05f03-8ffb-49be-9fca-258ae2379f78",
-      "name": "/more",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        1460
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Meal_train",
-        "options": {},
-        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
-      },
-      "id": "85364778-0d6b-453c-8062-4bdcd4f37ea4",
-      "name": "/members",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        1660
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Meal_train",
-        "options": {},
-        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
-      },
-      "id": "ee86f3a1-1de8-4b56-983b-f99167b4df5e",
-      "name": "/participate",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        380
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Meal_train",
-        "options": {},
-        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
-      },
-      "id": "4667814c-d608-41c3-8878-3fd109e1884c",
-      "name": "/meal",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        540
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Meal_train",
-        "options": {},
-        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
-      },
-      "id": "19c01d61-5bee-400f-a64a-a1ead5864948",
-      "name": "/uber",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        700
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Meal_train",
-        "options": {},
-        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
-      },
-      "id": "e1b233b7-a175-49ae-83e4-9fd7b115122b",
-      "name": "/instacart",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        880
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 2",
-        "options": {},
-        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "3079fabd-cf71-44cc-8d39-a03ea072b595",
-      "name": "/series2",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        1100
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 2",
-        "options": {},
-        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "b761bf53-4ace-472d-8578-e7142823e8c6",
-      "name": "/support",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        1280
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 2",
-        "options": {},
-        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "d3b74f3f-cea9-4891-bf9a-84f65f97b7b9",
-      "name": "/help",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        1460
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 2",
-        "options": {},
-        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "d4a28694-e968-437b-9b56-b0d2323cf4a2",
-      "name": "/11am",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        1660
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 4",
-        "options": {},
-        "query": "={\n\"Text 1\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "fca5215c-d660-442e-9bdd-431a87e29d78",
-      "name": "/series4",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        2000,
-        720
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 5",
-        "options": {},
-        "query": "={\n\"Text 1\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "c0ab7946-2493-4d67-8567-b8c222c4cf75",
-      "name": "/series5",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        2000,
-        920
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
     }
   ],
   "connections": {
     "Wait7": {
-      "main": [
-        [
-          {
-            "node": "Aproaches1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Series 5 Partner Greeting": {
-      "main": [
-        [
-          {
-            "node": "Wait7",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait6": {
       "main": [
         [
           {
@@ -1339,11 +1265,55 @@
         ]
       ]
     },
-    "Series 4 Greetings": {
+    "Partner greeting1": {
+      "main": [
+        [
+          {
+            "node": "Wait7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/series5": {
+      "main": [
+        [
+          {
+            "node": "Partner greeting1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait6": {
+      "main": [
+        [
+          {
+            "node": "Aproaches2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Series 4 Greeting": {
       "main": [
         [
           {
             "node": "Wait6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/series4": {
+      "main": [
+        [
+          {
+            "node": "Series 4 Greeting",
             "type": "main",
             "index": 0
           }
@@ -1372,14 +1342,14 @@
       "main": [
         [
           {
-            "node": "PN Notification3",
+            "node": "PN Notification4",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Village member shedule a block time": {
+    "Village member schedule block time": {
       "main": [
         [
           {
@@ -1390,22 +1360,66 @@
         ]
       ]
     },
-    "Wait4": {
+    "/11am": {
       "main": [
         [
           {
-            "node": "Village Notification",
+            "node": "Village member schedule block time",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Mama Support acepted": {
+    "/help": {
+      "main": [
+        [
+          {
+            "node": "Village member accepted to help1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait4": {
+      "main": [
+        [
+          {
+            "node": "Village Notification1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mama aceptede support": {
       "main": [
         [
           {
             "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/support": {
+      "main": [
+        [
+          {
+            "node": "Mama aceptede support",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/series2": {
+      "main": [
+        [
+          {
+            "node": "Greetings series 2",
             "type": "main",
             "index": 0
           }
@@ -1448,14 +1462,14 @@
       "main": [
         [
           {
-            "node": "PN Notification2",
+            "node": "PN notifications2",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Instacart": {
+    "instacart": {
       "main": [
         [
           {
@@ -1466,18 +1480,29 @@
         ]
       ]
     },
-    "Wait2": {
+    "/instacart": {
       "main": [
         [
           {
-            "node": "PN Notification1",
+            "node": "instacart",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Uber": {
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "PN notifications1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "uber": {
       "main": [
         [
           {
@@ -1488,22 +1513,55 @@
         ]
       ]
     },
-    "Wait1": {
+    "/uber": {
       "main": [
         [
           {
-            "node": "PN Notification",
+            "node": "uber",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Meal": {
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "PN notifications",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Meal1": {
       "main": [
         [
           {
             "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/meal": {
+      "main": [
+        [
+          {
+            "node": "Meal1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/participate": {
+      "main": [
+        [
+          {
+            "node": "Participate on a meal train1",
             "type": "main",
             "index": 0
           }
@@ -1542,6 +1600,50 @@
         ]
       ]
     },
+    "/members": {
+      "main": [
+        [
+          {
+            "node": "Meal train invitation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/more": {
+      "main": [
+        [
+          {
+            "node": "Latching help1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/5": {
+      "main": [
+        [
+          {
+            "node": "I'm good1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/4": {
+      "main": [
+        [
+          {
+            "node": "Other1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Series1": {
       "main": [
         [
@@ -1574,11 +1676,66 @@
         ]
       ]
     },
+    "/3": {
+      "main": [
+        [
+          {
+            "node": "I'm in pain1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/2": {
+      "main": [
+        [
+          {
+            "node": "Getting enough milk1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/1": {
+      "main": [
+        [
+          {
+            "node": "Latching2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Wait": {
       "main": [
         [
           {
-            "node": "Menu",
+            "node": "Menu2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Greeting1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/start": {
+      "main": [
+        [
+          {
+            "node": "Greeting1",
             "type": "main",
             "index": 0
           }
@@ -1642,215 +1799,6 @@
           },
           {
             "node": "Series",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Greeting": {
-      "main": [
-        [
-          {
-            "node": "Wait",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/start": {
-      "main": [
-        [
-          {
-            "node": "Greeting",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/1": {
-      "main": [
-        [
-          {
-            "node": "Latching",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/2": {
-      "main": [
-        [
-          {
-            "node": "Getting enough milk",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/3": {
-      "main": [
-        [
-          {
-            "node": "I'm in pain",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/4": {
-      "main": [
-        [
-          {
-            "node": "Other",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/5": {
-      "main": [
-        [
-          {
-            "node": "I'm good",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/more": {
-      "main": [
-        [
-          {
-            "node": "Latching help",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/members": {
-      "main": [
-        [
-          {
-            "node": "Village members greeting",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/participate": {
-      "main": [
-        [
-          {
-            "node": "Participate on a meal train",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/meal": {
-      "main": [
-        [
-          {
-            "node": "Meal",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/uber": {
-      "main": [
-        [
-          {
-            "node": "Uber",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/instacart": {
-      "main": [
-        [
-          {
-            "node": "Instacart",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/series2": {
-      "main": [
-        [
-          {
-            "node": "Gretings Series 2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/support": {
-      "main": [
-        [
-          {
-            "node": "Mama Support acepted",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/help": {
-      "main": [
-        [
-          {
-            "node": "Village member accepted to help",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/11am": {
-      "main": [
-        [
-          {
-            "node": "Village member shedule a block time",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/series4": {
-      "main": [
-        [
-          {
-            "node": "Series 4 Greetings",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/series5": {
-      "main": [
-        [
-          {
-            "node": "Series 5 Partner Greeting",
             "type": "main",
             "index": 0
           }
