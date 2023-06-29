@@ -1,28 +1,8 @@
 {
-  "name": "Typeform_village",
+  "meta": {
+    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
+  },
   "nodes": [
-    {
-      "parameters": {
-        "operation": "insert",
-        "collection": "Mavi",
-        "fields": "name, email, phone, location",
-        "options": {}
-      },
-      "id": "8a37b20c-4c3d-4ae1-879a-923c01cf1db1",
-      "name": "MongoDB",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        1740,
-        900
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
     {
       "parameters": {
         "rule": {
@@ -72,13 +52,13 @@
     },
     {
       "parameters": {
-        "url": "https://api.typeform.com/forms/WP4sjM5m/responses?page_size=2",
+        "url": "https://api.typeform.com/forms/WP4sjM5m/responses?page_size=1",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "Authorization",
-              "value": "Bearer tfp_Dc5Ep3D2CrfMoEWVqaSBq8SyiHK3PX8vz81RzJmqAmYg_e42dppYtm2iS"
+              "value": "Bearer tfp_FXNLSurP62Ri7YLBm5rEdPbR5a7YCNY4PmeRD5U7YPZt_3pbK9x8Emv1P3Q"
             },
             {
               "name": "cookie",
@@ -123,6 +103,14 @@
             {
               "name": "location",
               "value": "={{ $json[\"answers\"][\"3\"][\"text\"] }}"
+            },
+            {
+              "name": "responseId",
+              "value": "={{ $json[\"response_id\"] }}"
+            },
+            {
+              "name": "Village member phone",
+              "value": "+573226159348"
             }
           ]
         },
@@ -139,16 +127,19 @@
     },
     {
       "parameters": {
+        "operation": "insert",
         "collection": "Mavi",
-        "options": {},
-        "query": "={\"phone\":  \"{{ $json[\"answers\"][\"2\"][\"text\"] }}\"}"
+        "fields": "name, email, phone, location, responseId, Village member phone",
+        "options": {
+          "dateFields": ""
+        }
       },
       "id": "276e19e5-1d8d-4b82-a192-0e769eff10a1",
       "name": "MongoDB1",
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1,
       "position": [
-        740,
+        800,
         880
       ],
       "alwaysOutputData": true,
@@ -161,50 +152,72 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{$node[\"Set variables\"].json[\"phone\"]}}",
-              "value2": "={{$node[\"MongoDB1\"].json[\"phone\"]}}"
-            }
-          ]
-        }
+        "operation": "insert",
+        "collection": "Series 1",
+        "fields": "Welcome home",
+        "options": {}
       },
-      "id": "cd780d92-1b1b-4e94-99d2-e025a6b9c5b6",
-      "name": "IF",
-      "type": "n8n-nodes-base.if",
+      "id": "203147b3-3a8c-47cc-89ed-b1557878d0d2",
+      "name": "MongoDB",
+      "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1,
       "position": [
-        920,
-        880
-      ]
-    },
-    {
-      "parameters": {},
-      "id": "e448b4f4-2724-44de-b4e8-b0cc0fede7a3",
-      "name": "NoOp",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        1120,
-        800
-      ]
+        1100,
+        700
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
     },
     {
       "parameters": {
+        "sendTo": "={{ $json[\"email\"] }}",
+        "subject": "Hello from Mavi",
+        "message": "Your email has been approved and you can now start using littl.  Before you login, we'd like to remind you that our solution is in Beta and has a few limitations:  ⚠️ Limitations ⚠️  While we have safeguards in place, our platform may occasionally generate outdated, incorrect, misleading or biased information. Please report issues you might come across. Littl does not replace professional medical advice.   CALL 911 IF YOU THINK YOU HAVE A MEDICAL EMERGENCY  Your feedback is extremely important to help us grow and build something truly valuable for you.   Please reply to this email if you have any questions or feedback you'd like to share. We'd love to hear from you! 🙏  Our goal is to create the ideal tech companion for anything parents need, anytime, anywhere.  Thank you for supporting our mission,",
         "options": {}
       },
-      "id": "3fed8c18-d73a-49f6-8146-2af6124e97c1",
-      "name": "Set",
-      "type": "n8n-nodes-base.set",
+      "id": "3338bdda-bb49-4c5a-9489-8317e973498d",
+      "name": "Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        820,
+        700
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "13",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14155238886",
+        "to": "=+542494554293",
+        "toWhatsapp": true,
+        "message": "=Welcome{{ $json[\"name\"] }}let us know when you are at home replying /home",
+        "options": {}
+      },
+      "id": "5f7230da-84a7-4bf5-a27b-402adf36d08f",
+      "name": "Twilio",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
-        1120,
-        1000
-      ]
+        1000,
+        880
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
     }
   ],
-  "pinData": {},
   "connections": {
     "Schedule Trigger": {
       "main": [
@@ -254,12 +267,12 @@
       "main": [
         [
           {
-            "node": "MongoDB1",
+            "node": "SplitInBatches",
             "type": "main",
             "index": 0
           },
           {
-            "node": "SplitInBatches",
+            "node": "MongoDB1",
             "type": "main",
             "index": 0
           }
@@ -270,44 +283,12 @@
       "main": [
         [
           {
-            "node": "IF",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF": {
-      "main": [
-        [
-          {
-            "node": "NoOp",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Set",
+            "node": "Twilio",
             "type": "main",
             "index": 0
           }
         ]
       ]
     }
-  },
-  "active": false,
-  "settings": {
-    "timezone": "Europe/Madrid",
-    "saveExecutionProgress": true,
-    "saveManualExecutions": true,
-    "callerPolicy": "any",
-    "executionTimeout": 60
-  },
-  "hash": "472ad9a817f26fcc39030945acfd91da",
-  "id": 5,
-  "meta": {
-    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
-  },
-  "tags": []
+  }
 }

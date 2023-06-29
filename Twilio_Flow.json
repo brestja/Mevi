@@ -5,28 +5,6 @@
   "nodes": [
     {
       "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $node[\"/series5\"].json[\"Text 2\"] }}",
-        "options": {}
-      },
-      "id": "e7fcfdd1-1abe-44d9-baf3-1f5cc948d7a5",
-      "name": "Aproaches",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        2600,
-        920
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "amount": 4,
         "unit": "seconds"
       },
@@ -35,75 +13,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2400,
-        920
+        -960,
+        180
       ],
       "webhookId": "be80de20-681f-4a2f-9989-a4e58317d793"
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"Text 1\"] }}",
-        "options": {}
-      },
-      "id": "7547e337-4e9d-46b0-8c83-b4b7e8f5ff03",
-      "name": "Partner greeting1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        2200,
-        920
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 5",
-        "options": {},
-        "query": "={\n\"Text 1\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "c0ab7946-2493-4d67-8567-b8c222c4cf75",
-      "name": "/series5",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        2000,
-        920
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $node[\"/series4\"].json[\"Text 2\"] }}",
-        "options": {}
-      },
-      "id": "115066df-0790-473e-97eb-108994c93216",
-      "name": "Aproaches2",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        2600,
-        720
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
     },
     {
       "parameters": {
@@ -115,53 +28,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2400,
-        720
+        -960,
+        -20
       ],
       "webhookId": "06670397-bc87-4bae-a627-3a6ae3ad3292"
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"Text 1\"] }}",
-        "options": {}
-      },
-      "id": "7ae64ba5-b05b-468b-9e7e-b7f982601004",
-      "name": "Series 4 Greeting",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        2200,
-        720
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 4",
-        "options": {},
-        "query": "={\n\"Text 1\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "fca5215c-d660-442e-9bdd-431a87e29d78",
-      "name": "/series4",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        2000,
-        720
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
     },
     {
       "parameters": {
@@ -175,6 +45,10 @@
             {
               "value2": "/series5",
               "output": 1
+            },
+            {
+              "value2": "/home",
+              "output": 2
             }
           ]
         }
@@ -184,31 +58,9 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        1680,
-        960
+        -1680,
+        160
       ]
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $node[\"/11am\"].json[\"PM receive confirmation\"] }}",
-        "options": {}
-      },
-      "id": "45e3ec2b-87ba-4405-970b-ed8fb96f980a",
-      "name": "PN Notification4",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1360,
-        1660
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
     },
     {
       "parameters": {
@@ -220,118 +72,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1180,
-        1660
+        880,
+        1840
       ],
       "webhookId": "87ebb1ce-0630-47ab-8ec2-8af1d62ed0a5"
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"Confirmation sent to PM\"] }}",
-        "options": {}
-      },
-      "id": "1759fbe3-738f-498d-88fd-eec90f9a6e1a",
-      "name": "Village member schedule block time",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1000,
-        1660
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 2",
-        "options": {},
-        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "d4a28694-e968-437b-9b56-b0d2323cf4a2",
-      "name": "/11am",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        1660
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"Village schedule\"] }}",
-        "options": {}
-      },
-      "id": "ad0e04b6-0751-4f10-b47a-9617cc4f2159",
-      "name": "Village member accepted to help1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1000,
-        1460
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 2",
-        "options": {},
-        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "d3b74f3f-cea9-4891-bf9a-84f65f97b7b9",
-      "name": "/help",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        1460
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $node[\"/support\"].json[\"Village Greeting\"] }}",
-        "options": {}
-      },
-      "id": "f7018b95-b406-4578-8771-ad6f9686ecf2",
-      "name": "Village Notification1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1360,
-        1280
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
     },
     {
       "parameters": {
@@ -343,96 +87,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1180,
-        1280
+        880,
+        1460
       ],
       "webhookId": "6bcd384f-6ccb-4cea-b9a2-8b094ba3e0d9"
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"We're on it\"] }}",
-        "options": {}
-      },
-      "id": "b53f7287-eb45-4e91-a798-ec5edd9ea9d1",
-      "name": "Mama aceptede support",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1000,
-        1280
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 2",
-        "options": {},
-        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "b761bf53-4ace-472d-8578-e7142823e8c6",
-      "name": "/support",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        1280
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"Greetings Day 7\"] }}",
-        "options": {}
-      },
-      "id": "fa0db9bf-a692-47d5-8dfb-3dc0ec038dae",
-      "name": "Greetings series 2",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1000,
-        1100
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 2",
-        "options": {},
-        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "3079fabd-cf71-44cc-8d39-a03ea072b595",
-      "name": "/series2",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        1100
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
     },
     {
       "parameters": {
@@ -463,31 +121,9 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        520,
-        1360
+        220,
+        1540
       ]
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $node[\"/instacart\"].json[\"PM sms for instacart\"] }}",
-        "options": {}
-      },
-      "id": "79ad1f24-d5ae-403c-b6a5-38c38b2994c4",
-      "name": "PN notifications2",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1340,
-        820
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
     },
     {
       "parameters": {
@@ -506,71 +142,6 @@
     },
     {
       "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"answer for instacart\"] }}",
-        "options": {}
-      },
-      "id": "30f58ddb-2090-4a42-a1a6-3eb0c7fab08f",
-      "name": "instacart",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        980,
-        820
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Meal_train",
-        "options": {},
-        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
-      },
-      "id": "e1b233b7-a175-49ae-83e4-9fd7b115122b",
-      "name": "/instacart",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        820
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $node[\"/uber\"].json[\"PM sms for uber\"] }}",
-        "options": {}
-      },
-      "id": "eb5a7f14-63a6-41ca-84cf-a5e09d16f0e1",
-      "name": "PN notifications1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1340,
-        640
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "amount": 4,
         "unit": "seconds"
       },
@@ -586,71 +157,6 @@
     },
     {
       "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"answer for uber\"] }}",
-        "options": {}
-      },
-      "id": "68bd3e6b-49dc-474f-b2f6-6094aee7d45d",
-      "name": "uber",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        980,
-        640
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Meal_train",
-        "options": {},
-        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
-      },
-      "id": "19c01d61-5bee-400f-a64a-a1ead5864948",
-      "name": "/uber",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        640
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $node[\"/meal\"].json[\"PM sms for meal\"] }}",
-        "options": {}
-      },
-      "id": "2136ca5c-a042-4598-9771-4b8c2b7daf1d",
-      "name": "PN notifications",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1340,
-        480
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "amount": 2,
         "unit": "seconds"
       },
@@ -663,92 +169,6 @@
         480
       ],
       "webhookId": "7051f175-e1b9-4aa8-abf3-ec6ae4fa20fa"
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"answer for meal\"] }}",
-        "options": {}
-      },
-      "id": "daccabfe-23b7-4504-b460-ffdbb5330563",
-      "name": "Meal1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        980,
-        480
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Meal_train",
-        "options": {},
-        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
-      },
-      "id": "4667814c-d608-41c3-8878-3fd109e1884c",
-      "name": "/meal",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        480
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"options to send\"] }}",
-        "options": {}
-      },
-      "id": "fa6c854f-0b88-4181-8330-42da7206fe1b",
-      "name": "Participate on a meal train1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        980,
-        320
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Meal_train",
-        "options": {},
-        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
-      },
-      "id": "ee86f3a1-1de8-4b56-983b-f99167b4df5e",
-      "name": "/participate",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        320
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
     },
     {
       "parameters": {
@@ -785,178 +205,6 @@
     },
     {
       "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"village invitation\"] }}",
-        "options": {}
-      },
-      "id": "8fba4a2a-3c4a-4f01-aca4-a54d31e9519d",
-      "name": "Meal train invitation",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        -280,
-        1660
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Meal_train",
-        "options": {},
-        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
-      },
-      "id": "85364778-0d6b-453c-8062-4bdcd4f37ea4",
-      "name": "/members",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        1660
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"more support\"] }}",
-        "options": {}
-      },
-      "id": "20945e93-76fb-4900-9174-abc409b450d9",
-      "name": "Latching help1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        -280,
-        1460
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "82d05f03-8ffb-49be-9fca-258ae2379f78",
-      "name": "/more",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        1460
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"I'm good\"] }}",
-        "options": {}
-      },
-      "id": "86828c3e-8f46-4314-a8cc-a4a57f82a087",
-      "name": "I'm good1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        -280,
-        1280
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "3dabe65c-e715-4680-a03f-5082909be97a",
-      "name": "/5",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        1280
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"Other\"] }}",
-        "options": {}
-      },
-      "id": "2bd00ad7-c271-47ec-a6f1-7746d972e30e",
-      "name": "Other1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        -280,
-        1100
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "94f4bade-968f-4b51-a5f2-9602af6ec027",
-      "name": "/4",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        1100
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "dataType": "string",
         "value1": "={{ $json[\"body\"][\"Body\"] }}",
         "rules": {
@@ -988,160 +236,9 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        -720,
-        1360
+        880,
+        2340
       ]
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"I'm in pain\"] }}",
-        "options": {}
-      },
-      "id": "97873bdf-b533-4b19-b58f-a175551fb7f7",
-      "name": "I'm in pain1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        -280,
-        880
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "41189396-072e-4765-b158-1cd37f823c76",
-      "name": "/3",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        880
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"Getting enough milk\"] }}",
-        "options": {}
-      },
-      "id": "7f38cf05-5467-407f-9ebc-9fc7f4588bc6",
-      "name": "Getting enough milk1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        -280,
-        700
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "e4ea8d4a-f98b-4f5f-b1e6-a338a7d36f40",
-      "name": "/2",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        700
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"latching\"] }}",
-        "options": {}
-      },
-      "id": "4d5609fb-e5e6-4cab-8fe3-69881b51ba1a",
-      "name": "Latching2",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        -280,
-        540
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "5634d986-3be3-4b62-8def-35c1ee74dff3",
-      "name": "/1",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        540
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $node[\"/start\"].json[\"menu\"] }}",
-        "options": {}
-      },
-      "id": "e78375a4-2f40-47e0-95db-188f9ab5ec35",
-      "name": "Menu2",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        140,
-        380
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
     },
     {
       "parameters": {
@@ -1153,53 +250,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        -40,
-        380
+        -100,
+        360
       ],
       "webhookId": "cd600a52-87d9-4265-a2aa-526dbc2ebd17"
-    },
-    {
-      "parameters": {
-        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
-        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
-        "message": "={{ $json[\"greeting\"] }}",
-        "options": {}
-      },
-      "id": "2437422f-c93b-4f17-bff8-6bf459ba8171",
-      "name": "Greeting1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        -280,
-        380
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "5",
-          "name": "Twilio account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "collection": "Series 1",
-        "options": {},
-        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
-      },
-      "id": "61eee3f7-f6b4-4c29-b207-c47e1b3ce793",
-      "name": "/start",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        -500,
-        380
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
     },
     {
       "parameters": {
@@ -1251,6 +305,1105 @@
         960
       ],
       "webhookId": "956e41f4-a666-43da-8825-464e4a1d0188"
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "61eee3f7-f6b4-4c29-b207-c47e1b3ce793",
+      "name": "/start",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        360
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "5634d986-3be3-4b62-8def-35c1ee74dff3",
+      "name": "/1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        540
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "e4ea8d4a-f98b-4f5f-b1e6-a338a7d36f40",
+      "name": "/2",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        700
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "41189396-072e-4765-b158-1cd37f823c76",
+      "name": "/3",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        880
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "94f4bade-968f-4b51-a5f2-9602af6ec027",
+      "name": "/4",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        2080
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "3dabe65c-e715-4680-a03f-5082909be97a",
+      "name": "/5",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        2260
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"greeting\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "82d05f03-8ffb-49be-9fca-258ae2379f78",
+      "name": "/more",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        2440
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Meal_train",
+        "options": {},
+        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
+      },
+      "id": "85364778-0d6b-453c-8062-4bdcd4f37ea4",
+      "name": "/members",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        2640
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Meal_train",
+        "options": {},
+        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
+      },
+      "id": "ee86f3a1-1de8-4b56-983b-f99167b4df5e",
+      "name": "/participate",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        320
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Meal_train",
+        "options": {},
+        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
+      },
+      "id": "4667814c-d608-41c3-8878-3fd109e1884c",
+      "name": "/meal",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        480
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Meal_train",
+        "options": {},
+        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
+      },
+      "id": "19c01d61-5bee-400f-a64a-a1ead5864948",
+      "name": "/uber",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        640
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Meal_train",
+        "options": {},
+        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
+      },
+      "id": "e1b233b7-a175-49ae-83e4-9fd7b115122b",
+      "name": "/instacart",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        820
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 2",
+        "options": {},
+        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "3079fabd-cf71-44cc-8d39-a03ea072b595",
+      "name": "/series2",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        500,
+        1280
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 2",
+        "options": {},
+        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "b761bf53-4ace-472d-8578-e7142823e8c6",
+      "name": "/support",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        500,
+        1460
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 2",
+        "options": {},
+        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "d3b74f3f-cea9-4891-bf9a-84f65f97b7b9",
+      "name": "/help",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        500,
+        1640
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 2",
+        "options": {},
+        "query": "={\n\"Greetings Day 7\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "d4a28694-e968-437b-9b56-b0d2323cf4a2",
+      "name": "/11am",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        500,
+        1840
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 4",
+        "options": {},
+        "query": "={\n\"Text 1\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "fca5215c-d660-442e-9bdd-431a87e29d78",
+      "name": "/series4",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -1360,
+        -20
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 5",
+        "options": {},
+        "query": "={\n\"Text 1\": { \"$regex\": \"Hey\", \"$options\": \"i\" }\n}"
+      },
+      "id": "c0ab7946-2493-4d67-8567-b8c222c4cf75",
+      "name": "/series5",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -1360,
+        180
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"greeting\"] }}",
+        "options": {}
+      },
+      "id": "2437422f-c93b-4f17-bff8-6bf459ba8171",
+      "name": "Greeting1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        360
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/start\"].json[\"menu\"] }}",
+        "options": {}
+      },
+      "id": "e78375a4-2f40-47e0-95db-188f9ab5ec35",
+      "name": "Menu2",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        80,
+        360
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"latching\"] }}",
+        "options": {}
+      },
+      "id": "4d5609fb-e5e6-4cab-8fe3-69881b51ba1a",
+      "name": "Latching2",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        540
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Getting enough milk\"] }}",
+        "options": {}
+      },
+      "id": "7f38cf05-5467-407f-9ebc-9fc7f4588bc6",
+      "name": "Getting enough milk1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        700
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"I'm in pain\"] }}",
+        "options": {}
+      },
+      "id": "97873bdf-b533-4b19-b58f-a175551fb7f7",
+      "name": "I'm in pain1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        880
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Other\"] }}",
+        "options": {}
+      },
+      "id": "2bd00ad7-c271-47ec-a6f1-7746d972e30e",
+      "name": "Other1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        2080
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"I'm good\"] }}",
+        "options": {}
+      },
+      "id": "86828c3e-8f46-4314-a8cc-a4a57f82a087",
+      "name": "I'm good1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        2260
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"more support\"] }}",
+        "options": {}
+      },
+      "id": "20945e93-76fb-4900-9174-abc409b450d9",
+      "name": "Latching help1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        2440
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"village invitation\"] }}",
+        "options": {}
+      },
+      "id": "8fba4a2a-3c4a-4f01-aca4-a54d31e9519d",
+      "name": "Meal train invitation",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        2640
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"options to send\"] }}",
+        "options": {}
+      },
+      "id": "fa6c854f-0b88-4181-8330-42da7206fe1b",
+      "name": "Participate on a meal train1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        980,
+        320
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"answer for meal\"] }}",
+        "options": {}
+      },
+      "id": "daccabfe-23b7-4504-b460-ffdbb5330563",
+      "name": "Meal1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        980,
+        480
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/meal\"].json[\"PM sms for meal\"] }}",
+        "options": {}
+      },
+      "id": "2136ca5c-a042-4598-9771-4b8c2b7daf1d",
+      "name": "PN notifications",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        480
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/uber\"].json[\"PM sms for uber\"] }}",
+        "options": {}
+      },
+      "id": "eb5a7f14-63a6-41ca-84cf-a5e09d16f0e1",
+      "name": "PN notifications1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        640
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/instacart\"].json[\"PM sms for instacart\"] }}",
+        "options": {}
+      },
+      "id": "79ad1f24-d5ae-403c-b6a5-38c38b2994c4",
+      "name": "PN notifications2",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        820
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"answer for uber\"] }}",
+        "options": {}
+      },
+      "id": "68bd3e6b-49dc-474f-b2f6-6094aee7d45d",
+      "name": "uber",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        980,
+        640
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"answer for instacart\"] }}",
+        "options": {}
+      },
+      "id": "30f58ddb-2090-4a42-a1a6-3eb0c7fab08f",
+      "name": "instacart",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        980,
+        820
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Greetings Day 7\"] }}",
+        "options": {}
+      },
+      "id": "fa0db9bf-a692-47d5-8dfb-3dc0ec038dae",
+      "name": "Greetings series 2",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        700,
+        1280
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"We're on it\"] }}",
+        "options": {}
+      },
+      "id": "b53f7287-eb45-4e91-a798-ec5edd9ea9d1",
+      "name": "Mama aceptede support",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        700,
+        1460
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "=whatsapp:{{ $json[\"Village member phone\"] }}",
+        "message": "={{ $node[\"/support\"].json[\"Village Greeting\"] }}",
+        "options": {}
+      },
+      "id": "f7018b95-b406-4578-8771-ad6f9686ecf2",
+      "name": "Village Notification1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        1460
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "=  whatsapp:{{ $json[\"Village member phone\"] }}",
+        "message": "={{ $node[\"/help\"].json[\"Village schedule\"] }}",
+        "options": {}
+      },
+      "id": "ad0e04b6-0751-4f10-b47a-9617cc4f2159",
+      "name": "Village member accepted to help1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        880,
+        1640
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Confirmation sent to PM\"] }}",
+        "options": {}
+      },
+      "id": "1759fbe3-738f-498d-88fd-eec90f9a6e1a",
+      "name": "Village member schedule block time",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        700,
+        1840
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/11am\"].json[\"PM receive confirmation\"] }}",
+        "options": {}
+      },
+      "id": "45e3ec2b-87ba-4405-970b-ed8fb96f980a",
+      "name": "PN Notification4",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        1840
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Text 1\"] }}",
+        "options": {}
+      },
+      "id": "7ae64ba5-b05b-468b-9e7e-b7f982601004",
+      "name": "Series 4 Greeting",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        -1160,
+        -20
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/series4\"].json[\"Text 2\"] }}",
+        "options": {}
+      },
+      "id": "115066df-0790-473e-97eb-108994c93216",
+      "name": "Aproaches2",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        -20
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Text 1\"] }}",
+        "options": {}
+      },
+      "id": "7547e337-4e9d-46b0-8c83-b4b7e8f5ff03",
+      "name": "Partner greeting1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        -1160,
+        180
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $node[\"/series5\"].json[\"Text 2\"] }}",
+        "options": {}
+      },
+      "id": "e7fcfdd1-1abe-44d9-baf3-1f5cc948d7a5",
+      "name": "Aproaches",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        180
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Meal_train",
+        "options": {},
+        "query": "={\n\"village invitation\": { \"$regex\": \"just\", \"$options\": \"i\" }\n}"
+      },
+      "id": "593ccc9a-01b8-45d4-b838-b6c0a58bc784",
+      "name": "/members1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        2640
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Mavi",
+        "options": {},
+        "query": "={\n  \"phone\": \"{{$node[\"Webhook\"].json[\"body\"][\"WaId\"]}}\"\n}"
+      },
+      "id": "f77cddd1-d911-4860-ab4c-7f074f2e3e29",
+      "name": "MongoDB",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        1460
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Series 1",
+        "options": {},
+        "query": "={\n\"Welcome home\": { \"$regex\": \"Welcome\" }\n}"
+      },
+      "id": "6a10636f-b703-47f8-a197-cfec315f514d",
+      "name": "/home",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -1360,
+        360
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "={{ $node[\"Webhook\"].json[\"body\"][\"To\"] }}",
+        "to": "={{ $node[\"Webhook\"].json[\"body\"][\"From\"] }}",
+        "message": "={{ $json[\"Welcome home\"] }}",
+        "options": {}
+      },
+      "id": "b0106d6b-98a2-4514-bc88-ceb8fcafab86",
+      "name": "Welcome",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        -1160,
+        360
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "5",
+          "name": "Twilio account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10,
+        "unit": "seconds"
+      },
+      "id": "6fb57eec-b6a3-4f4c-8948-5a4021875b94",
+      "name": "Wait until day 4",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        -980,
+        360
+      ],
+      "webhookId": "ea745c6a-bd0d-4f36-b1c8-e3ce31d291e8"
+    },
+    {
+      "parameters": {
+        "unit": "minutes"
+      },
+      "id": "2d950007-317b-4f2f-a0a4-eee1a530c749",
+      "name": "Wait until day 7",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        320,
+        840
+      ],
+      "webhookId": "81046846-eac5-4452-bd84-5818649af7a0"
+    },
+    {
+      "parameters": {
+        "collection": "Mavi",
+        "options": {},
+        "query": "={\n  \"phone\": \"{{$node[\"Webhook\"].json[\"body\"][\"WaId\"]}}\"\n}"
+      },
+      "id": "46605025-f1d2-43c1-8bba-fa0e8cdc087b",
+      "name": "MongoDB1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        700,
+        1640
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "unit": "minutes"
+      },
+      "id": "07bd8829-fb5e-4555-b6ae-b90648f4c9db",
+      "name": "Wait until day 9",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        880,
+        1280
+      ],
+      "webhookId": "ac0d905e-0756-404e-88b7-15a3d33eb523"
     }
   ],
   "connections": {
@@ -1265,55 +1418,11 @@
         ]
       ]
     },
-    "Partner greeting1": {
-      "main": [
-        [
-          {
-            "node": "Wait7",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/series5": {
-      "main": [
-        [
-          {
-            "node": "Partner greeting1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Wait6": {
       "main": [
         [
           {
             "node": "Aproaches2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Series 4 Greeting": {
-      "main": [
-        [
-          {
-            "node": "Wait6",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/series4": {
-      "main": [
-        [
-          {
-            "node": "Series 4 Greeting",
             "type": "main",
             "index": 0
           }
@@ -1335,6 +1444,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "/home",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -1349,77 +1465,11 @@
         ]
       ]
     },
-    "Village member schedule block time": {
-      "main": [
-        [
-          {
-            "node": "Wait5",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/11am": {
-      "main": [
-        [
-          {
-            "node": "Village member schedule block time",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/help": {
-      "main": [
-        [
-          {
-            "node": "Village member accepted to help1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Wait4": {
       "main": [
         [
           {
-            "node": "Village Notification1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Mama aceptede support": {
-      "main": [
-        [
-          {
-            "node": "Wait4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/support": {
-      "main": [
-        [
-          {
-            "node": "Mama aceptede support",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/series2": {
-      "main": [
-        [
-          {
-            "node": "Greetings series 2",
+            "node": "MongoDB",
             "type": "main",
             "index": 0
           }
@@ -1469,28 +1519,6 @@
         ]
       ]
     },
-    "instacart": {
-      "main": [
-        [
-          {
-            "node": "Wait3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/instacart": {
-      "main": [
-        [
-          {
-            "node": "instacart",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Wait2": {
       "main": [
         [
@@ -1502,66 +1530,11 @@
         ]
       ]
     },
-    "uber": {
-      "main": [
-        [
-          {
-            "node": "Wait2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/uber": {
-      "main": [
-        [
-          {
-            "node": "uber",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Wait1": {
       "main": [
         [
           {
             "node": "PN notifications",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Meal1": {
-      "main": [
-        [
-          {
-            "node": "Wait1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/meal": {
-      "main": [
-        [
-          {
-            "node": "Meal1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/participate": {
-      "main": [
-        [
-          {
-            "node": "Participate on a meal train1",
             "type": "main",
             "index": 0
           }
@@ -1600,50 +1573,6 @@
         ]
       ]
     },
-    "/members": {
-      "main": [
-        [
-          {
-            "node": "Meal train invitation",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/more": {
-      "main": [
-        [
-          {
-            "node": "Latching help1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/5": {
-      "main": [
-        [
-          {
-            "node": "I'm good1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/4": {
-      "main": [
-        [
-          {
-            "node": "Other1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Series1": {
       "main": [
         [
@@ -1676,66 +1605,11 @@
         ]
       ]
     },
-    "/3": {
-      "main": [
-        [
-          {
-            "node": "I'm in pain1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/2": {
-      "main": [
-        [
-          {
-            "node": "Getting enough milk1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/1": {
-      "main": [
-        [
-          {
-            "node": "Latching2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Wait": {
       "main": [
         [
           {
             "node": "Menu2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Greeting1": {
-      "main": [
-        [
-          {
-            "node": "Wait",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "/start": {
-      "main": [
-        [
-          {
-            "node": "Greeting1",
             "type": "main",
             "index": 0
           }
@@ -1799,6 +1673,402 @@
           },
           {
             "node": "Series",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/start": {
+      "main": [
+        [
+          {
+            "node": "Greeting1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/1": {
+      "main": [
+        [
+          {
+            "node": "Latching2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/2": {
+      "main": [
+        [
+          {
+            "node": "Getting enough milk1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/3": {
+      "main": [
+        [
+          {
+            "node": "I'm in pain1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/4": {
+      "main": [
+        [
+          {
+            "node": "Other1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/5": {
+      "main": [
+        [
+          {
+            "node": "I'm good1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/more": {
+      "main": [
+        [
+          {
+            "node": "Latching help1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/members": {
+      "main": [
+        [
+          {
+            "node": "/members1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/participate": {
+      "main": [
+        [
+          {
+            "node": "Participate on a meal train1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/meal": {
+      "main": [
+        [
+          {
+            "node": "Meal1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/uber": {
+      "main": [
+        [
+          {
+            "node": "uber",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/instacart": {
+      "main": [
+        [
+          {
+            "node": "instacart",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/series2": {
+      "main": [
+        [
+          {
+            "node": "Greetings series 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/support": {
+      "main": [
+        [
+          {
+            "node": "Mama aceptede support",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/help": {
+      "main": [
+        [
+          {
+            "node": "MongoDB1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/11am": {
+      "main": [
+        [
+          {
+            "node": "Village member schedule block time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/series4": {
+      "main": [
+        [
+          {
+            "node": "Series 4 Greeting",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/series5": {
+      "main": [
+        [
+          {
+            "node": "Partner greeting1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Greeting1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Menu2": {
+      "main": [
+        [
+          {
+            "node": "Wait until day 7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Meal1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "uber": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "instacart": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Greetings series 2": {
+      "main": [
+        [
+          {
+            "node": "Wait until day 9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mama aceptede support": {
+      "main": [
+        [
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Village member schedule block time": {
+      "main": [
+        [
+          {
+            "node": "Wait5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Series 4 Greeting": {
+      "main": [
+        [
+          {
+            "node": "Wait6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Partner greeting1": {
+      "main": [
+        [
+          {
+            "node": "Wait7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/members1": {
+      "main": [
+        [
+          {
+            "node": "Meal train invitation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MongoDB": {
+      "main": [
+        [
+          {
+            "node": "Village Notification1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "/home": {
+      "main": [
+        [
+          {
+            "node": "Welcome",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Welcome": {
+      "main": [
+        [
+          {
+            "node": "Wait until day 4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait until day 4": {
+      "main": [
+        [
+          {
+            "node": "/start",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait until day 7": {
+      "main": [
+        [
+          {
+            "node": "/series2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MongoDB1": {
+      "main": [
+        [
+          {
+            "node": "Village member accepted to help1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait until day 9": {
+      "main": [
+        [
+          {
+            "node": "/members",
             "type": "main",
             "index": 0
           }
