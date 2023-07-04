@@ -1,0 +1,128 @@
+{
+  "name": "Typeform_waitlist",
+  "nodes": [
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "name",
+              "value": "={{ $json[\"What's your first name?\"] }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $json[\"What's your email?\"] }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{$node[\"Typeform Trigger\"].json[\"Nice to meet you, [field:01GYR7CS6QHA9EG2F5ZGD2C95E], we'll need your phone number to get started\"]}}"
+            },
+            {
+              "name": "village agreement",
+              "value": "={{$node[\"Typeform Trigger\"].json[\"Mevi is designed to tap into your village. Will you feel comfortable signing them up to support your postpartum journey?\"]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c0d0d1a2-f51b-4fd2-83dd-99f94fc337f6",
+      "name": "Set variables",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        400,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "collection": "Waitlist",
+        "fields": "name, email, phone, village agreement",
+        "options": {}
+      },
+      "id": "7817526e-e992-4fc2-a0c5-a4020dc56c05",
+      "name": "MongoDB1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        800,
+        880
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "formId": "h8F0rsem"
+      },
+      "id": "7b43a998-afaf-4346-930f-15c90acfc14a",
+      "name": "Typeform Trigger",
+      "type": "n8n-nodes-base.typeformTrigger",
+      "typeVersion": 1,
+      "position": [
+        40,
+        880
+      ],
+      "webhookId": "5b20cbef-d4bc-451b-8c39-add05cc2a9a7",
+      "credentials": {
+        "typeformOAuth2Api": {
+          "id": "15",
+          "name": "Typeform Zamina account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Set variables": {
+      "main": [
+        [
+          {
+            "node": "MongoDB1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Typeform Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "timezone": "Europe/Madrid",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "any",
+    "executionTimeout": 60
+  },
+  "hash": "b44f67e68c4c0bfbd2a678e4e9b66c59",
+  "id": 16,
+  "meta": {
+    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
+  },
+  "tags": [
+    {
+      "createdAt": "2023-07-03T19:29:21.181Z",
+      "updatedAt": "2023-07-03T19:29:21.181Z",
+      "id": "1",
+      "name": "Typeform"
+    }
+  ]
+}

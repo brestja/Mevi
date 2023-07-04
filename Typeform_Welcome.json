@@ -1,0 +1,150 @@
+{
+  "name": "Typeform_Welcome",
+  "nodes": [
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "name",
+              "value": "={{ $json[\"What's your first name?\"] }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $json[\"What's your email?\"] }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{$node[\"Typeform Welcome\"].json[\"Nice to meet you, [field:01GYR7CS6QHA9EG2F5ZGD2C95E], we'll need your phone number to get started\"]}}"
+            },
+            {
+              "name": "due date",
+              "value": "={{ $json[\"What's your *due *date?\"] }}"
+            },
+            {
+              "name": "Village member name",
+              "value": "={{ $json[\"Enter the name of the first person in your village\"] }}"
+            },
+            {
+              "name": "Village member phone",
+              "value": "={{$node[\"Typeform Welcome\"].json[\"What's [field:2dca9f1d-c416-42f6-8637-6ccc6e9ceeea]'s phone number?\"]}}"
+            }
+          ],
+          "boolean": [
+            {
+              "name": "given birth",
+              "value": "={{$node[\"Typeform Welcome\"].json[\"Have you given birth yet [field:01GYR7CS6QHA9EG2F5ZGD2C95E]?\"]}}"
+            },
+            {
+              "name": "other children",
+              "value": "={{$node[\"Typeform Welcome\"].json[\"Do you have other children?\"]}}"
+            },
+            {
+              "name": "primary parent",
+              "value": "={{$node[\"Typeform Welcome\"].json[\"Are you the birthing or primary parent? \"]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "543edbe8-0f35-4940-a3f5-18c16e17a31a",
+      "name": "Set variables",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        400,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "collection": "Mavi",
+        "fields": "name, email, phone, due date, given birth, other children, primary parent, Village member name, Village member phone",
+        "options": {}
+      },
+      "id": "4046c2bd-a080-400e-83db-4bc0c6255948",
+      "name": "MongoDB1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        640,
+        880
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "formId": "LfSgCyGd"
+      },
+      "id": "f4030f1d-a47d-4441-84b2-89f0cdb47dba",
+      "name": "Typeform Welcome",
+      "type": "n8n-nodes-base.typeformTrigger",
+      "typeVersion": 1,
+      "position": [
+        140,
+        880
+      ],
+      "webhookId": "da883f5c-28ad-4aa9-8243-07bc6ba17928",
+      "credentials": {
+        "typeformOAuth2Api": {
+          "id": "15",
+          "name": "Typeform Zamina account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Set variables": {
+      "main": [
+        [
+          {
+            "node": "MongoDB1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Typeform Welcome": {
+      "main": [
+        [
+          {
+            "node": "Set variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "timezone": "Europe/Madrid",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "any",
+    "executionTimeout": 60
+  },
+  "hash": "15d293b29d50258c1441e857eab2a820",
+  "id": 17,
+  "meta": {
+    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
+  },
+  "tags": [
+    {
+      "createdAt": "2023-07-03T19:29:21.181Z",
+      "updatedAt": "2023-07-03T19:29:21.181Z",
+      "id": "1",
+      "name": "Typeform"
+    }
+  ]
+}
