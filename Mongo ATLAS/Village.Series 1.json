@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "6488b2f1b82566dbe44e79af"
+  },
+  "greeting": " , hope the first few days at home with baby are blissfull. We know things are probably starting to pile up, so we're ready to activate your village in whatever ways you need. Today we'll make sure you have what you need to keep baby fed because a fed baby is a happy baby.",
+  "menu": "Feeding can be tough and if you're struggling in any way that's completely normal and okay. How are you doing today? Reply with the number corresponding to where you're at:  /1. I think my baby is having trouble latching  /2. I don't know if my baby is getting enough /3. I'm in a lot of pain /4. Other  /5. I've got this!",
+  "latching": "Below is a great evidence based resource to help you figure out if baby is latching correctly.  Link: https://www.healthlinkbc.ca/pregnancy-parenting/parenting-babies-0-12-months/breastfeeding/learning-latch  If you need more help on this, write /more. ",
+  "Getting enough milk": "This is a valid concern. When breastfeeding you can't tell how much your baby is getting so often when babies clusterfeed or are hungry often, mom does feel concerned they're not getting enough.   However, in most cases if your baby is healthy they are getting what they need. This resource from HealthLink BC explains how your baby's feeding patterns should change over the first ten days.    https://www.healthlinkbc.ca/pregnancy-parenting/parenting-babies-0-12-months/feeding-your-baby/how-often-and-how-long-feed\t\t",
+  "I'm in pain": "You'll be okay soon. If the pain is severe and remains after baby has finished feeding, you may have mastitis. Don't worry, your baby is not in danger.   This resource from HealthLink BC explains how to manage mastitis. But, you should call 811 for immediate support so you can figure out what specific care you may need. Good luck, mama! ",
+  "Other": "The challenges of feeding often are not discussed openly. You're not the only one struggling, we promise.   Because we're in prototype, we don't have the ability to have a dialogue to help you in real time. However, we can still help! Please check out the resources below that may cover your current concerns.   Breastfeeding: https://www.healthlinkbc.ca/pregnancy-parenting/parenting-babies-0-12-months/breastfeeding  Combo feeding (breastmilk + formula): https://www.healthlinkbc.ca/pregnancy-parenting/parenting-babies-0-12-months/feeding-your-baby/alternative-feeding-methods  Exclusively formula feeding: https://www.healthlinkbc.ca/health-topics/bottle-feeding  Breastfeeding and lactation consultation services: http://www.bcwomens.ca/our-services/labour-birth-post-birth-care/breastfeeding-clinic\t",
+  "I'm good": "That's amazing to hear! We'll reach out soon to see how we can help in other ways.",
+  "more support": "No sweat. You have options! \n\nYou may contact BC Women's to speak to a lactation consultant. \n\nIf you need help immediately, call 811 to talk to the Public Health Nurse for immediate support. ",
+  "Welcome home": "Welcome home message",
+  "Week 20": "Hi mama this is a test message"
+}]

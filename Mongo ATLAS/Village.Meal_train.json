@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "6495fa2a146df3b1a3e19601"
+  },
+  "feeding ourselves": "No sweat at all. We'll activate a meal train and let you know when food is it's way. ",
+  "village invitation": "  just got home from the hospital and needs some help with food. We're activating a meal train on their behalf. Would you look to participate? Reply  /participate\t\t\t\t",
+  "answer for meal": " know and you can reach out to them to coordinate delivery.",
+  "answer for uber": "Great! Here's a link to purchase a gift card: https://about.ubereats.com/ca/en/how-it-works/uber-eats-gift-card/",
+  "answer for instacart": "Great! Here's a link to purchase an Instacart gift card: https://www.instacart.com/gift-cards",
+  "PM sms for meal": "will be dropping lunch and dinner off for the day. They'll be reaching out to coordinate delivery shortly.   Stay well 🧡",
+  "PM sms for uber": "has purchased an Uber gift card for the family. Hope it keeps you fed today.  Stay well 🧡",
+  "PM sms for instacart": "has purchased an Instacart gift card for the family. Hope it helps with groceries this week.   Stay well 🧡",
+  "options to send": "Are you able to provide a meal, order an Uber eats gift card or some groceries through Instacart? Reply:  /meal  /uber  /instacart."
+}]
