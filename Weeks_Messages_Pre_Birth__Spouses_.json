@@ -1,0 +1,240 @@
+{
+  "name": "Weeks Messages Pre-Birth (Spouses)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "daysInterval": 7,
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "6cb0a978-a909-459d-8f05-b3eefcfe3b07",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2260,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "0e845f6a-e018-4d19-9b19-aab9837a58a1",
+      "name": "SplitInBatches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [
+        -1500,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "collection": "Mevi",
+        "options": {},
+        "query": "={\"Weeks\": {\"$in\": [13, 5, 6, 7]}}"
+      },
+      "id": "7de7e944-0766-4c9e-9046-c93eec92da4a",
+      "name": "Busca primary parent",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -1760,
+        1080
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "20",
+          "name": "MongoDB Atlas"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Pre-Birth",
+        "options": {},
+        "query": "={\n  \"Pregnant Messages\": {\"$in\":[\"0\"]}\n  \n}"
+      },
+      "id": "9e3829b1-a603-4d1e-aa90-eb4fef845f8e",
+      "name": "Busca pre-birth messages",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -2000,
+        1080
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mongoDb": {
+          "id": "20",
+          "name": "MongoDB Atlas"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "pregnant phone",
+              "value": "={{ $json[\"spouse phone\"] }}"
+            },
+            {
+              "name": "message",
+              "value": "={{$node[\"Busca pre-birth messages\"].json[\"Spouse SMSs\"][$node[\"SplitInBatches\"].json[\"Weeks\"]]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2d51ae1e-52d6-4811-bbe8-88c0b824175f",
+      "name": "Spouses",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -1280,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"message\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "73e57ff7-c847-4a8b-af72-5702b8dbf5c6",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1060,
+        1080
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "72cdbb6a-170a-4bbc-8395-6a662326251f",
+      "name": "NoOp",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -840,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "871a8179-75a7-4ccb-b780-8003e4243a7a",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -840,
+        1200
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Busca pre-birth messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SplitInBatches": {
+      "main": [
+        [
+          {
+            "node": "Busca primary parent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Spouses",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca primary parent": {
+      "main": [
+        [
+          {
+            "node": "SplitInBatches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca pre-birth messages": {
+      "main": [
+        [
+          {
+            "node": "Busca primary parent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spouses": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "NoOp",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "hash": "9eab9ce4a5fad83b462b6d7d4217bdad",
+  "id": 22,
+  "meta": {
+    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
+  },
+  "tags": []
+}

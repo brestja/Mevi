@@ -1,0 +1,240 @@
+{
+  "name": "Weeks Messages Pre-Birth (Villages)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "daysInterval": 7,
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "52210423-fb10-4cd8-befb-38208226cec3",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2260,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "cf0a6b39-d366-4fcd-b10b-4f6784126360",
+      "name": "SplitInBatches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [
+        -1500,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "collection": "Mevi",
+        "options": {},
+        "query": "={\"Weeks\": {\"$in\": [13, 5, 6, 7]}}"
+      },
+      "id": "f8dee50b-f1be-4f4f-b5a2-b9e66c58d55a",
+      "name": "Busca primary parent",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -1760,
+        1080
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "20",
+          "name": "MongoDB Atlas"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Pre-Birth",
+        "options": {},
+        "query": "={\n  \"Pregnant Messages\": {\"$in\":[\"0\"]}\n  \n}"
+      },
+      "id": "079b63d8-2cca-4e3e-8016-346c93782699",
+      "name": "Busca pre-birth messages",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -2000,
+        1080
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mongoDb": {
+          "id": "20",
+          "name": "MongoDB Atlas"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"message\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "10ff9097-786d-4f42-973f-df3787cd41b1",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1060,
+        1080
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "c00a42a2-98f1-4e27-8ce1-02bd7fa7d135",
+      "name": "NoOp",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -840,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "20f3ad06-fee4-4804-ad0e-542fb72d3060",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -840,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "pregnant phone",
+              "value": "={{ $json[\"Village member phone\"] }}"
+            },
+            {
+              "name": "message",
+              "value": "={{$node[\"Busca pre-birth messages\"].json[\"Village SMSs\"][$node[\"SplitInBatches\"].json[\"Weeks\"]]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4c4aa8f9-51a9-40ae-82c4-8e19fc53c64a",
+      "name": "Villages",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -1260,
+        1080
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Busca pre-birth messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SplitInBatches": {
+      "main": [
+        [
+          {
+            "node": "Busca primary parent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Villages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca primary parent": {
+      "main": [
+        [
+          {
+            "node": "SplitInBatches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca pre-birth messages": {
+      "main": [
+        [
+          {
+            "node": "Busca primary parent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "NoOp",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Villages": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "hash": "1686a6232c4f7cb6275a9b49b0d5afa1",
+  "id": 23,
+  "meta": {
+    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
+  },
+  "tags": []
+}
