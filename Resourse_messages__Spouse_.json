@@ -1,0 +1,261 @@
+{
+  "name": "Resourse messages (Spouse)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "f2061f94-076f-461e-8c75-77081e1d0f2b",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        220,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "collection": "Mevi",
+        "options": {},
+        "query": "={\"Weeks\": {\"$in\": [13, 5, 6, 7]}}"
+      },
+      "id": "6bb30c16-8f9c-4439-8a84-915ac22781fe",
+      "name": "Busca primary parent1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        580,
+        660
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "20",
+          "name": "MongoDB Atlas"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtenemos las fechas del flujo de trabajo\nconst fechaInicio = new Date($node[\"SplitInBatches\"].json[\"due date\"]);\nconst fechaFin = new Date();\n\n// Calculamos la diferencia en milisegundos entre las fechas\nconst diferenciaMs = fechaFin - fechaInicio ;\n\n// Convertimos la diferencia a días\nconst diasPasados = Math.floor(diferenciaMs / (1000 * 60 * 60 * 24));\n\n// Devolvemos el resultado\nreturn { diasPasados };\n"
+      },
+      "id": "e1abd537-552e-459e-b001-cc153ec2841b",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "befd2ed1-cef2-4069-8e99-5958c53cf1c5",
+      "name": "SplitInBatches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [
+        780,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "Spouse message",
+              "value": "={{ $node[\"Resource Messages\"].json[\"Spouse\"][ $json[\"diasPasados\"]]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "357ae5fd-1742-406b-b33c-c6469fcd91d6",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"Spouse message\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "0da58444-fe8d-4c12-bc01-622a1eceb38c",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        660
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "0f47bf9b-10bf-4710-ba17-80f35f60fa20",
+      "name": "NoOp",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "9c4d7a80-c20b-44d6-b4bd-9d3b0d5f6033",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "collection": "Resource Messages",
+        "options": {},
+        "query": "{\"Primary\":{\"$in\":[\"\"]}}"
+      },
+      "id": "ef644cc9-56ce-4964-8424-3bd1c815b4ed",
+      "name": "Resource Messages",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        400,
+        660
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "20",
+          "name": "MongoDB Atlas"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Resource Messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca primary parent1": {
+      "main": [
+        [
+          {
+            "node": "SplitInBatches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SplitInBatches": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SplitInBatches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "NoOp",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resource Messages": {
+      "main": [
+        [
+          {
+            "node": "Busca primary parent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "timezone": "America/Vancouver",
+    "saveManualExecutions": true,
+    "callerPolicy": "any"
+  },
+  "hash": "965e53fbdc55aa31a64662b455a072f1",
+  "id": 25,
+  "meta": {
+    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
+  },
+  "tags": []
+}
