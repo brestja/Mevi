@@ -1,0 +1,83 @@
+{
+  "name": "Update Weeks",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://us-east-1.aws.data.mongodb-api.com/app/data-bzilb/endpoint/data/v1/action/updateMany",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Access-Control-Request-Headers",
+              "value": "*"
+            },
+            {
+              "name": "api-key",
+              "value": "XlwXlxUIkgpNz0gm8U54BfaJ6dIwxFKfRzNzw5aCS6Xbh54Jmp9JOLuEWSm0Yjac"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"dataSource\":\"Cluster0\",\"database\":\"Village\",\"collection\":\"Mevi\",\"filter\":{\"Weeks\":{\"$lt\":41}},\"update\":{\"$inc\":{\"Weeks\":1}}}",
+        "options": {
+          "redirect": {
+            "redirect": {
+              "followRedirects": true
+            }
+          }
+        }
+      },
+      "id": "9bae4497-0c54-40f2-b79f-381a171eb248",
+      "name": "Update weeks",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        700,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks"
+            }
+          ]
+        }
+      },
+      "id": "37a533de-903b-49ea-9008-e79e5bcd8642",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        400,
+        320
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Update weeks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "6fa5d9ec-f356-4d64-a584-c99d82851356",
+  "id": "14",
+  "meta": {
+    "instanceId": "cd387a108e59f407338aaa3dd1fc1392753e7785132f8d58d189493b0d889a53"
+  },
+  "tags": []
+}
