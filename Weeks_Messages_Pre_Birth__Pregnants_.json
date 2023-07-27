@@ -5,28 +5,72 @@
   "nodes": [
     {
       "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json.phone }}",
+        "message": "=Hey {{ $('SplitInBatches').item.json.name }}! {{ $('Busca pre-birth messages').item.json[\"Pregnant Messages\"][ $('SplitInBatches').item.json.weeks ] }}  ",
         "options": {}
       },
-      "id": "2ba8cdfa-84c9-4e24-b822-199d54a4a69c",
-      "name": "Set",
-      "type": "n8n-nodes-base.set",
+      "id": "57f0a25c-d6cc-494a-ab82-24a7bc8ffd61",
+      "name": "Pregnant personal messages",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
-        1300,
-        520
-      ]
+        1460,
+        560
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
     },
     {
       "parameters": {
         "options": {}
       },
-      "id": "f54e95ca-e788-4d3a-a5b2-ee873b03ef1c",
-      "name": "Hey primary name!",
+      "id": "b2364a26-ee9c-42ed-9bc8-4e22cb580549",
+      "name": "Set",
       "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "=  {{ $('SplitInBatches').item.json.phone }}",
+        "message": "={{ $('Busca pre-birth messages').item.json[\"Pregnant Messages\"][$('SplitInBatches').item.json.weeks ]}} ",
+        "options": {}
+      },
+      "id": "f9bb5709-10e2-4edd-8342-8a30a063f2f3",
+      "name": "Pregnant1",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
-        1300,
-        300
+        1460,
+        280
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "e19a19c8-504e-47e8-8639-c27051c1677c",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        280
       ]
     },
     {
@@ -211,11 +255,33 @@
     }
   ],
   "connections": {
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Pregnant personal messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "Pregnant1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "IF1": {
       "main": [
         [
           {
-            "node": "Hey primary name!",
+            "node": "Set1",
             "type": "main",
             "index": 0
           }
