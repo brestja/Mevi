@@ -350,6 +350,28 @@
     },
     {
       "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "={{ $json.message }} ",
+        "options": {}
+      },
+      "id": "8bd2a442-409e-45ea-a1e2-5293920db203",
+      "name": "Twilio11",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        380
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
         "options": {}
       },
       "id": "ef5d6916-58bf-40eb-943a-b9a8349944bd",
@@ -358,7 +380,7 @@
       "typeVersion": 1,
       "position": [
         780,
-        520
+        380
       ]
     },
     {
@@ -473,7 +495,7 @@
             },
             {
               "name": "message",
-              "value": "={{$node[\"Busca pre-birth messages\"].json[\"Spouse SMSs\"][$node[\"SplitInBatches\"].json[\"weeks\"]]}}"
+              "value": "={{ $('Busca pre-birth messages').item.json[\"Spouse SMSs\"][$json.weeks].slice(0)}}"
             }
           ],
           "number": [
@@ -533,7 +555,7 @@
       "parameters": {
         "collection": "Pre-Birth",
         "options": {},
-        "query": "={\n  \"Pregnant Messages\": {\"$in\":[\"0\"]}\n  \n}"
+        "query": "={\n  \"Pregnant Messages\": {\"$in\":[\"\"]}\n  \n}"
       },
       "id": "20ece285-7f09-4064-9c6f-49a01261c8e2",
       "name": "Busca pre-birth messages",
@@ -656,6 +678,17 @@
         [
           {
             "node": "Twilio3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "Twilio11",
             "type": "main",
             "index": 0
           }

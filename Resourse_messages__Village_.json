@@ -1,71 +1,49 @@
 {
-  "name": "Resourse messages (Village)",
+  "meta": {
+    "instanceId": "cd387a108e59f407338aaa3dd1fc1392753e7785132f8d58d189493b0d889a53"
+  },
   "nodes": [
     {
       "parameters": {
-        "rule": {
-          "interval": [
+        "options": {}
+      },
+      "id": "3fb9e833-c00a-4d52-97dd-47415763be4b",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        820,
+        360
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "9c5b1c6a-5c45-4fd1-ba24-f7316de25df5",
+      "name": "NoOp",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        820,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
             {
-              "triggerAtHour": 8
+              "value1": "={{ $json[\"Village message\"] }}"
             }
           ]
         }
       },
-      "id": "b1a745a5-7644-4379-b585-6a6a03620f98",
-      "name": "Schedule Trigger",
-      "type": "n8n-nodes-base.scheduleTrigger",
+      "id": "74433088-4ff1-400e-bbcc-594ead099d96",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        220,
-        660
-      ]
-    },
-    {
-      "parameters": {
-        "collection": "Mevi",
-        "options": {},
-        "query": "={\"Weeks\": {\"$in\": [13, 5, 6, 7]}}"
-      },
-      "id": "687dbfa3-29f8-4fe1-9eb8-deffaab617a0",
-      "name": "Busca primary parent1",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        580,
-        660
-      ],
-      "credentials": {
-        "mongoDb": {
-          "id": "20",
-          "name": "MongoDB Atlas"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "jsCode": "// Obtenemos las fechas del flujo de trabajo\nconst fechaInicio = new Date($node[\"SplitInBatches\"].json[\"due date\"]);\nconst fechaFin = new Date();\n\n// Calculamos la diferencia en milisegundos entre las fechas\nconst diferenciaMs = fechaFin - fechaInicio ;\n\n// Convertimos la diferencia a días\nconst diasPasados = Math.floor(diferenciaMs / (1000 * 60 * 60 * 24));\n\n// Devolvemos el resultado\nreturn { diasPasados };\n"
-      },
-      "id": "868660c7-9a68-4e95-83f4-87b8f3c13cc5",
-      "name": "Code",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
-      "position": [
-        1000,
-        660
-      ]
-    },
-    {
-      "parameters": {
-        "batchSize": 1,
-        "options": {}
-      },
-      "id": "143874fd-b8b8-413e-8bef-fe4f9a7223fc",
-      "name": "SplitInBatches",
-      "type": "n8n-nodes-base.splitInBatches",
-      "typeVersion": 1,
-      "position": [
-        780,
-        660
+        600,
+        260
       ]
     },
     {
@@ -80,57 +58,62 @@
         },
         "options": {}
       },
-      "id": "9555d4e6-1796-4a07-8a1f-211d957eefcd",
+      "id": "b6f04c45-ca05-4a55-bbb1-9da1ebff9cf1",
       "name": "Set",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        1200,
-        660
+        380,
+        260
       ]
     },
     {
       "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $json[\"Village message\"] }}"
-            }
-          ]
-        }
+        "jsCode": "// Obtenemos las fechas del flujo de trabajo\nconst fechaInicio = new Date($node[\"SplitInBatches\"].json[\"due date\"]);\nconst fechaFin = new Date();\n\n// Calculamos la diferencia en milisegundos entre las fechas\nconst diferenciaMs = fechaFin - fechaInicio ;\n\n// Convertimos la diferencia a días\nconst diasPasados = Math.floor(diferenciaMs / (1000 * 60 * 60 * 24));\n\n// Devolvemos el resultado\nreturn { diasPasados };\n"
       },
-      "id": "e4a13e6e-0a67-4886-abaa-4b80800c14a1",
-      "name": "IF",
-      "type": "n8n-nodes-base.if",
+      "id": "db1f9328-6514-4060-8fe9-6a3d827b32ae",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1420,
-        660
-      ]
-    },
-    {
-      "parameters": {},
-      "id": "7edd68b4-8c89-4c35-bc19-c141eb6016cd",
-      "name": "NoOp",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        1640,
-        580
+        180,
+        260
       ]
     },
     {
       "parameters": {
+        "batchSize": 1,
         "options": {}
       },
-      "id": "0c52f0c7-aa6c-4587-b2e3-d307bc9f7236",
-      "name": "Set1",
-      "type": "n8n-nodes-base.set",
+      "id": "56eb1861-c650-4196-a114-f0222cc1376e",
+      "name": "SplitInBatches",
+      "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 1,
       "position": [
-        1640,
-        760
+        -40,
+        260
       ]
+    },
+    {
+      "parameters": {
+        "collection": "Mevi",
+        "options": {},
+        "query": "={\"Weeks\": {\"$in\": [13, 5, 6, 7]}}"
+      },
+      "id": "1f0086b9-b460-407f-b256-c24b363247da",
+      "name": "Busca primary parent1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        260
+      ],
+      "credentials": {
+        "mongoDb": {
+          "id": "13",
+          "name": "MongoDB Atlas"
+        }
+      }
     },
     {
       "parameters": {
@@ -138,51 +121,65 @@
         "options": {},
         "query": "{\"Primary\":{\"$in\":[\"\"]}}"
       },
-      "id": "998b3855-6cbe-40dd-bbd8-a87e7827ae60",
+      "id": "58742049-3d5e-4f56-955a-20b00d5fdacf",
       "name": "Resource Messages",
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1,
       "position": [
-        400,
-        660
+        -420,
+        260
       ],
       "credentials": {
         "mongoDb": {
-          "id": "20",
+          "id": "13",
           "name": "MongoDB Atlas"
         }
       }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "9d1d3542-17d1-4ab4-97da-2fa043335b5a",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -600,
+        260
+      ]
     }
   ],
-  "pinData": {},
   "connections": {
-    "Schedule Trigger": {
+    "IF": {
       "main": [
         [
           {
-            "node": "Resource Messages",
+            "node": "NoOp",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Busca primary parent1": {
+    "Set": {
       "main": [
         [
           {
-            "node": "SplitInBatches",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "SplitInBatches": {
-      "main": [
-        [
-          {
-            "node": "Code",
+            "node": "IF",
             "type": "main",
             "index": 0
           }
@@ -205,29 +202,22 @@
         ]
       ]
     },
-    "Set": {
+    "SplitInBatches": {
       "main": [
         [
           {
-            "node": "IF",
+            "node": "Code",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "IF": {
+    "Busca primary parent1": {
       "main": [
         [
           {
-            "node": "NoOp",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Set1",
+            "node": "SplitInBatches",
             "type": "main",
             "index": 0
           }
@@ -244,18 +234,17 @@
           }
         ]
       ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Resource Messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
-  },
-  "active": false,
-  "settings": {
-    "timezone": "America/Vancouver",
-    "saveManualExecutions": true,
-    "callerPolicy": "any"
-  },
-  "hash": "03dda26f349cf936c5b5aa904064d06a",
-  "id": 26,
-  "meta": {
-    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
-  },
-  "tags": []
+  }
 }

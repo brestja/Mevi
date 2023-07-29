@@ -15,7 +15,7 @@
       "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
-        2160,
+        2100,
         280
       ],
       "credentials": {
@@ -37,7 +37,7 @@
       "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
-        1960,
+        1920,
         280
       ],
       "credentials": {
@@ -51,7 +51,7 @@
       "parameters": {
         "from": "+14175413741",
         "to": "={{ $('MongoDB1').item.json[\"spouse phone\"] }}",
-        "message": "=  {{ $('Busca pre-birth messages').item.json[\"Spouse Welcome message\"] }}",
+        "message": "=Hey {{ $('Busca pre-birth messages').item.json[\"Spouse Welcome message\"] }}",
         "options": {}
       },
       "id": "f0644fa9-1f0e-4846-98e7-370446d8b0e2",
@@ -59,7 +59,7 @@
       "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
-        1760,
+        1740,
         280
       ],
       "credentials": {
@@ -117,14 +117,14 @@
       "parameters": {
         "collection": "Pre-Birth",
         "options": {},
-        "query": "={\n  \"Pregnant Messages\": {\"$in\":[\"0\"]}\n  \n}"
+        "query": "={\n  \"Pregnant Messages\": {\"$in\":[\"\"]}\n  \n}"
       },
       "id": "c9e2060a-8493-42ab-8b82-4fee45af9fec",
       "name": "Busca pre-birth messages",
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1,
       "position": [
-        1180,
+        1200,
         280
       ],
       "alwaysOutputData": true,
