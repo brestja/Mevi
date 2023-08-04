@@ -4,28 +4,6 @@
   },
   "nodes": [
     {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json.phone }} ",
-        "message": "=Hey {{ $('SplitInBatches').item.json.name }}{{ $json[\"primary message\"] }}",
-        "options": {}
-      },
-      "id": "6a91fc6c-3d04-4cf0-99a9-c6928855a772",
-      "name": "Twilio",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        840,
-        420
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
       "parameters": {},
       "id": "2026af81-5a83-4e3c-9587-e86320547f4c",
       "name": "NoOp",
@@ -39,16 +17,15 @@
     {
       "parameters": {
         "conditions": {
-          "string": [
-            {
-              "value1": "={{ $json[\"primary message\"] }}"
-            }
-          ],
           "number": [
             {
               "value1": "={{ $json.diasPasados }}",
-              "operation": "smallerEqual",
               "value2": 1
+            }
+          ],
+          "string": [
+            {
+              "value1": "={{ $json[\"primary message\"] }}"
             }
           ]
         },
@@ -115,7 +92,7 @@
       "parameters": {
         "collection": "Mevi",
         "options": {},
-        "query": "={\"weeks\": {\"$in\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]}}"
+        "query": "={\"weeks\": null}"
       },
       "id": "1a199677-5cdd-4b14-9a48-4004c82045d8",
       "name": "Busca primary parent1",
@@ -171,6 +148,28 @@
         -580,
         300
       ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json.phone }} ",
+        "message": "=Hey {{ $('SplitInBatches').item.json.name }} {{ $json[\"primary message\"] }}",
+        "options": {}
+      },
+      "id": "6a91fc6c-3d04-4cf0-99a9-c6928855a772",
+      "name": "Twilio",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        840,
+        420
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
     }
   ],
   "connections": {

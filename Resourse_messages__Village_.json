@@ -4,19 +4,6 @@
   },
   "nodes": [
     {
-      "parameters": {
-        "options": {}
-      },
-      "id": "3fb9e833-c00a-4d52-97dd-47415763be4b",
-      "name": "Set1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        820,
-        360
-      ]
-    },
-    {
       "parameters": {},
       "id": "9c5b1c6a-5c45-4fd1-ba24-f7316de25df5",
       "name": "NoOp",
@@ -98,7 +85,7 @@
       "parameters": {
         "collection": "Mevi",
         "options": {},
-        "query": "={\"Weeks\": {\"$in\": [13, 5, 6, 7]}}"
+        "query": "={\"weeks\": null}"
       },
       "id": "1f0086b9-b460-407f-b256-c24b363247da",
       "name": "Busca primary parent1",
@@ -154,6 +141,287 @@
         -600,
         260
       ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 1\"] }} ",
+        "message": "={{ $('SplitInBatches').item.json.name }} {{ $('Resource Messages').item.json.Village[$('Set').item.json.diasPasados] }} ",
+        "options": {}
+      },
+      "id": "5719139a-f5b0-41f5-91b9-44ab48ed16cf",
+      "name": "Twilio",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        200
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "value1": "={{ $('Set').item.json.diasPasados }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal",
+              "value2": 2
+            },
+            {
+              "operation": "equal",
+              "value2": 14
+            },
+            {
+              "operation": "equal",
+              "value2": 7,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 9,
+              "output": 2
+            },
+            {
+              "operation": "equal",
+              "value2": 32,
+              "output": 3
+            }
+          ]
+        }
+      },
+      "id": "8c56e70d-94d1-4b17-9ba8-e0aaeb57b386",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        820,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 1\"] }} ",
+        "message": "=As {{ $('SplitInBatches').item.json.name }} {{ $('Resource Messages').item.json.Village[$('Set').item.json.diasPasados] }} ",
+        "options": {}
+      },
+      "id": "2e93a256-b6aa-475b-a52b-497b73de2792",
+      "name": "Twilio1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        360
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 1\"] }} ",
+        "message": "=Intimate time between {{ $('SplitInBatches').item.json.name }} {{ $('Resource Messages').item.json.Village[$('Set').item.json.diasPasados] }} ",
+        "options": {}
+      },
+      "id": "c64e3024-1e28-4410-8af9-52d297e7c6fa",
+      "name": "Twilio2",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        520
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 1\"] }} ",
+        "message": "=A great way to offer support to {{ $('SplitInBatches').item.json.name }} during this time is to check in regularly and listen with an open heart.  ",
+        "options": {}
+      },
+      "id": "11d4553d-27d4-4036-8fea-a36ce03773f5",
+      "name": "Twilio3",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        680
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json.diasPasados }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal",
+              "value2": 44
+            }
+          ]
+        }
+      },
+      "id": "c2eb308b-574e-4d71-bb03-bf5d91d649e6",
+      "name": "Switch1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 1\"] }} ",
+        "message": "=Hi {{ $('SplitInBatches').item.json[\"name village member 1\"] }}!. Research shows that regular physical activity can improve mood and reduce anxiety. Could you offer to go for a walk with {{ $('SplitInBatches').item.json.name }} or watch the baby while they exercise?  ",
+        "options": {}
+      },
+      "id": "e26ef41a-bfca-471d-92b6-8ae8c1587ba8",
+      "name": "Twilio4",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1880,
+        240
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 2\"] }}",
+        "message": "={{ $('SplitInBatches').item.json.name }} {{ $('Resource Messages').item.json.Village[$('Set').item.json.diasPasados] }} ",
+        "options": {}
+      },
+      "id": "51c3cf71-9510-46a7-92c7-efe2576541a8",
+      "name": "Twilio5",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        220
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 2\"] }}",
+        "message": "=As {{ $('SplitInBatches').item.json.name }} {{ $('Resource Messages').item.json.Village[$('Set').item.json.diasPasados] }} ",
+        "options": {}
+      },
+      "id": "51381d45-85df-4ff4-859e-969c4b353630",
+      "name": "Twilio6",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        360
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 2\"] }}",
+        "message": "=Intimate time between {{ $('SplitInBatches').item.json.name }} {{ $('Resource Messages').item.json.Village[$('Set').item.json.diasPasados] }} ",
+        "options": {}
+      },
+      "id": "e2eb766c-0fcb-4ba9-ac09-c3105290958f",
+      "name": "Twilio7",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        520
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 2\"] }}",
+        "message": "=A great way to offer support to {{ $('SplitInBatches').item.json.name }} during this time is to check in regularly and listen with an open heart.  ",
+        "options": {}
+      },
+      "id": "c4a77188-f67c-460d-b267-6fdf877bfd85",
+      "name": "Twilio8",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        680
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 2\"] }}",
+        "message": "=Hi {{ $('SplitInBatches').item.json[\"name village member 2\"] }}!. Research shows that regular physical activity can improve mood and reduce anxiety. Could you offer to go for a walk with {{ $('SplitInBatches').item.json.name }} or watch the baby while they exercise?  ",
+        "options": {}
+      },
+      "id": "b5d153ec-dbf8-4b82-b71b-813b4194ce6a",
+      "name": "Twilio9",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        2120,
+        240
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
     }
   ],
   "connections": {
@@ -168,7 +436,12 @@
         ],
         [
           {
-            "node": "Set1",
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Switch1",
             "type": "main",
             "index": 0
           }
@@ -240,6 +513,104 @@
         [
           {
             "node": "Resource Messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Twilio": {
+      "main": [
+        [
+          {
+            "node": "Twilio5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Twilio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Twilio1": {
+      "main": [
+        [
+          {
+            "node": "Twilio6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Twilio2": {
+      "main": [
+        [
+          {
+            "node": "Twilio7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Twilio3": {
+      "main": [
+        [
+          {
+            "node": "Twilio8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Twilio4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Twilio4": {
+      "main": [
+        [
+          {
+            "node": "Twilio9",
             "type": "main",
             "index": 0
           }

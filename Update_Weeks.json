@@ -1,5 +1,7 @@
 {
-  "name": "Update Weeks",
+  "meta": {
+    "instanceId": "cd387a108e59f407338aaa3dd1fc1392753e7785132f8d58d189493b0d889a53"
+  },
   "nodes": [
     {
       "parameters": {
@@ -20,7 +22,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\"dataSource\":\"Cluster0\",\"database\":\"Village\",\"collection\":\"Mevi\",\"filter\":{\"Weeks\":{\"$lt\":41}},\"update\":{\"$inc\":{\"Weeks\":1}}}",
+        "jsonBody": "{\"dataSource\":\"Cluster0\",\"database\":\"Village\",\"collection\":\"Mevi\",\"filter\":{\"weeks\":{\"$lt\":41}},\"update\":{\"$inc\":{\"weeks\":1}}}",
         "options": {
           "redirect": {
             "redirect": {
@@ -43,7 +45,8 @@
         "rule": {
           "interval": [
             {
-              "field": "weeks"
+              "field": "weeks",
+              "triggerAtHour": 22
             }
           ]
         }
@@ -56,10 +59,72 @@
         400,
         320
       ]
+    },
+    {
+      "parameters": {
+        "amount": 20,
+        "unit": "seconds"
+      },
+      "id": "6b160c75-ddac-40d4-8aa1-dfbef63f5f7a",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        920,
+        320
+      ],
+      "webhookId": "1ca93bd3-bc0a-4587-88fd-f3e667d86957"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://us-east-1.aws.data.mongodb-api.com/app/data-bzilb/endpoint/data/v1/action/updateMany",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Access-Control-Request-Headers",
+              "value": "*"
+            },
+            {
+              "name": "api-key",
+              "value": "XlwXlxUIkgpNz0gm8U54BfaJ6dIwxFKfRzNzw5aCS6Xbh54Jmp9JOLuEWSm0Yjac"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{   \"dataSource\": \"Cluster0\",   \"database\": \"Village\",   \"collection\": \"Mevi\",   \"filter\": { \"weeks\": 41 },   \"update\": { \"$set\": { \"weeks\": null } } }",
+        "options": {
+          "redirect": {
+            "redirect": {
+              "followRedirects": true
+            }
+          }
+        }
+      },
+      "id": "7527a0f6-394c-42f5-acb4-8200e9d900cc",
+      "name": "Update weeks1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1120,
+        320
+      ]
     }
   ],
-  "pinData": {},
   "connections": {
+    "Update weeks": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Schedule Trigger": {
       "main": [
         [
@@ -70,14 +135,17 @@
           }
         ]
       ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Update weeks1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
-  },
-  "active": true,
-  "settings": {},
-  "versionId": "6fa5d9ec-f356-4d64-a584-c99d82851356",
-  "id": "14",
-  "meta": {
-    "instanceId": "cd387a108e59f407338aaa3dd1fc1392753e7785132f8d58d189493b0d889a53"
-  },
-  "tags": []
+  }
 }
