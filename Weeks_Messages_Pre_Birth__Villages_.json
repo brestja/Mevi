@@ -4,6 +4,204 @@
   },
   "nodes": [
     {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"name village member 1\"] }}",
+        "message": "=Hi family! As {{ $('SplitInBatches').item.json.name }} {{ $json[\"village message\"] }} ",
+        "options": {}
+      },
+      "id": "7901051b-d9d0-4991-8ce9-d5f9111210a2",
+      "name": "Twilio2",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        920,
+        1020
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 1\"] }}",
+        "message": "={{ $('SplitInBatches').item.json.name }} {{ $json[\"village message\"] }} ",
+        "options": {}
+      },
+      "id": "d93af477-eed3-43db-88d1-a064fb52bcee",
+      "name": "Twilio1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        920,
+        840
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 1\"] }}",
+        "message": "={{ $('SplitInBatches').item.json.name }}{{ $json[\"village message\"] }} ",
+        "options": {}
+      },
+      "id": "d2de883a-e090-4000-970f-eb81bb5aa4b4",
+      "name": "Twilio",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        920,
+        680
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json.weeks }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal",
+              "value2": 8
+            },
+            {
+              "operation": "equal",
+              "value2": 13,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 16,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 21,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 10,
+              "output": 2
+            },
+            {
+              "operation": "equal",
+              "value2": 17,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 28,
+              "output": 1
+            }
+          ]
+        }
+      },
+      "id": "d030e964-b7a5-4afc-9427-c2e07fdbe4ad",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        620,
+        840
+      ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"phone village member 1\"] }}",
+        "message": "={{ $json[\"village message\"] }} ",
+        "options": {}
+      },
+      "id": "b5028603-8eca-4dcf-b73a-b3bd1f17c6ab",
+      "name": "Twilio3",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        920,
+        520
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "92f68534-4326-40b1-9211-a113b6dd3d53",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        620,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 13
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 16
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 8
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 10
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 17
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 28
+            }
+          ]
+        }
+      },
+      "id": "4b54425c-837e-4dbf-ad5c-dcdb76262ccc",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        400,
+        680
+      ]
+    },
+    {
       "parameters": {},
       "id": "445aeed5-3b08-46d6-a0ba-a5412ee560cb",
       "name": "NoOp",
@@ -12,6 +210,53 @@
       "position": [
         400,
         320
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"village message\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "4259237e-06f5-40e9-8301-d26e0f8bd2a9",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        180,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "village message",
+              "value": "={{ $('Busca pre-birth messages').item.json[\"Village SMSs\"][$json.weeks].slice(0)}}"
+            }
+          ],
+          "number": [
+            {
+              "name": "weeks",
+              "value": "={{ $json.weeks }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f0287228-8f3f-4db8-aab0-857646cd07b5",
+      "name": "Set2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        -20,
+        500
       ]
     },
     {
@@ -93,327 +338,92 @@
         -1000,
         500
       ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "number": [
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 13
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 16
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 21
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 8
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 10
-            }
-          ]
-        }
-      },
-      "id": "4b54425c-837e-4dbf-ad5c-dcdb76262ccc",
-      "name": "IF1",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        400,
-        680
-      ]
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "92f68534-4326-40b1-9211-a113b6dd3d53",
-      "name": "Set1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 2,
-      "position": [
-        620,
-        520
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $json[\"village message\"] }}"
-            }
-          ]
-        }
-      },
-      "id": "4259237e-06f5-40e9-8301-d26e0f8bd2a9",
-      "name": "IF",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        180,
-        500
-      ]
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "village message",
-              "value": "={{ $('Busca pre-birth messages').item.json[\"Village SMSs\"][$json.weeks].slice(0)}}"
-            }
-          ],
-          "number": [
-            {
-              "name": "weeks",
-              "value": "={{ $json.weeks }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "f0287228-8f3f-4db8-aab0-857646cd07b5",
-      "name": "Set2",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 2,
-      "position": [
-        -20,
-        500
-      ]
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"phone village member 1\"] }}",
-        "message": "=Hey family! Just a heads up, {{ $('SplitInBatches').item.json.name }} {{ $json[\"village message\"] }} ",
-        "options": {}
-      },
-      "id": "d2de883a-e090-4000-970f-eb81bb5aa4b4",
-      "name": "Twilio",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        920,
-        680
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"phone village member 1\"] }}",
-        "message": "=Hi family! Just a quick update, {{ $('SplitInBatches').item.json.name }} {{ $json[\"village message\"] }} ",
-        "options": {}
-      },
-      "id": "d93af477-eed3-43db-88d1-a064fb52bcee",
-      "name": "Twilio1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        920,
-        840
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "value1": "={{ $json.weeks }}",
-        "rules": {
-          "rules": [
-            {
-              "operation": "equal",
-              "value2": 8
-            },
-            {
-              "operation": "equal",
-              "value2": 13,
-              "output": 1
-            },
-            {
-              "operation": "equal",
-              "value2": 16,
-              "output": 1
-            },
-            {
-              "operation": "equal",
-              "value2": 21,
-              "output": 1
-            },
-            {
-              "operation": "equal",
-              "value2": 10,
-              "output": 2
-            }
-          ]
-        }
-      },
-      "id": "d030e964-b7a5-4afc-9427-c2e07fdbe4ad",
-      "name": "Switch",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 1,
-      "position": [
-        620,
-        840
-      ]
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"name village member 1\"] }}",
-        "message": "=Hi family! As {{ $('SplitInBatches').item.json.name }} {{ $json[\"village message\"] }} ",
-        "options": {}
-      },
-      "id": "7901051b-d9d0-4991-8ce9-d5f9111210a2",
-      "name": "Twilio2",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        920,
-        1020
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"phone village member 1\"] }}",
-        "message": "={{ $json[\"village message\"] }} ",
-        "options": {}
-      },
-      "id": "b5028603-8eca-4dcf-b73a-b3bd1f17c6ab",
-      "name": "Twilio3",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        920,
-        520
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"phone village member 2\"] }}",
-        "message": "={{ $json[\"village message\"] }} ",
-        "options": {}
-      },
-      "id": "376f2b8a-49e4-46e1-b850-ed91a380a1cc",
-      "name": "Twilio4",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1180,
-        520
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"phone village member 2\"] }}",
-        "message": "=Hey family! Just a heads up, {{ $('SplitInBatches').item.json.name }} {{ $json[\"village message\"] }} ",
-        "options": {}
-      },
-      "id": "687a769c-691d-4b68-8c47-02b325bdba5b",
-      "name": "Twilio5",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1180,
-        680
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"phone village member 2\"] }}",
-        "message": "=Hi family! Just a quick update, {{ $('SplitInBatches').item.json.name }} {{ $json[\"village message\"] }} ",
-        "options": {}
-      },
-      "id": "e7327943-b6d7-4560-8573-bd6f17c53a82",
-      "name": "Twilio6",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1180,
-        840
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"phone village member 2\"] }}",
-        "message": "=Hi family! As {{ $('SplitInBatches').item.json.name }} {{ $json[\"village message\"] }} ",
-        "options": {}
-      },
-      "id": "12740691-9d50-4f8b-b64b-8d2ed3415587",
-      "name": "Twilio7",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1180,
-        1020
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
     }
   ],
   "connections": {
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Twilio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "Twilio3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "Set1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "NoOp",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set2": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "SplitInBatches": {
       "main": [
         [
@@ -457,133 +467,6 @@
         [
           {
             "node": "Busca pre-birth messages",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF1": {
-      "main": [
-        [
-          {
-            "node": "Set1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Switch",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set1": {
-      "main": [
-        [
-          {
-            "node": "Twilio3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF": {
-      "main": [
-        [
-          {
-            "node": "NoOp",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "IF1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set2": {
-      "main": [
-        [
-          {
-            "node": "IF",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Twilio": {
-      "main": [
-        [
-          {
-            "node": "Twilio5",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Twilio1": {
-      "main": [
-        [
-          {
-            "node": "Twilio6",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Twilio",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Twilio2": {
-      "main": [
-        [
-          {
-            "node": "Twilio7",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Twilio3": {
-      "main": [
-        [
-          {
-            "node": "Twilio4",
             "type": "main",
             "index": 0
           }
