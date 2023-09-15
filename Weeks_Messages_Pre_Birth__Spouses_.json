@@ -4,6 +4,457 @@
   },
   "nodes": [
     {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "=The best thing you can do these next few weeks is take charge of any non-baby and non-pregnancy related things, in the home and outside. When it comes to {{ $('SplitInBatches').item.json.name }} {{ $json.message }}  ",
+        "options": {}
+      },
+      "id": "f0dcf559-934e-431a-92bb-b5209f23b553",
+      "name": "Twilio10",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        2240,
+        820
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "=Pretty soon, {{ $('SplitInBatches').item.json.name }} {{ $json.message }}  ",
+        "options": {}
+      },
+      "id": "77477fa3-8693-4f6a-bb33-40f3a1e9472a",
+      "name": "Twilio9",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        2240,
+        620
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "=Women are biologically primed to give birth and breastfeed. It can feel like {{ $('SplitInBatches').item.json.name }} {{ $json.message }}  ",
+        "options": {}
+      },
+      "id": "69ae7e1e-9e1b-413b-a735-31df1ece2be5",
+      "name": "Twilio8",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        2240,
+        440
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json.weeks }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal",
+              "value2": 34
+            },
+            {
+              "operation": "equal",
+              "value2": 36,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 38,
+              "output": 2
+            }
+          ]
+        }
+      },
+      "id": "95d9fc12-a59c-40cb-931b-e90638430216",
+      "name": "Switch3",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "={{ $('SplitInBatches').item.json.name }} {{ $json.message }}  ",
+        "options": {}
+      },
+      "id": "83101bdd-0aaa-4ae4-9124-a1b9cfccd967",
+      "name": "Twilio7",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        1000
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "={{ $json.message }} ",
+        "options": {}
+      },
+      "id": "40dde367-3318-435f-8ae9-9707b7e259ed",
+      "name": "Twilio6",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        820
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "={{ $json.message }}  ",
+        "options": {}
+      },
+      "id": "b0424377-2191-44ba-af25-982118c7061d",
+      "name": "Twilio5",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        600
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "=Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }}, pregnancy hormones are swirling through {{ $('SplitInBatches').item.json.name }}{{ $json.message }} ",
+        "options": {}
+      },
+      "id": "f174047c-caa3-4cac-857f-df89ee24fa34",
+      "name": "Twilio4",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        460
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json.weeks }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal",
+              "value2": 14
+            },
+            {
+              "operation": "equal",
+              "value2": 19,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 25,
+              "output": 2
+            },
+            {
+              "operation": "equal",
+              "value2": 27,
+              "output": 3
+            }
+          ]
+        }
+      },
+      "id": "aed334e7-2c01-4ea8-a9e4-1f2a3b847516",
+      "name": "Switch2",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "= Some exercise is healthy for, {{ $('SplitInBatches').item.json.name }} {{ $json.message }}  ",
+        "options": {}
+      },
+      "id": "0870e389-4268-486f-bcfe-05eca3f5e9bf",
+      "name": "Twilio3",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        1040
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "=  Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }}, {{ $('SplitInBatches').item.json.name }} {{ $json.message }} ",
+        "options": {}
+      },
+      "id": "02849bff-e8d5-4959-88e2-625fc0375436",
+      "name": "Twilio2",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        880
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "=  Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }}, through Mevi we'll connect you, {{ $('SplitInBatches').item.json.name }}{{ $json.message }} ",
+        "options": {}
+      },
+      "id": "02c39786-d937-4b53-80ec-724ee5627877",
+      "name": "Twilio1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        720
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "={{ $('SplitInBatches').item.json.name }}{{ $json.message }} ",
+        "options": {}
+      },
+      "id": "62f56b13-0748-4c99-8b82-a86059dd327c",
+      "name": "Twilio",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        560
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json.weeks }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal",
+              "value2": 4
+            },
+            {
+              "operation": "equal",
+              "value2": 7,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 10,
+              "output": 2
+            },
+            {
+              "operation": "equal",
+              "value2": 11,
+              "output": 3
+            }
+          ]
+        }
+      },
+      "id": "d62e2551-21e3-4b11-b202-4a0cef8ba400",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        780,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
+        "message": "={{ $json.message }} ",
+        "options": {}
+      },
+      "id": "8bd2a442-409e-45ea-a1e2-5293920db203",
+      "name": "Twilio11",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        380
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "ef5d6916-58bf-40eb-943a-b9a8349944bd",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        780,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 4
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 7
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 10
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 11
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 14
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 19
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 25
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 27
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 34
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 36
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 38
+            }
+          ]
+        }
+      },
+      "id": "bb80d554-b077-4a5d-a0ad-3e4e3c809011",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        460,
+        640
+      ]
+    },
+    {
       "parameters": {},
       "id": "b6da23ff-d383-414c-b6e4-ce0f50b66516",
       "name": "NoOp",
@@ -127,10 +578,6 @@
         "rule": {
           "interval": [
             {
-              "field": "weeks",
-              "triggerAtDay": [
-                1
-              ],
               "triggerAtHour": 8
             }
           ]
@@ -144,460 +591,137 @@
         -940,
         460
       ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "number": [
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 4
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 7
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 10
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 11
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 14
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 19
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 25
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 27
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 34
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 36
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 38
-            }
-          ]
-        }
-      },
-      "id": "bb80d554-b077-4a5d-a0ad-3e4e3c809011",
-      "name": "IF1",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        460,
-        640
-      ]
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "ef5d6916-58bf-40eb-943a-b9a8349944bd",
-      "name": "Set1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        780,
-        380
-      ]
-    },
-    {
-      "parameters": {
-        "value1": "={{ $json.weeks }}",
-        "rules": {
-          "rules": [
-            {
-              "operation": "equal",
-              "value2": 4
-            },
-            {
-              "operation": "equal",
-              "value2": 7,
-              "output": 1
-            },
-            {
-              "operation": "equal",
-              "value2": 10,
-              "output": 2
-            },
-            {
-              "operation": "equal",
-              "value2": 11,
-              "output": 3
-            }
-          ]
-        }
-      },
-      "id": "d62e2551-21e3-4b11-b202-4a0cef8ba400",
-      "name": "Switch",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 1,
-      "position": [
-        780,
-        740
-      ]
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "={{ $('SplitInBatches').item.json.name }}{{ $json.message }} ",
-        "options": {}
-      },
-      "id": "62f56b13-0748-4c99-8b82-a86059dd327c",
-      "name": "Twilio",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1020,
-        560
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "=  Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }}, through Mevi we'll connect you, {{ $('SplitInBatches').item.json.name }}{{ $json.message }} ",
-        "options": {}
-      },
-      "id": "02c39786-d937-4b53-80ec-724ee5627877",
-      "name": "Twilio1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1020,
-        720
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "=  Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }}, {{ $('SplitInBatches').item.json.name }} {{ $json.message }} ",
-        "options": {}
-      },
-      "id": "02849bff-e8d5-4959-88e2-625fc0375436",
-      "name": "Twilio2",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1020,
-        880
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "= Some exercise is healthy for, {{ $('SplitInBatches').item.json.name }} {{ $json.message }}  ",
-        "options": {}
-      },
-      "id": "0870e389-4268-486f-bcfe-05eca3f5e9bf",
-      "name": "Twilio3",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1020,
-        1040
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "=Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }}, pregnancy hormones are swirling through {{ $('SplitInBatches').item.json.name }}{{ $json.message }} ",
-        "options": {}
-      },
-      "id": "f174047c-caa3-4cac-857f-df89ee24fa34",
-      "name": "Twilio4",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1640,
-        460
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "value1": "={{ $json.weeks }}",
-        "rules": {
-          "rules": [
-            {
-              "operation": "equal",
-              "value2": 14
-            },
-            {
-              "operation": "equal",
-              "value2": 19,
-              "output": 1
-            },
-            {
-              "operation": "equal",
-              "value2": 25,
-              "output": 2
-            },
-            {
-              "operation": "equal",
-              "value2": 27,
-              "output": 3
-            }
-          ]
-        }
-      },
-      "id": "aed334e7-2c01-4ea8-a9e4-1f2a3b847516",
-      "name": "Switch2",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 1,
-      "position": [
-        1320,
-        660
-      ]
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "=Boundaries are SO important. {{ $('SplitInBatches').item.json.name }} {{ $json.message }}  ",
-        "options": {}
-      },
-      "id": "b0424377-2191-44ba-af25-982118c7061d",
-      "name": "Twilio5",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1640,
-        600
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "={{ $('SplitInBatches').item.json[\"spouse name\"] }}{{ $json.message }} ",
-        "options": {}
-      },
-      "id": "40dde367-3318-435f-8ae9-9707b7e259ed",
-      "name": "Twilio6",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1640,
-        820
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "=Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }}! {{ $('SplitInBatches').item.json.name }} {{ $json.message }}  ",
-        "options": {}
-      },
-      "id": "83101bdd-0aaa-4ae4-9124-a1b9cfccd967",
-      "name": "Twilio7",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1640,
-        1000
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "value1": "={{ $json.weeks }}",
-        "rules": {
-          "rules": [
-            {
-              "operation": "equal",
-              "value2": 34
-            },
-            {
-              "operation": "equal",
-              "value2": 36,
-              "output": 1
-            },
-            {
-              "operation": "equal",
-              "value2": 38,
-              "output": 2
-            }
-          ]
-        }
-      },
-      "id": "95d9fc12-a59c-40cb-931b-e90638430216",
-      "name": "Switch3",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 1,
-      "position": [
-        1900,
-        660
-      ]
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "=Women are biologically primed to give birth and breastfeed. It can feel like {{ $('SplitInBatches').item.json.name }} {{ $json.message }}  ",
-        "options": {}
-      },
-      "id": "69ae7e1e-9e1b-413b-a735-31df1ece2be5",
-      "name": "Twilio8",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        2240,
-        440
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "=Pretty soon, {{ $('SplitInBatches').item.json.name }} {{ $json.message }}  ",
-        "options": {}
-      },
-      "id": "77477fa3-8693-4f6a-bb33-40f3a1e9472a",
-      "name": "Twilio9",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        2240,
-        620
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "=The best thing you can do these next few weeks is take charge of any non-baby and non-pregnancy related things, in the home and outside. When it comes to {{ $('SplitInBatches').item.json.name }} {{ $json.message }}  ",
-        "options": {}
-      },
-      "id": "f0dcf559-934e-431a-92bb-b5209f23b553",
-      "name": "Twilio10",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        2240,
-        820
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json[\"spouse phone\"] }}",
-        "message": "={{ $json.message }} ",
-        "options": {}
-      },
-      "id": "8bd2a442-409e-45ea-a1e2-5293920db203",
-      "name": "Twilio11",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1020,
-        380
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
     }
   ],
   "connections": {
+    "Switch3": {
+      "main": [
+        [
+          {
+            "node": "Twilio8",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio9",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "Twilio4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Twilio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "Twilio11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "Set1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Switch2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Switch3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "IF": {
       "main": [
         [
@@ -670,134 +794,6 @@
         [
           {
             "node": "Busca pre-birth messages",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF1": {
-      "main": [
-        [
-          {
-            "node": "Set1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Switch",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Switch2",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Switch3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set1": {
-      "main": [
-        [
-          {
-            "node": "Twilio11",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Twilio",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio2",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Switch2": {
-      "main": [
-        [
-          {
-            "node": "Twilio4",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio5",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio6",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio7",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Switch3": {
-      "main": [
-        [
-          {
-            "node": "Twilio8",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio9",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio10",
             "type": "main",
             "index": 0
           }

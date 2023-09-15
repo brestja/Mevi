@@ -4,6 +4,117 @@
   },
   "nodes": [
     {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json.phone }}",
+        "message": "=Hey {{ $('SplitInBatches').item.json.name }}!{{ $('Busca pre-birth messages').item.json[\"Pregnant Messages\"][ $('SplitInBatches').item.json.weeks ] }}  ",
+        "options": {}
+      },
+      "id": "57f0a25c-d6cc-494a-ab82-24a7bc8ffd61",
+      "name": "Pregnant personal messages",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        560
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b2364a26-ee9c-42ed-9bc8-4e22cb580549",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "=  {{ $('SplitInBatches').item.json.phone }}",
+        "message": "={{ $('Busca pre-birth messages').item.json[\"Pregnant Messages\"][$('SplitInBatches').item.json.weeks ]}} ",
+        "options": {}
+      },
+      "id": "f9bb5709-10e2-4edd-8342-8a30a063f2f3",
+      "name": "Pregnant1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        280
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "e19a19c8-504e-47e8-8639-c27051c1677c",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $('SplitInBatches').item.json.weeks }}",
+              "operation": "notEqual",
+              "value2": 6
+            },
+            {
+              "value1": "={{ $('SplitInBatches').item.json.weeks }}",
+              "operation": "notEqual",
+              "value2": 10
+            },
+            {
+              "value1": "={{ $('SplitInBatches').item.json.weeks }}",
+              "operation": "notEqual",
+              "value2": 19
+            },
+            {
+              "value1": "={{ $('SplitInBatches').item.json.weeks }}",
+              "operation": "notEqual",
+              "value2": 31
+            },
+            {
+              "value1": "={{ $('SplitInBatches').item.json.weeks }}",
+              "operation": "notEqual",
+              "value2": 32
+            }
+          ]
+        }
+      },
+      "id": "8426139a-a48d-46fd-af4d-8174aa6b7646",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        420
+      ]
+    },
+    {
       "parameters": {},
       "id": "08904762-c238-449d-912b-50edf5b06207",
       "name": "NoOp",
@@ -30,6 +141,32 @@
       "typeVersion": 1,
       "position": [
         860,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "pregnant phone",
+              "value": "={{ $json.phone }}"
+            },
+            {
+              "name": "message",
+              "value": "={{$('Busca pre-birth messages').item.json[\"Pregnant Messages\"][ $json.weeks]}} \n"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b3b4255c-513c-427d-b754-7c36884e3cf6",
+      "name": "Set2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        620,
         280
       ]
     },
@@ -95,10 +232,6 @@
         "rule": {
           "interval": [
             {
-              "field": "weeks",
-              "triggerAtDay": [
-                1
-              ],
               "triggerAtHour": 8
             }
           ]
@@ -112,146 +245,49 @@
         -360,
         280
       ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "number": [
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 6
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 10
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 19
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 31
-            },
-            {
-              "value1": "={{ $json.weeks }}",
-              "operation": "notEqual",
-              "value2": 32
-            }
-          ]
-        }
-      },
-      "id": "8426139a-a48d-46fd-af4d-8174aa6b7646",
-      "name": "IF1",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        1040,
-        420
-      ]
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "=  {{ $('SplitInBatches').item.json.phone }}",
-        "message": "={{ $('Busca pre-birth messages').item.json[\"Pregnant Messages\"][$('SplitInBatches').item.json.weeks ]}} ",
-        "options": {}
-      },
-      "id": "f9bb5709-10e2-4edd-8342-8a30a063f2f3",
-      "name": "Pregnant1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1460,
-        280
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "b2364a26-ee9c-42ed-9bc8-4e22cb580549",
-      "name": "Set",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 2,
-      "position": [
-        1260,
-        560
-      ]
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "e19a19c8-504e-47e8-8639-c27051c1677c",
-      "name": "Set1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 2,
-      "position": [
-        1260,
-        280
-      ]
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json.phone }}",
-        "message": "=Hey {{ $('SplitInBatches').item.json.name }}! {{ $('Busca pre-birth messages').item.json[\"Pregnant Messages\"][ $('SplitInBatches').item.json.weeks ] }}  ",
-        "options": {}
-      },
-      "id": "57f0a25c-d6cc-494a-ab82-24a7bc8ffd61",
-      "name": "Pregnant personal messages",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1460,
-        560
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "pregnant phone",
-              "value": "={{ $json.phone }}"
-            },
-            {
-              "name": "message",
-              "value": "={{$('Busca pre-birth messages').item.json[\"Pregnant Messages\"][ $json.weeks]}} \n"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "b3b4255c-513c-427d-b754-7c36884e3cf6",
-      "name": "Set2",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 2,
-      "position": [
-        620,
-        280
-      ]
     }
   ],
   "connections": {
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Pregnant personal messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "Pregnant1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "Set1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "IF": {
       "main": [
         [
@@ -264,6 +300,17 @@
         [
           {
             "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set2": {
+      "main": [
+        [
+          {
+            "node": "IF",
             "type": "main",
             "index": 0
           }
@@ -313,57 +360,6 @@
         [
           {
             "node": "Busca pre-birth messages",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF1": {
-      "main": [
-        [
-          {
-            "node": "Set1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Set",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set": {
-      "main": [
-        [
-          {
-            "node": "Pregnant personal messages",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set1": {
-      "main": [
-        [
-          {
-            "node": "Pregnant1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set2": {
-      "main": [
-        [
-          {
-            "node": "IF",
             "type": "main",
             "index": 0
           }

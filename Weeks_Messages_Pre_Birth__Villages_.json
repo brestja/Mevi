@@ -107,6 +107,11 @@
               "operation": "equal",
               "value2": 28,
               "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 34,
+              "output": 1
             }
           ]
         }
@@ -188,6 +193,11 @@
               "value1": "={{ $json.weeks }}",
               "operation": "notEqual",
               "value2": 28
+            },
+            {
+              "value1": "={{ $json.weeks }}",
+              "operation": "notEqual",
+              "value2": 34
             }
           ]
         }
@@ -320,13 +330,7 @@
       "parameters": {
         "rule": {
           "interval": [
-            {
-              "field": "weeks",
-              "triggerAtDay": [
-                1
-              ],
-              "triggerAtHour": 8
-            }
+            {}
           ]
         }
       },
