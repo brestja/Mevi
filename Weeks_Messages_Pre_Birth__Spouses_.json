@@ -472,8 +472,15 @@
             {
               "value1": "={{ $json[\"message\"] }}"
             }
+          ],
+          "boolean": [
+            {
+              "value1": "={{ $('Busca primary parent').item.json.partner }}",
+              "value2": "={{ false }}"
+            }
           ]
-        }
+        },
+        "combineOperation": "any"
       },
       "id": "5f0806be-8f10-4d89-a3eb-2c54abb08e1e",
       "name": "IF",
@@ -526,7 +533,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 1,
       "position": [
-        -180,
+        -220,
         460
       ]
     },
@@ -562,7 +569,7 @@
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1,
       "position": [
-        -680,
+        -660,
         460
       ],
       "alwaysOutputData": true,
@@ -588,7 +595,7 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1,
       "position": [
-        -940,
+        -880,
         460
       ]
     }

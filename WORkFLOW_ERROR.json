@@ -1,0 +1,60 @@
+{
+  "name": "WORkFLOW ERROR",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "125b0bdb-8dec-4496-a646-841a78805786",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        620,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "josebrest25@gmail.com",
+        "subject": "From Workflow Error",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\n",
+        "options": {}
+      },
+      "id": "a6e3fb08-b9e3-48c6-8e69-585a19039d9a",
+      "name": "Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        840,
+        260
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "17",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "75fa3056-4757-479f-a854-2af4cd65d1a4",
+  "id": "18",
+  "meta": {
+    "instanceId": "cd387a108e59f407338aaa3dd1fc1392753e7785132f8d58d189493b0d889a53"
+  },
+  "tags": []
+}

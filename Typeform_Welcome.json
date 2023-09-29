@@ -5,22 +5,207 @@
   "nodes": [
     {
       "parameters": {
-        "formId": "LfSgCyGd"
+        "from": "+14175413741",
+        "to": "={{ $('MongoDB1').item.json.phone }}",
+        "message": "={{ $('Busca pre-birth messages').item.json[\"Pregnant Messages\"][$('MongoDB1').item.json.weeks] }}   ",
+        "options": {}
       },
-      "id": "10b03ed6-9fdd-4004-baf1-f1da8fba9b45",
-      "name": "Typeform Welcome",
-      "type": "n8n-nodes-base.typeformTrigger",
+      "id": "45d8a787-8076-4d58-a108-a07f84d983a4",
+      "name": "Week Message",
+      "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
-        380,
+        1640,
         280
       ],
-      "webhookId": "da883f5c-28ad-4aa9-8243-07bc6ba17928",
-      "executeOnce": true,
       "credentials": {
-        "typeformApi": {
-          "id": "15",
-          "name": "Typeform account"
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('Set variables').item.json[\"What's [field:2dca9f1d-c416-42f6-8637-6ccc6e9ceeea]'s phone number?\"] }}",
+        "message": "= Hey {{ $('Set variables').item.json[\"name village member 2\"] }}, it's Mevi! We are the first ever mental load solution for new moms. {{ $('Set variables').item.json[\"What's your first name?\"] }} {{ $('Busca pre-birth messages').item.json[\"Village Welcomme\"] }}     ",
+        "options": {}
+      },
+      "id": "3b2e05aa-ff86-4bff-8e8f-05b8f74aaf72",
+      "name": "Village 2 Welcome",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        2300,
+        280
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('Set variables').item.json[\"What's [field:363eeaf8-baf1-4040-b4ba-b36f9c7cdb70]'s phone number?\"] }}",
+        "message": "=Hey {{ $('Set variables').item.json[\"Enter the name of the closest person in your village?\"] }}, it's Mevi! We are the first ever mental load solution for new moms. {{ $('Set variables').item.json[\"What's your first name?\"] }} {{ $('Busca pre-birth messages').item.json[\"Village Welcomme\"] }}   ",
+        "options": {}
+      },
+      "id": "15a6d8f4-daeb-4927-bab3-62bd2937eff0",
+      "name": "Village 1 Welcome",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        2100,
+        280
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('MongoDB1').item.json[\"spouse phone\"] }}",
+        "message": "=Hey {{ $('Set variables').item.json[\"What's their name?\"] }}{{ $('Busca pre-birth messages').item.json[\"Spouse Welcome message\"] }} ",
+        "options": {}
+      },
+      "id": "f0644fa9-1f0e-4846-98e7-370446d8b0e2",
+      "name": "Spouse Welcome",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        280
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $('Typeform Welcome').item.json[\"Do you have a partner / spouse? \"] }}",
+              "value2": "={{ true }}"
+            }
+          ]
+        }
+      },
+      "id": "07a90e2e-f6de-46f9-bb0b-c04b5044409a",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        60
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "401a5496-efcd-4958-a3ee-fcb14f30f1e8",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $('Set variables').item.json['Have you given birth yet [field:01GYR7CS6QHA9EG2F5ZGD2C95E]?'] }}",
+              "value2": "={{ true }}"
+            }
+          ]
+        }
+      },
+      "id": "5b14dd12-edc3-48e7-b025-23764c972b05",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('Set variables').item.json[\"Nice to meet you, [field:01GYR7CS6QHA9EG2F5ZGD2C95E], we'll need your phone number to get started\"] }}",
+        "message": "=Hey {{ $('Set variables').item.json[\"What's your first name?\"] }}! {{ $json[\"Welcome message\"] }}  ",
+        "options": {}
+      },
+      "id": "8c1954df-42ec-4b6c-b261-e92209d0ba88",
+      "name": "Welcome",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        280
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "collection": "Pre-Birth",
+        "options": {},
+        "query": "={\n  \"Pregnant Messages\": {\"$in\":[\"\"]}\n  \n}"
+      },
+      "id": "c9e2060a-8493-42ab-8b82-4fee45af9fec",
+      "name": "Busca pre-birth messages",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        280
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mongoDb": {
+          "id": "13",
+          "name": "MongoDB Atlas"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "collection": "Mevi",
+        "fields": "name, email, phone, due date, spouse name, spouse phone, relationship, spouse email, name village member 1, phone village member 1, relationship village member 1, email village member 1, given birth, other children, primary parent, weeks, name village member 2, phone village member 2, relationship village member 2, email village member 2, partner",
+        "options": {}
+      },
+      "id": "1a5fcf01-7b2c-4f62-9c05-41941150d78a",
+      "name": "MongoDB1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        820,
+        280
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mongoDb": {
+          "id": "13",
+          "name": "MongoDB Atlas"
         }
       }
     },
@@ -46,7 +231,7 @@
             },
             {
               "name": "spouse name",
-              "value": "={{ $json[\"Enter the name of the first person in your village\"] }}"
+              "value": "={{ $json[\"What's their name?\"] }}"
             },
             {
               "name": "spouse phone",
@@ -62,7 +247,7 @@
             },
             {
               "name": "name village member 1",
-              "value": "={{ $json['Enter the name of the next person in your village'] }}"
+              "value": "={{ $json['Enter the name of the closest person in your village?'] }}"
             },
             {
               "name": "phone village member 1",
@@ -78,7 +263,7 @@
             },
             {
               "name": "name village member 2",
-              "value": "={{ $json['Enter the name of another person in your village'] }}"
+              "value": "={{ $json['Who\\'s another person in your close village?'] }}"
             },
             {
               "name": "phone village member 2",
@@ -105,6 +290,10 @@
             {
               "name": "primary parent",
               "value": "={{$node[\"Typeform Welcome\"].json[\"Are you the birthing or primary parent? \"]}}"
+            },
+            {
+              "name": "partner",
+              "value": "={{ $json[\"Do you have a partner / spouse? \"] }}"
             }
           ],
           "number": [
@@ -121,329 +310,38 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        540,
+        640,
         280
       ]
     },
     {
       "parameters": {
-        "operation": "insert",
-        "collection": "Mevi",
-        "fields": "name, email, phone, due date, spouse name, spouse phone, relationship, spouse email, name village member 1, phone village member 1, relationship village member 1, email village member 1, given birth, other children, primary parent, weeks, name village member 2, phone village member 2, relationship village member 2, email village member 2",
-        "options": {}
+        "formId": "LfSgCyGd"
       },
-      "id": "1a5fcf01-7b2c-4f62-9c05-41941150d78a",
-      "name": "MongoDB1",
-      "type": "n8n-nodes-base.mongoDb",
+      "id": "10b03ed6-9fdd-4004-baf1-f1da8fba9b45",
+      "name": "Typeform Welcome",
+      "type": "n8n-nodes-base.typeformTrigger",
       "typeVersion": 1,
       "position": [
-        700,
+        380,
         280
       ],
-      "alwaysOutputData": true,
+      "webhookId": "da883f5c-28ad-4aa9-8243-07bc6ba17928",
+      "executeOnce": true,
       "credentials": {
-        "mongoDb": {
-          "id": "13",
-          "name": "MongoDB Atlas"
+        "typeformApi": {
+          "id": "15",
+          "name": "Typeform account"
         }
       }
-    },
-    {
-      "parameters": {
-        "collection": "Pre-Birth",
-        "options": {},
-        "query": "={\n  \"Pregnant Messages\": {\"$in\":[\"\"]}\n  \n}"
-      },
-      "id": "c9e2060a-8493-42ab-8b82-4fee45af9fec",
-      "name": "Busca pre-birth messages",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        840,
-        280
-      ],
-      "alwaysOutputData": true,
-      "credentials": {
-        "mongoDb": {
-          "id": "13",
-          "name": "MongoDB Atlas"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('MongoDB1').item.json.phone }}",
-        "message": "={{ $('Busca pre-birth messages').item.json[\"Pregnant Messages\"][$('MongoDB1').item.json.weeks] }}   ",
-        "options": {}
-      },
-      "id": "45d8a787-8076-4d58-a108-a07f84d983a4",
-      "name": "Week Message",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1640,
-        280
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('MongoDB1').item.json[\"spouse phone\"] }}",
-        "message": "=Hey {{ $('Busca pre-birth messages').item.json[\"Spouse Welcome message\"] }}",
-        "options": {}
-      },
-      "id": "f0644fa9-1f0e-4846-98e7-370446d8b0e2",
-      "name": "Spouse Welcome",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1980,
-        280
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('Set variables').item.json[\"Nice to meet you, [field:01GYR7CS6QHA9EG2F5ZGD2C95E], we'll need your phone number to get started\"] }}",
-        "message": "=Hey {{ $('Set variables').item.json[\"What's your first name?\"] }}! {{ $json[\"Welcome message\"] }}  ",
-        "options": {}
-      },
-      "id": "8c1954df-42ec-4b6c-b261-e92209d0ba88",
-      "name": "Welcome",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        980,
-        280
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('Set variables').item.json[\"What's [field:363eeaf8-baf1-4040-b4ba-b36f9c7cdb70]'s phone number?\"] }}",
-        "message": "=Hey {{ $('Set variables').item.json[\"Enter the name of the next person in your village\"] }}, it's Mevi! We are the first ever mental load solution for new moms.{{ $('Busca pre-birth messages').item.json[\"Village Welcomme\"] }} ",
-        "options": {}
-      },
-      "id": "15a6d8f4-daeb-4927-bab3-62bd2937eff0",
-      "name": "Village 1 Welcome",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        2220,
-        280
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('Set variables').item.json[\"What's [field:2dca9f1d-c416-42f6-8637-6ccc6e9ceeea]'s phone number?\"] }}",
-        "message": "= Hey {{ $('Set variables').item.json[\"Enter the name of another person in your village\"] }}, it's Mevi! We are the first ever mental load solution for new moms.{{ $('Busca pre-birth messages').item.json[\"Village Welcomme\"] }}  ",
-        "options": {}
-      },
-      "id": "3b2e05aa-ff86-4bff-8e8f-05b8f74aaf72",
-      "name": "Village 2 Welcome",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        2480,
-        280
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "amount": 2,
-        "unit": "seconds"
-      },
-      "id": "67c983e4-1114-49b4-a951-05ab2808c3fd",
-      "name": "Wait",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1,
-      "position": [
-        1140,
-        280
-      ],
-      "webhookId": "60f054cb-84a2-45fb-babf-633b27eb9e72"
-    },
-    {
-      "parameters": {
-        "amount": 2,
-        "unit": "seconds"
-      },
-      "id": "6a1f60d1-260f-49f2-a6d2-dbcee47f3cca",
-      "name": "Wait1",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1,
-      "position": [
-        1800,
-        280
-      ],
-      "webhookId": "c83604e9-0e3c-4663-b3bd-20ef34e6bef6"
-    },
-    {
-      "parameters": {
-        "amount": 2,
-        "unit": "seconds"
-      },
-      "id": "9713baab-e9fc-4aa7-8c2e-339195088221",
-      "name": "Wait2",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1,
-      "position": [
-        2100,
-        280
-      ],
-      "webhookId": "85141339-da55-443c-864d-769408e266a1"
-    },
-    {
-      "parameters": {
-        "amount": 2,
-        "unit": "seconds"
-      },
-      "id": "aeaf87f6-e172-4570-8a06-29d8e9a3ce78",
-      "name": "Wait3",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1,
-      "position": [
-        2340,
-        280
-      ],
-      "webhookId": "9b6c21c5-d505-4191-bcf8-e371981e6a0e"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "boolean": [
-            {
-              "value1": "={{ $('Set variables').item.json['Have you given birth yet [field:01GYR7CS6QHA9EG2F5ZGD2C95E]?'] }}",
-              "value2": "={{ true }}"
-            }
-          ]
-        }
-      },
-      "id": "5b14dd12-edc3-48e7-b025-23764c972b05",
-      "name": "IF",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        1360,
-        280
-      ]
-    },
-    {
-      "parameters": {},
-      "id": "401a5496-efcd-4958-a3ee-fcb14f30f1e8",
-      "name": "No Operation, do nothing",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        1560,
-        60
-      ]
     }
   ],
   "connections": {
-    "Typeform Welcome": {
-      "main": [
-        [
-          {
-            "node": "Set variables",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set variables": {
-      "main": [
-        [
-          {
-            "node": "MongoDB1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "MongoDB1": {
-      "main": [
-        [
-          {
-            "node": "Busca pre-birth messages",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Busca pre-birth messages": {
-      "main": [
-        [
-          {
-            "node": "Welcome",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Week Message": {
       "main": [
         [
           {
-            "node": "Wait1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Spouse Welcome": {
-      "main": [
-        [
-          {
-            "node": "Wait2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Welcome": {
-      "main": [
-        [
-          {
-            "node": "Wait",
+            "node": "IF1",
             "type": "main",
             "index": 0
           }
@@ -454,36 +352,14 @@
       "main": [
         [
           {
-            "node": "Wait3",
+            "node": "Village 2 Welcome",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Wait": {
-      "main": [
-        [
-          {
-            "node": "IF",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait1": {
-      "main": [
-        [
-          {
-            "node": "Spouse Welcome",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait2": {
+    "Spouse Welcome": {
       "main": [
         [
           {
@@ -494,11 +370,29 @@
         ]
       ]
     },
-    "Wait3": {
+    "IF1": {
       "main": [
         [
           {
-            "node": "Village 2 Welcome",
+            "node": "Spouse Welcome",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Village 1 Welcome",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "IF1",
             "type": "main",
             "index": 0
           }
@@ -523,11 +417,55 @@
         ]
       ]
     },
-    "No Operation, do nothing": {
+    "Welcome": {
       "main": [
         [
           {
-            "node": "Spouse Welcome",
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca pre-birth messages": {
+      "main": [
+        [
+          {
+            "node": "Welcome",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MongoDB1": {
+      "main": [
+        [
+          {
+            "node": "Busca pre-birth messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set variables": {
+      "main": [
+        [
+          {
+            "node": "MongoDB1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Typeform Welcome": {
+      "main": [
+        [
+          {
+            "node": "Set variables",
             "type": "main",
             "index": 0
           }

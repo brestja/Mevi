@@ -4,6 +4,71 @@
   },
   "nodes": [
     {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json.phone }} ",
+        "message": "=Hey {{ $('SplitInBatches').item.json.name }}{{ $json[\"primary message\"] }} ",
+        "options": {}
+      },
+      "id": "6a91fc6c-3d04-4cf0-99a9-c6928855a772",
+      "name": "Twilio",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        580
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json.phone }} ",
+        "message": "={{ $json[\"primary message\"] }} ",
+        "options": {}
+      },
+      "id": "ea902186-217a-4334-9151-50d748b0b925",
+      "name": "Twilio1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        360
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $('Set').item.json.diasPasados }}",
+              "operation": "equal",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "id": "2af1a91d-8238-4597-ac5f-8b3cd788231d",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        840,
+        420
+      ]
+    },
+    {
       "parameters": {},
       "id": "2026af81-5a83-4e3c-9587-e86320547f4c",
       "name": "NoOp",
@@ -25,7 +90,8 @@
           ],
           "string": [
             {
-              "value1": "={{ $json[\"primary message\"] }}"
+              "value1": "={{ $json[\"primary message\"] }}",
+              "value2": "="
             }
           ]
         },
@@ -135,7 +201,7 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 8
+              "triggerAtHour": 10
             }
           ]
         }
@@ -148,31 +214,27 @@
         -580,
         300
       ]
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json.phone }} ",
-        "message": "=Hey {{ $('SplitInBatches').item.json.name }} {{ $json[\"primary message\"] }}",
-        "options": {}
-      },
-      "id": "6a91fc6c-3d04-4cf0-99a9-c6928855a772",
-      "name": "Twilio",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        840,
-        420
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
     }
   ],
   "connections": {
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "Twilio1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "IF": {
       "main": [
         [
@@ -184,7 +246,7 @@
         ],
         [
           {
-            "node": "Twilio",
+            "node": "IF1",
             "type": "main",
             "index": 0
           }

@@ -4,6 +4,286 @@
   },
   "nodes": [
     {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
+        "message": "=It can be hard to understand what's going on in {{ $('SplitInBatches').item.json.name }}{{ $('Resource Messages').item.json.Spouse[ $json.diasPasados ] }} https://michaelssorensen.com/validation-the-most-powerful-relationship-skill-you-were-never-taught/",
+        "options": {}
+      },
+      "id": "4384769d-9249-422c-8d79-e410c9182860",
+      "name": "Twilio6",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        480
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
+        "message": "=As you settle into your family routine, take note of all the things that your partner, {{ $('SplitInBatches').item.json.name }} {{ $('Resource Messages').item.json.Spouse[ $json.diasPasados ] }} ",
+        "options": {}
+      },
+      "id": "f16b1737-7672-4542-a420-ca489df3fd8f",
+      "name": "Twilio5",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        300
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
+        "message": "=Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }}, welcome home. You are stepping in to a new chapter of your life as a family. While your newborn is your primary focus for now, {{ $('SplitInBatches').item.json.name }}{{ $('Resource Messages').item.json.Spouse[ $json.diasPasados ] }} ",
+        "options": {}
+      },
+      "id": "7ba603e8-261c-4ef8-a301-0bc59150156a",
+      "name": "Twilio4",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        120
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json.diasPasados }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal",
+              "value2": 2
+            },
+            {
+              "operation": "equal",
+              "value2": 40,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 57,
+              "output": 2
+            }
+          ]
+        }
+      },
+      "id": "b0e83f59-03b2-4496-be89-3de9be762832",
+      "name": "Switch1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
+        "message": "={{ $('SplitInBatches').item.json.name }} is in the throws of a period called matresence, which is the hormonal, physical, emotional, and spiritual adjustment to motherhood. This is a period marked by ups, downs, hopes and fears -- just like adolesence!  ",
+        "options": {}
+      },
+      "id": "50849971-1448-4c70-ac05-6bd466a21d78",
+      "name": "Twilio3",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        760
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
+        "message": "=Massage can help restore the connection between you and your spouse and help her find calm and relaxation. Could you book a professional massage for {{ $('SplitInBatches').item.json.name }} or DIY a comforting massage tonight? \n ",
+        "options": {}
+      },
+      "id": "70801f5f-0ff0-413b-9799-b5949f8d0d38",
+      "name": "Twilio2",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        580
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
+        "message": "=Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }} did you know that listening to calming music can reduce stress and anxiety? Maybe you could create a relaxing playlist for {{ $('SplitInBatches').item.json.name }} to listen to while they're resting or feeding the baby. \n ",
+        "options": {}
+      },
+      "id": "5c51c9f5-b34b-4fd6-bc3c-ca6392da4409",
+      "name": "Twilio1",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        420
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "+14175413741",
+        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
+        "message": "=Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }}{{ $('Resource Messages').item.json.Spouse[$json.diasPasados] }} ",
+        "options": {}
+      },
+      "id": "fda36447-6eb5-4202-aefd-86397a146c4c",
+      "name": "Twilio",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        260
+      ],
+      "credentials": {
+        "twilioApi": {
+          "id": "16",
+          "name": "Twilio Zamina trial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json.diasPasados }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal",
+              "value2": 12
+            },
+            {
+              "operation": "equal",
+              "value2": 45
+            },
+            {
+              "operation": "equal",
+              "value2": 20,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 30,
+              "output": 2
+            },
+            {
+              "operation": "equal",
+              "value2": 5,
+              "output": 3
+            }
+          ]
+        }
+      },
+      "id": "3e687af6-daa4-4eed-b634-335120bf36b0",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 12
+            },
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 45
+            },
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 2
+            },
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 5
+            },
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 20
+            },
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 30
+            },
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 40
+            },
+            {
+              "operation": "equal",
+              "value2": 57
+            }
+          ]
+        }
+      },
+      "id": "4537ef1d-62a4-4206-bf97-0f6622db3333",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        940,
+        320
+      ]
+    },
+    {
       "parameters": {},
       "id": "ef0529fc-6a2e-4f99-bca8-c63f10c83372",
       "name": "NoOp",
@@ -128,7 +408,7 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 8
+              "triggerAtHour": 10
             }
           ]
         }
@@ -141,289 +421,83 @@
         -540,
         240
       ]
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
-        "message": "=Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }}{{ $('Resource Messages').item.json.Spouse[$json.diasPasados] }} ",
-        "options": {}
-      },
-      "id": "fda36447-6eb5-4202-aefd-86397a146c4c",
-      "name": "Twilio",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1420,
-        260
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "number": [
-            {
-              "value1": "={{ $json.diasPasados }}",
-              "operation": "equal",
-              "value2": 12
-            },
-            {
-              "value1": "={{ $json.diasPasados }}",
-              "operation": "equal",
-              "value2": 45
-            },
-            {
-              "value1": "={{ $json.diasPasados }}",
-              "operation": "equal",
-              "value2": 2
-            },
-            {
-              "value1": "={{ $json.diasPasados }}",
-              "operation": "equal",
-              "value2": 5
-            },
-            {
-              "value1": "={{ $json.diasPasados }}",
-              "operation": "equal",
-              "value2": 20
-            },
-            {
-              "value1": "={{ $json.diasPasados }}",
-              "operation": "equal",
-              "value2": 30
-            },
-            {
-              "value1": "={{ $json.diasPasados }}",
-              "operation": "equal",
-              "value2": 40
-            },
-            {
-              "operation": "equal",
-              "value2": 57
-            }
-          ]
-        }
-      },
-      "id": "4537ef1d-62a4-4206-bf97-0f6622db3333",
-      "name": "IF1",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        940,
-        320
-      ]
-    },
-    {
-      "parameters": {
-        "value1": "={{ $json.diasPasados }}",
-        "rules": {
-          "rules": [
-            {
-              "operation": "equal",
-              "value2": 12
-            },
-            {
-              "operation": "equal",
-              "value2": 45
-            },
-            {
-              "operation": "equal",
-              "value2": 20,
-              "output": 1
-            },
-            {
-              "operation": "equal",
-              "value2": 30,
-              "output": 2
-            },
-            {
-              "operation": "equal",
-              "value2": 5,
-              "output": 3
-            }
-          ]
-        }
-      },
-      "id": "3e687af6-daa4-4eed-b634-335120bf36b0",
-      "name": "Switch",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 1,
-      "position": [
-        1180,
-        460
-      ]
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
-        "message": "=Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }} did you know that listening to calming music can reduce stress and anxiety? Maybe you could create a relaxing playlist for {{ $('SplitInBatches').item.json.name }} to listen to while they're resting or feeding the baby. \n ",
-        "options": {}
-      },
-      "id": "5c51c9f5-b34b-4fd6-bc3c-ca6392da4409",
-      "name": "Twilio1",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1420,
-        420
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
-        "message": "=Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }} shows that massage can reduce postpartum depression symptoms. Could you book a professional massage for {{ $('SplitInBatches').item.json.name }} or learn some basic techniques to help them relax? \n ",
-        "options": {}
-      },
-      "id": "70801f5f-0ff0-413b-9799-b5949f8d0d38",
-      "name": "Twilio2",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1420,
-        580
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
-        "message": "={{ $('SplitInBatches').item.json.name }} is in the throws of a period called matresence, which is the hormonal, physical, emotional, and spiritual adjustment to motherhood. This is a period marked by ups, downs, hopes and fears -- just like adolesence!  ",
-        "options": {}
-      },
-      "id": "50849971-1448-4c70-ac05-6bd466a21d78",
-      "name": "Twilio3",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1420,
-        760
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "value1": "={{ $json.diasPasados }}",
-        "rules": {
-          "rules": [
-            {
-              "operation": "equal",
-              "value2": 2
-            },
-            {
-              "operation": "equal",
-              "value2": 40,
-              "output": 1
-            },
-            {
-              "operation": "equal",
-              "value2": 57,
-              "output": 2
-            }
-          ]
-        }
-      },
-      "id": "b0e83f59-03b2-4496-be89-3de9be762832",
-      "name": "Switch1",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 1,
-      "position": [
-        1600,
-        340
-      ]
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
-        "message": "=Hey {{ $('SplitInBatches').item.json[\"spouse name\"] }}, welcome home. You are stepping in to a new chapter of your life as a family. While your newborn is your primary focus for now, {{ $('SplitInBatches').item.json.name }}{{ $('Resource Messages').item.json.Spouse[ $json.diasPasados ] }} ",
-        "options": {}
-      },
-      "id": "7ba603e8-261c-4ef8-a301-0bc59150156a",
-      "name": "Twilio4",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1860,
-        120
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
-        "message": "=As you settle into your family routine, take note of all the things that your partner, {{ $('SplitInBatches').item.json.name }} {{ $('Resource Messages').item.json.Spouse[ $json.diasPasados ] }} ",
-        "options": {}
-      },
-      "id": "f16b1737-7672-4542-a420-ca489df3fd8f",
-      "name": "Twilio5",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1860,
-        300
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "from": "+14175413741",
-        "to": "={{ $('SplitInBatches').item.json['spouse phone'] }} ",
-        "message": "=It can be hard to understand what's going on in {{ $('SplitInBatches').item.json.name }}{{ $('Resource Messages').item.json.Spouse[ $json.diasPasados ] }} https://michaelssorensen.com/validation-the-most-powerful-relationship-skill-you-were-never-taught/",
-        "options": {}
-      },
-      "id": "4384769d-9249-422c-8d79-e410c9182860",
-      "name": "Twilio6",
-      "type": "n8n-nodes-base.twilio",
-      "typeVersion": 1,
-      "position": [
-        1860,
-        480
-      ],
-      "credentials": {
-        "twilioApi": {
-          "id": "16",
-          "name": "Twilio Zamina trial"
-        }
-      }
     }
   ],
   "connections": {
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Twilio4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Twilio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Twilio3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        null,
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "IF": {
       "main": [
         [
@@ -507,80 +581,6 @@
         [
           {
             "node": "Resource Messages",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF1": {
-      "main": [
-        null,
-        [
-          {
-            "node": "Switch",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Switch1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Twilio",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio2",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Switch1": {
-      "main": [
-        [
-          {
-            "node": "Twilio4",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio5",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Twilio6",
             "type": "main",
             "index": 0
           }

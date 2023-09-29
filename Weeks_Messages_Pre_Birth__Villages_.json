@@ -330,7 +330,9 @@
       "parameters": {
         "rule": {
           "interval": [
-            {}
+            {
+              "triggerAtHour": 8
+            }
           ]
         }
       },

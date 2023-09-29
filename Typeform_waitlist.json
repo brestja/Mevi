@@ -1,6 +1,31 @@
 {
-  "name": "Typeform_waitlist",
+  "meta": {
+    "instanceId": "cd387a108e59f407338aaa3dd1fc1392753e7785132f8d58d189493b0d889a53"
+  },
   "nodes": [
+    {
+      "parameters": {
+        "operation": "insert",
+        "collection": "Waitlist",
+        "fields": "name, email, phone, village agreement",
+        "options": {}
+      },
+      "id": "d5837256-cad8-4d9a-a087-352e17a4c7ea",
+      "name": "MongoDB1",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        340
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mongoDb": {
+          "id": "10",
+          "name": "MongoDB account"
+        }
+      }
+    },
     {
       "parameters": {
         "values": {
@@ -25,61 +50,32 @@
         },
         "options": {}
       },
-      "id": "c0d0d1a2-f51b-4fd2-83dd-99f94fc337f6",
+      "id": "44111eee-0304-4101-a4aa-11fcbc1b19e4",
       "name": "Set variables",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        400,
-        880
+        760,
+        340
       ]
-    },
-    {
-      "parameters": {
-        "operation": "insert",
-        "collection": "Waitlist",
-        "fields": "name, email, phone, village agreement",
-        "options": {}
-      },
-      "id": "7817526e-e992-4fc2-a0c5-a4020dc56c05",
-      "name": "MongoDB1",
-      "type": "n8n-nodes-base.mongoDb",
-      "typeVersion": 1,
-      "position": [
-        800,
-        880
-      ],
-      "alwaysOutputData": true,
-      "credentials": {
-        "mongoDb": {
-          "id": "10",
-          "name": "MongoDB account"
-        }
-      }
     },
     {
       "parameters": {
         "authentication": "oAuth2",
         "formId": "h8F0rsem"
       },
-      "id": "7b43a998-afaf-4346-930f-15c90acfc14a",
+      "id": "a7823eda-35f8-4405-b66b-fbbb5fa91aa4",
       "name": "Typeform Trigger",
       "type": "n8n-nodes-base.typeformTrigger",
       "typeVersion": 1,
       "position": [
-        40,
-        880
+        400,
+        340
       ],
-      "webhookId": "5b20cbef-d4bc-451b-8c39-add05cc2a9a7",
-      "credentials": {
-        "typeformOAuth2Api": {
-          "id": "15",
-          "name": "Typeform Zamina account"
-        }
-      }
+      "webhookId": "8116dd07-3b62-4436-bf2d-18792a888b1f",
+      "credentials": {}
     }
   ],
-  "pinData": {},
   "connections": {
     "Set variables": {
       "main": [
@@ -103,26 +99,5 @@
         ]
       ]
     }
-  },
-  "active": false,
-  "settings": {
-    "timezone": "Europe/Madrid",
-    "saveExecutionProgress": true,
-    "saveManualExecutions": true,
-    "callerPolicy": "any",
-    "executionTimeout": 60
-  },
-  "hash": "b44f67e68c4c0bfbd2a678e4e9b66c59",
-  "id": 16,
-  "meta": {
-    "instanceId": "99d68c1f0abc8c95b53a5d4a1f9ab40d270b55323018b60c597c3fdcee2d3663"
-  },
-  "tags": [
-    {
-      "createdAt": "2023-07-03T19:29:21.181Z",
-      "updatedAt": "2023-07-03T19:29:21.181Z",
-      "id": "1",
-      "name": "Typeform"
-    }
-  ]
+  }
 }

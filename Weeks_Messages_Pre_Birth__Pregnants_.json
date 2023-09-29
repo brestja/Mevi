@@ -7,7 +7,7 @@
       "parameters": {
         "from": "+14175413741",
         "to": "={{ $('SplitInBatches').item.json.phone }}",
-        "message": "=Hey {{ $('SplitInBatches').item.json.name }}!{{ $('Busca pre-birth messages').item.json[\"Pregnant Messages\"][ $('SplitInBatches').item.json.weeks ] }}  ",
+        "message": "=Hey {{ $('SplitInBatches').item.json.name }}! {{ $('Busca pre-birth messages').item.json[\"Pregnant Messages\"][ $('SplitInBatches').item.json.weeks ] }}  ",
         "options": {}
       },
       "id": "57f0a25c-d6cc-494a-ab82-24a7bc8ffd61",
