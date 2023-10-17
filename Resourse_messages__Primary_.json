@@ -7,16 +7,16 @@
       "parameters": {
         "from": "+14175413741",
         "to": "={{ $('SplitInBatches').item.json.phone }} ",
-        "message": "=Hey {{ $('SplitInBatches').item.json.name }}{{ $json[\"primary message\"] }} ",
+        "message": "={{ $json[\"primary message\"] }} ",
         "options": {}
       },
-      "id": "6a91fc6c-3d04-4cf0-99a9-c6928855a772",
-      "name": "Twilio",
+      "id": "ea902186-217a-4334-9151-50d748b0b925",
+      "name": "Twilio1",
       "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
-        1080,
-        580
+        1120,
+        540
       ],
       "credentials": {
         "twilioApi": {
@@ -29,16 +29,16 @@
       "parameters": {
         "from": "+14175413741",
         "to": "={{ $('SplitInBatches').item.json.phone }} ",
-        "message": "={{ $json[\"primary message\"] }} ",
+        "message": "=Hey {{ $('SplitInBatches').item.json.name }}{{ $json[\"primary message\"] }} ",
         "options": {}
       },
-      "id": "ea902186-217a-4334-9151-50d748b0b925",
-      "name": "Twilio1",
+      "id": "6a91fc6c-3d04-4cf0-99a9-c6928855a772",
+      "name": "Twilio",
       "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
       "position": [
-        1080,
-        360
+        1120,
+        340
       ],
       "credentials": {
         "twilioApi": {
@@ -54,10 +54,36 @@
             {
               "value1": "={{ $('Set').item.json.diasPasados }}",
               "operation": "equal",
-              "value2": 5
+              "value2": 2
+            },
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 4
+            },
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 7
+            },
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 9
+            },
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 11
+            },
+            {
+              "value1": "={{ $json.diasPasados }}",
+              "operation": "equal",
+              "value2": 14
             }
           ]
-        }
+        },
+        "combineOperation": "any"
       },
       "id": "2af1a91d-8238-4597-ac5f-8b3cd788231d",
       "name": "IF1",
@@ -201,7 +227,7 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 10
+              "triggerAtHour": 9
             }
           ]
         }
@@ -221,14 +247,14 @@
       "main": [
         [
           {
-            "node": "Twilio1",
+            "node": "Twilio",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Twilio",
+            "node": "Twilio1",
             "type": "main",
             "index": 0
           }
